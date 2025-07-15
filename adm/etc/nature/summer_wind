@@ -1,0 +1,64 @@
+#  Spring rainny day phase
+#  The definition of day phase
+#  Format:
+#       length          length of the phase in seconds
+#       time_msg        msg sent to outdoors user at phase starts
+#       desc_msg        desc looked during the period before next phase
+#       event_fun       the function is called in NATURE_D at the phase starts
+#
+#  Phase starts at 0:00 every day
+#
+#  Note the length of a phase is in minutes of a day.
+#
+
+# The two lines defines the data format in 2 lines as
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+length:time_msg:desc_msg:event_fun
+%d:%s:%s:%s
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+240
+[1;36m东边的天空泛起了鱼肚白，天上似乎有些云飘忽不定。[2;37;0m
+%s[1;36m 凌晨，天空已经发白了[2;37;0m
+event_dawn
+
+120
+[1;33m风吹起来了，和着东升太阳的万道金光，清晨不似从前那般凉爽。[2;37;0m
+%s[1;33m 清晨，太阳在东方的天边吞吐着万道金光，太阳升起来了[2;37;0m
+event_sunrise
+
+180
+[1;37m风带着一股热辣辣的气息吹了起来。[2;37;0m
+%s[1;37m 上午，起风了，空气中弥漫着燥热的气息[2;37;0m
+event_morning
+
+180
+[1;37m已经是正午了，风摇曳着树枝，大地一片火热。[2;37;0m
+%s[1;37m 正午时分，太阳高挂在你的头顶正上方，知了不知疲倦的叫着[2;37;0m
+event_noon
+
+180
+[1;37m太阳开始从西方的天空中慢慢挪动，风，鼓着腮帮使劲搜刮着地面，扬起满天尘埃。[2;37;0m
+%s[1;37m 下午，太阳正高挂在西边的树梢上[2;37;0m
+event_afternoon
+
+180
+[1;31m傍晚了，夕阳烧红了半边天。大地在慢慢的降温，风儿也不似原先那么燥热了。[2;37;0m
+%s[1;31m 傍晚，一轮火红的夕阳正徘徊在西方的地平线上[2;37;0m
+event_evening
+
+120
+[1;34m夜晚降临了，迎面而来的风儿终于带来了一点凉爽的滋味。[2;37;0m
+%s[1;34m 夜晚，夜幕笼罩著大地[2;37;0m
+event_night
+
+240
+[1;34m已经是午夜了，漫天的繁星映衬着淡淡的银河。天街如洗。[2;37;0m
+%s[1;34m 深夜，夜幕低垂，满天繁星[2;37;0m
+event_midnight

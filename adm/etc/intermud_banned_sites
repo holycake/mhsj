@@ -1,0 +1,4 @@
+#the banned sites can contain both IP and port, or IP only
+^0\.
+#pirated zh site code.
+^210\.34\.48\.49

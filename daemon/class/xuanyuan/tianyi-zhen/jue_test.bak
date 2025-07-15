@@ -1,0 +1,332 @@
+#include <ansi.h>
+#include <combat.h>
+inherit F_SSERVER;
+#include "/u/fly/skill/eff_msg.h";
+int check_pfm(object me, object target, object ob);
+int perform(object me, object target)
+{
+      object ob, tar;
+if( !target ) target = offensive_target(me);
+if( !target
+||      !target->is_character()
+||      !me->is_fighting(target) )
+return notify_fail(HIC"「剑气」"HIM"攻击只能对战斗中的对手使用。\n"NOR);
+        if( objectp(me->query_temp("weapon")) )
+                return notify_fail("你必须空手才能使用「剑气」！\n"); 
+
+message_vision(HIR"\n$N琅声长笑，中气加盛，中指一伸,突然指间似生出一团的"HIM"剑气"HIR"，似有形而飘忽不定！\n"NOR,me);
+me->start_busy(1);
+me->set_temp("pfm_chousui", 1);
+if(random(me->query_kar()) > 15)
+      check_pfm(me, target, ob);
+else call_out("check_pfm", 6, me, target, ob);
+       return 1;
+}
+int check_armor(object target)
+{
+object *inv;
+int i, j;
+inv = all_inventory(target);
+j=0;
+for(i=0; i<sizeof(inv); i++)
+if( (string)inv[i]->query("equipped")=="worn" ) j++;
+return j;
+}
+
+int check_pfm(object me, object target, object ob)
+{
+string jianqi,msg, *limbs;
+int i, force, ap, dp, damage, p;
+object *inv;
+if(!me) return 0;
+i = (int)me->query_skill("unarmed", 1);
+force = (int)me->query("force");
+damage = (i+me->query("force_factor"))*2;
+me->delete_temp("pfm_chousui");
+me->start_busy(1);
+
+        if(!living(me) || me->is_ghost()) return 1;
+        if( (int)me->query("max_force") < 1800) {
+                tell_object(me,"你发现自己内力实在太弱，无法驱动「火墙」进行攻击。\n");
+                return 1;
+                }
+        if(me->query("force") < 1000){
+                tell_object(me,"你发现自己现在真气实在太弱，举不起「火墙」进行攻击。\n");       
+                return 1;
+                }
+        if(!living(target) || !target || environment(me)->query("no_fight")
+           ){
+           message_vision(HIY"$N朗声一笑，将酝酿许久的"HIR"剑气"HIY"回复体内。\n"NOR,me);
+                return 1;
+                }
+        if( me->query_skill("NO.1_skill", 1) >200 ){
+message_vision(HIC"\n$N内息自丹田循任脉引向会阴穴,默运"HIB"第一神功"HIC",只觉指尖真气欲破空而出。"NOR,me);
+                       damage = damage+(int)me->query_skill("NO.1_skill", 1);
+                        }
+        me->add("force", 100);
+ap = me->query("combat_exp")/10000+i*5;
+dp = target->query("combat_exp")/10000+target->query_skill("parry",1);
+if (ap < 1) ap = 1;
+if (dp < 1) dp = 1;
+
+message_vision(HIB"\n此时$N内息急催,脸上流光溢采，真气越奔越快,指尖"HIW"剑气"HIB"越来越明显 !!"NOR,me);
+msg = HIM"\n真气一盛，嗤嗤两声轻响,"HIW"剑气"HIM"陡然向$n疾冲过来,无坚不摧却又虚无缥缈！\n"NOR;
+
+if(ap > random(dp)){
+inv = all_inventory(target);
+               if(check_armor(target) >= 1){     
+               if(me->query("force") > target->query("force")*2){ 
+               if(me->query_str() > random(target->query_str())){
+me->start_busy(3);
+target->start_busy(2);
+msg += HIY"猛烈间剑气光芒四散，火花迸射，炸开了$p的护具！\n" NOR;
+for(i=0; i<sizeof(inv); i++)
+if((string)inv[i]->query("equipped")=="worn" && !inv[i]->query("unique")){
+inv[i]->unequip();
+inv[i]->move(environment(target));
+inv[i]->set("name", "粉碎的" + inv[i]->query("name"));
+inv[i]->delete("value");
+inv[i]->set("armor_prop", 0);
+}
+target->reset_action();
+damage = damage * 3;
+if (damage > 4000) damage = 4000;
+damage = damage - target->query_temp("apply/armor");
+target->receive_damage("kee", damage, me);   
+target->receive_wound("kee", damage/4, me);  
+p = (int)target->query("kee")*100/(int)target->query("max_kee");
+msg += damage_msg(damage, "砸伤");
+msg += "( $n"+eff_status_msg(p)+" )\n";
+me->start_busy(2);
+target->start_busy(1);    
+                             }
+                             else {
+me->start_busy(3);
+target->start_busy(3);
+msg += HIY"只见剑气光芒四散，火花四溅，热力直透$p的护具！\n" NOR;
+for(i=0; i<sizeof(inv); i++)
+if((string)inv[i]->query("equipped")=="worn" && !inv[i]->query("unique")){
+inv[i]->set("name", "碎裂的" + inv[i]->query("name"));
+inv[i]->set("value", 49);
+if(inv[i]->query("armor_prop/armor"))
+inv[i]->set("armor_prop/armor", inv[i]->query("armor_prop/armor")/2);
+}
+target->reset_action();
+damage = damage * 3;
+if (damage > 3500) damage = 3500;
+damage = damage - target->query_temp("apply/armor");
+target->receive_damage("kee", damage, me); 
+target->receive_wound("kee", damage/4, me);  
+p = (int)target->query("kee")*100/(int)target->query("max_kee");
+msg += damage_msg(damage, "砸伤");
+msg += "( $n"+eff_status_msg(p)+" )\n";
+me->start_busy(2);
+target->start_busy(1);    
+                             }
+                             }
+                             else {
+me->start_busy(3);
+target->start_busy(3);
+msg += HIY"剑气光芒四溅，阵阵压力撞向$p,无坚不摧！\n" NOR;                  
+damage = damage * 2;
+if (damage > 2500) damage = 2500;
+target->receive_damage("kee", damage, me);
+target->receive_wound("kee", damage/6, me);   
+p = (int)target->query("kee")*100/(int)target->query("max_kee");
+msg += damage_msg(damage, "砸伤");
+msg += "( $n"+eff_status_msg(p)+" )\n";
+me->start_busy(2);
+target->start_busy(1);    
+                             }
+                           }
+                             else {
+//target has no armor, so, hehe...
+damage = damage*2 + random(damage);
+if (damage > 3000) damage = 3000;
+if(force > target->query("force")*2) damage = damage*2;
+target->receive_damage("kee", damage, me);   
+target->receive_wound("kee", damage/2, me);  
+p = (int)target->query("kee")*100/(int)target->query("max_kee");
+msg += damage_msg(damage, "砸伤");
+msg += "( $n"+eff_status_msg(p)+" )\n";
+me->start_busy(2);
+target->start_busy(1);    
+                             }
+                           }
+                             else {
+me->start_busy(2);
+msg += HIY"\n$p眼看就要被打中，冒死一个“铁板桥”，全身自膝盖处向后倒去，堪堪避过$w"HIY"！\n" NOR;
+                             }
+limbs = target->query("limbs");
+msg = replace_string(msg, "$l", limbs[random(sizeof(limbs))]);
+msg = replace_string(msg, "$w", HIW"剑气"NOR);    
+message_vision(msg, me, target);
+        if (target->query_temp("weapon")) {
+        msg = CYN "\n\n紧跟着,$N窥破$n招式的破绽，随手一指妙到毫颠,正中$n手腕。\n"NOR;
+        msg += CYN "$n早被"RED"剑气"CYN"所伤,如何抵挡这一招，兵器脱手而飞\n"NOR;
+                message_vision(msg, me, target);
+                target->query_temp("weapon")->move(environment(target));}
+               remove_call_out("check_pfm");
+      jianqi=me->query("env/jianqi");
+if (!jianqi)              call_out("check_pfm3", 0, me, target, p);  
+if (jianqi=="丹田"){
+             call_out("check_pfm2", 0, me, target, p);  }
+if (jianqi=="百汇") call_out("check_pfm4", 0, me, target, p);  
+if (jianqi=="三脉") call_out("check_pfm3", 0, me, target, p);  
+if (jianqi!="三脉"&&jianqi!="百汇"&&jianqi!="丹田")
+    {
+   switch(random(3))
+     {case 0 :
+// 一种busy 的pfm 在busy 中攻击防御增加
+             call_out("check_pfm2", 0, me, target, p);  
+                    break;
+     case 1 :
+// 接着一指三脉,攻击性pfm
+             call_out("check_pfm3", 0, me, target, p);  
+                    break;
+     case 2 :
+// 颠倒错乱性的pfm,有类似于大挪移
+             call_out("check_pfm4", 0, me, target, p);  
+                    break;
+           }
+    }
+return 1;
+}
+int check_pfm2(object me, object target,int p)
+{
+string msg, *limbs;
+int i, force, ap, dp, damage;
+if(!me) return 0;
+i = (int)me->query_skill("unarmed", 1);
+force = (int)me->query("force");
+damage = (i+me->query("force_factor"))*2;
+me->start_busy(1);
+        if(!living(me) || me->is_ghost()) return 1;
+        if( (int)me->query("max_force") < 1800) {
+                tell_object(me,"你发现自己内力实在太弱，无法驱动「剑气」进行攻击。\n");
+                return 1;
+                }
+        if(me->query("force") < 1000){
+                tell_object(me,"你发现自己现在真气实在太弱，举不起「剑气」进行攻击。\n");       
+                return 1;
+                }
+        if(!living(target) || !target || environment(me)->query("no_fight")
+           ){
+           message_vision(HIY"$N朗声一笑，将酝酿许久的"HIR"剑气"HIY"回复体内。\n"NOR,me);
+                return 1;
+                }
+        if( me->query_skill("NO.1_skill", 1) >210 ){
+message_vision(HIC"\n$N内息自七经八脉引回丹田,默运"HIB"第一神功"HIC",只觉指尖真气欲破空而出！\n"NOR,me,target);
+                        }
+               else {
+message_vision(HIC"\n$N一式「惊神」点出，但听得嗤的一声轻响，一股纯阳的指力透入$n体内任脉紫宫穴！"NOR,me,target);
+                 }
+
+                target->add_temp("apply/attack", - 200);
+                target->add_temp("apply/dodge", - 200);
+                target->add_temp("apply/parry", -200);
+        msg = RED "\n紧跟着$N忽然低唤了一声：$n,声音犹似在千重梦魔浮沉中气若游丝地传来。！\n"NOR;        
+               msg += HIM "$n征了一怔,$N忽一举袖，却听见“波”的一声，$N一指击在了$n的手心！\n" NOR;
+               msg += HIR "$n只觉体内奇经八脉中内息为之一怠，全身气力竟然提不起来了！\n" NOR;
+                target->start_busy(me->query_skill("unarmed",1)/30+5);
+                me->start_busy(1);
+                call_out("back", 3 + me->query_skill("unarmed",1)/2+me->query_skill("force",1)/2, target);
+        message_vision(msg, me, target);
+        return 1;
+}
+
+void back(object target)
+{
+    if (!target) return;
+        target->add_temp("apply/attack", 200);
+        target->add_temp("apply/dodge", 200);
+        target->add_temp("apply/parry", 200);
+message_vision(HIC"$N待到这时候才渐渐冲开了体内的纯阳真气，恢复了武功！\n"NOR,target);
+}
+
+int check_pfm3(object me, object target,int p)
+{
+string msg, *limbs;
+int i, force, ap, dp, damage;
+if(!me) return 0;
+i = (int)me->query_skill("unarmed", 1);
+force = (int)me->query("force");
+damage = (i+me->query("force_factor"))*2;
+me->start_busy(1);
+        if(!living(me) || me->is_ghost()) return 1;
+        if( (int)me->query("max_force") < 1800) {
+                tell_object(me,"你发现自己内力实在太弱，无法驱动「剑气」进行攻击。\n");
+                return 1;
+                }
+        if(me->query("force") < 1000){
+                tell_object(me,"你发现自己现在真气实在太弱，举不起「剑气」进行攻击。\n");       
+                return 1;
+                }
+        if(!living(target) || !target || environment(me)->query("no_fight")
+           ){
+           message_vision(HIY"$N朗声一笑，将酝酿许久的"HIR"剑气"HIY"回复体内。\n"NOR,me);
+                return 1;
+                }
+message_vision(HIC"\n突然间，$N一指点出,犹如蜻蜓点水,竟分袭三道大脉,快捷无伦. "NOR,me,target);
+        if( me->query_skill("NO.1_skill", 1) >210 ){
+              msg=HIM"\n但见$N食指幌动，$n上半身正面大穴,却已全在$N一指笼罩之下。\n"HIG"$N右手食指微曲，突然点出，使的竟然便是["HIB"第一神功"HIG"]。\n"NOR;
+                            }
+ else
+              msg=HIM"但见$N食指幌动，$n上半身正面大穴,却已全在$N一指笼罩之下.\n"NOR;
+                damage = damage*2 + random(damage*2);
+                if(damage>3000) damage=3000;
+                if(me->query("force") > target->query("force")*2 ) damage += random(damage*2);
+                target->receive_damage("kee", damage);
+                target->receive_wound("kee", damage/2);
+                p = (int)target->query("kee")*100/(int)target->query("max_kee");
+                msg += damage_msg(damage, "刺伤");
+                msg += "( $n"+eff_status_msg(p)+" )\n";                
+limbs = target->query("limbs");
+msg = replace_string(msg, "$l", limbs[random(sizeof(limbs))]);
+msg = replace_string(msg, "$w", HIR"手指"NOR);    
+        message_vision(msg, me, target); 
+        return 1;
+}
+
+int check_pfm4(object me, object target,int p)
+{
+string msg, *limbs;
+int i, force, ap, dp, damage;
+if(!me) return 0;
+i = (int)me->query_skill("unarmed", 1);
+force = (int)me->query("force");
+damage = (i+me->query("force_factor"))*2;
+me->start_busy(1);
+        if(!living(me) || me->is_ghost()) return 1;
+        if( (int)me->query("max_force") < 1800) {
+                tell_object(me,"你发现自己内力实在太弱，无法驱动「剑气」进行攻击。\n");
+                return 1;
+                }
+        if(me->query("force") < 1000){
+                tell_object(me,"你发现自己现在真气实在太弱，举不起「剑气」进行攻击。\n");       
+                return 1;
+                }
+        if(!living(target) || !target || environment(me)->query("no_fight")
+           ){
+           message_vision(HIY"$N朗声一笑，将酝酿许久的"HIR"剑气"HIY"回复体内。\n"NOR,me);
+                return 1;
+                }
+message_vision(HIC"\n$N内息从七经八脉逆回百汇,默运"HIB"第一神功"HIC",试图将$n的攻击挪移到$n身上。\n"NOR,me,target);
+message_vision(HIC"忽然，$N发现有一股奇怪的力量向自己袭来！。真是莫名其妙!!\n"NOR,target);
+            me->start_busy(random(2));
+                target->start_busy(1+me->query_skill("unarmed",1)/100);
+        if ( me->query_skill("force",1) > random(target->query_skill("force",1))/3*2)
+        {
+        tell_object(target, CYN"你身不由己，连续几招击向自己！\n"NOR);
+                for (i = 0;i < random(3)+3;i ++)
+        {
+        message("vision", HIR"\n" + target->name() + "忽然如"HIG"中魔"HIR"一般，招招击向自己！"NOR, environment(me), target);
+		COMBAT_D->do_attack(target, target, target->query_temp("weapon") );
+        }
+		}
+	else {
+		write( CYN"可是"+target->name()+"内力深厚，丝毫不为所动。\n"NOR);
+		tell_object(target, CYN"你强用心神，终于控制住自己。\n"NOR);
+	}
+	return 1;
+}

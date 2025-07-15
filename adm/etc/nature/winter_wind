@@ -1,0 +1,64 @@
+#  Spring rainny day phase
+#  The definition of day phase
+#  Format:
+#       length          length of the phase in seconds
+#       time_msg        msg sent to outdoors user at phase starts
+#       desc_msg        desc looked during the period before next phase
+#       event_fun       the function is called in NATURE_D at the phase starts
+#
+#  Phase starts at 0:00 every day
+#
+#  Note the length of a phase is in minutes of a day.
+#
+
+# The two lines defines the data format in 2 lines as
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+length:time_msg:desc_msg:event_fun
+%d:%s:%s:%s
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+240
+[1;36m天渐渐亮了，天空惨白的，大地还笼罩在夜幕之中。[2;37;0m
+%s[1;36m 天渐渐亮了，天上没有晨星[2;37;0m
+event_dawn
+
+120
+[1;37m天光终于放亮了，风裹着云在天上飞速的跑着。[2;37;0m
+%s[1;37m 起风了，树木光秃秃的在风中瑟瑟的发抖[2;37;0m
+event_sunrise
+
+180
+[1;37m风更大了，卡的一声，枯枝从树上落了下来，转眼又不知被吹到了什么地方。[2;37;0m
+%s[1;37m 风更大了，呼呼的吹着，逞着自己摧枯拉朽的力量[2;37;0m
+event_morning
+
+180
+[1;37m已经是正午了，风没有一点停的意思，天空惨白惨白的。[2;37;0m
+%s[1;37m 现在是正午时分，天阴着，凛冽的北风呼呼的吹着[2;37;0m
+event_noon
+
+180
+[1;37m风渐渐的小了些，惨白的太阳也些许露出了半张脸。[2;37;0m
+%s[1;37m 风小些了，空气中透着冰冷的气息[2;37;0m
+event_afternoon
+
+180
+[1;31m残阳如血，风停了，树枝掉了不少在地上。[2;37;0m
+%s[1;31m 夕阳正徘徊在西方的地平线上，无力的喘息着[2;37;0m
+event_evening
+
+120
+[1;34m夜晚降临了，风裹尘沙，寒意入骨。[2;37;0m
+%s[1;34m 夜幕笼罩著大地，风沙刺骨[2;37;0m
+event_night
+
+240
+[1;34m已经是午夜了，寒风挟卷着枯枝落叶，沙沙声不绝于耳。[2;37;0m
+%s[1;34m 夜幕低垂，寒风肆虐[2;37;0m
+event_midnight

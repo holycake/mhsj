@@ -1,0 +1,7 @@
+#/d/city/npc/teawaiter.c
+dbase (["per":14,"class":"scholar","max_kee":528,"eff_sen":264,"str":21,"kee":528,"max_gin":220,"force":0,"kar":10,"gin":220,"cor":19,"startroom":"/d/city/clubpoem","shen_type":1,"eff_kee":528,"con":28,"unit":"位","eff_gin":220,"vendor_goods":(["huasheng":"/d/ourhome/obj/huasheng","jiudai":"/d/moon/obj/jiudai",]),"int":14,"shop_id":({"cha boshi","waiter",}),"can_speak":1,"mana":0,"race":"人类","name":"茶博士","spi":10,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"cha boshi","cps":17,"gender":"男性","atman":0,"combat_exp":1000,"bodytype":"normal","attitude":"friendly","max_sen":264,"sen":264,"age":26,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "teawaiter"
+price_ratio 10
+close_time 1752652469

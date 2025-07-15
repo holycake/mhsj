@@ -1,0 +1,124 @@
+// baixiang-zunzhe.c...weiqi, 97.09.15.
+
+inherit NPC;
+void create()
+{
+	set_name("°×Ïó×ğÕß", ({"baixiang zunzhe", "baixiang", "zunzhe"}));
+	set("title", "Ã÷Íõ»¤·¨");
+	set("gender", "ÄĞĞÔ" );
+	set("age", 43);
+	set("per", 112);//no rongmao description.
+	set("str", 50);
+	set("long", "ÕâÎ»°×Ïó×ğÕßÊÇÓĞÃûµÄ´óÁ¦Ê¿¡£ÒÔÇ°ÔÚÊ¨ÍÕÉ½×ö¶ş´óÍõ£¬\nÊ¨ÍÕÉ½±»½ËÃğºóËû¸ú×ÅÇàÊ¨ÀÏÄ§Í¶±¼´óÅôÃ÷Íõ£¬×öÁË»¤·¨×ğÕß¡£\nÉúÆ½×îÅÂµÄÊÇÀÏÊó£¬¿´µ½¼â×ìºïÈùµÄÈË¾ÍÌÖÑá¡£\n");
+	set("class", "yaomo");
+	set("combat_exp", 800000);
+	set("daoxing", 500000);
+
+	set("attitude", "peaceful");
+	create_family("´óÑ©É½", 2, "µÜ×Ó");
+	set_skill("unarmed", 150);
+	set_skill("cuixin-zhang", 80);
+	set_skill("dodge", 60);
+	set_skill("xiaoyaoyou", 70);
+	set_skill("parry", 120);
+	set_skill("blade", 110);
+	set_skill("bingpo-blade", 120);
+	set_skill("force", 90);   
+	set_skill("ningxie-force", 80);
+	set_skill("literate", 70);
+	set_skill("spells", 90);
+	set_skill("dengxian-dafa", 80);
+	map_skill("spells", "dengxian-dafa");
+	map_skill("force", "ningxie-force");
+	map_skill("unarmed", "cuixin-zhang");
+	map_skill("blade", "bingpo-blade");
+	map_skill("dodge", "xiaoyaoyou");
+
+	set("max_kee", 1200);
+	set("max_sen", 600);
+	set("force", 1600);
+	set("max_force", 800);
+	set("mana", 800);
+	set("max_mana", 400);	
+	set("force_factor", 60);
+	set("mana_factor", 20);
+
+        set("eff_dx", -200000);
+        set("nkgain", 400);
+
+	setup();
+	carry_object("/d/obj/armor/yinjia")->wear();
+	carry_object("/d/obj/weapon/blade/yanblade")->wield();
+}
+
+void attempt_apprentice(object ob)
+{
+	if( (int)ob->query("str") < 20 ){
+		command("kick " + ob->query("id"));
+		command("say ¿ì×ß£¬¿ì×ß£¡ÎÒÒ»¿´µ½¼â×ìºïÈùµÄÈË¾ÍÓĞÆø¡£\n");
+		return;
+	}
+
+	if( (string)ob->query("family/family_name")=="´óÑ©É½" ){
+		if( (int)ob->query("family/generation") < 2  ){
+			command("say ²»¸Ò£¬²»¸Ò¡£ÎÒ¸Ã°İ" + RANK_D->query_respect(ob) + "ÄúÎªÊ¦²ÅÊÇ¡£\n");
+		}
+		else if( (int)ob->query("family/generation") ==2  ){
+			command("say ÄãÕâ¸ö" + RANK_D->query_rude(ob) + "±ğÀ´ÏûÇ²ÄãÒ¯Ò¯ÎÒÁË£¡\n");
+		}
+		else if( (int)ob->query("family/generation") ==3  ){
+			command(":D");
+			command("say ÄãÕâ¸ö" + RANK_D->query_rude(ob) + "ÊÇ²»ÊÇ±»Ê¦¸¸¸Ï³öÀ´ÁË£¿ÄãÒ¯Ò¯ÎÒ½ñÌìĞÄÇéºÃ£¬¾ÍÊÕÁôÄã°É...\n");
+			command("recruit " + ob->query("id") );
+		}
+		else {
+			if( (int)ob->query("daoxing")+(int)ob->query("combat_exp") >= 200000 ){
+				command(":D ");
+				command("say ºÃ£¬" + RANK_D->query_respect(ob) + "ºÃºÃ¸úÎÒ¸É£¬½«À´ÓĞÄãµÄºÃ´¦£¡\n");
+				command("recruit " + ob->query("id") );
+			}
+			else {
+				command("say Äã»¹ÊÇÕÒğĞğÄ£¬ÎÚÑ»ËûÃÇÏÈÁ·×Å°É¡£\n");
+			}
+		}
+	}
+
+	else{
+		command("hmm");
+		command("say ÕâÎ»" + RANK_D->query_respect(ob) + "£¬Äã»¹ÊÇÕÒğĞğÄ£¬ÎÚÑ»ËûÃÇÏÈÁ·Á·°É¡£\n");
+	}
+
+	return;
+}
+
+int recruit_apprentice(object ob)
+{
+	if( ::recruit_apprentice(ob) )
+		ob->set("class", "yaomo");
+}
+
+void init()
+{       
+	object ob=this_player();
+
+	::init();
+	if ( ((string)ob->query("gender")=="ÄĞĞÔ") && ((int)ob->query("str") < 20) && (random(3) > 1) )
+        {
+                        remove_call_out("greeting");
+                        call_out("greeting", 1, ob);
+        }
+}
+void greeting(object ob)
+{
+        if( !ob || environment(ob) != environment() ) return;
+
+        switch( random(1) ) {
+                case 0:
+		command("kick " + ob->query("id"));
+		command("say ¼â×ìºïÈù£¡");
+		command("laugh");
+		break;
+	}
+}
+
+ÿ

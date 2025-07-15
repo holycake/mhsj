@@ -1,0 +1,77 @@
+//  ÑýÉñÖ®Õù £±¡££°
+//  by happ@YSZZ 2000.4.7
+//  /d/qujing/huangfeng/npc/lingji.c
+ 
+inherit NPC;
+
+void create()
+{
+   set_name("Óñ»Ê´óµÛ", ({ "yuhuang dadi", "yu di", "yu di" }));
+   set("long","ÌìÍ¥µÄ×î¸ßÍ³ÖÎÕß");
+   set("gender", "ÄÐÐÔ");
+   set("age", 35);
+   set("attitude", "peaceful");
+   set("max_kee", 5000);
+   set("max_gin", 5000);
+   set("max_sen", 5000);
+   set("force", 4000);
+   set("max_force", 2000);
+   set("force_factor", 145);
+   set("max_mana", 3000);
+   set("mana", 6000);
+   set("mana_factor", 150);
+   set("combat_exp", 20000000);
+   set("daoxing",150000000);
+   set_skill("literate", 150);
+   set_skill("spells", 200);
+   set_skill("buddhism", 200);
+   set_skill("unarmed", 150);
+   set_skill("jienan-zhi", 150);
+   set_skill("dodge", 180);
+   set_skill("lotusmove", 160);
+   set_skill("parry", 150);
+   set_skill("force", 180);
+   set_skill("lotusforce", 180);
+   set_skill("staff", 150);
+   set_skill("lunhui-zhang", 180);
+   set_skill("spear", 150);
+   map_skill("spells", "buddhism");
+   map_skill("unarmed", "jienan-zhi");
+   map_skill("dodge", "lotusmove");
+   map_skill("force", "lotusforce");
+   map_skill("parry", "lunhui-zhang");
+   map_skill("staff", "lunhui-zhang");
+
+   setup();
+   carry_object("/d/nanhai/obj/jiasha")->wear();
+   carry_object("/d/nanhai/obj/jingu1");
+   carry_object("/d/nanhai/obj/nine-ring")->wield();
+}
+
+void init()
+{
+  object ob = this_player();
+  object room;  
+  int i;
+  if( ! ob->query_temp("sha_killed") )
+     return;
+  if(! ob->query("obstacle/hfg") )
+    return; 
+ if (ob->query("combat_exp") < 10000)
+    return;
+  if (ob->query("obstacle/liusha") == "done")
+    return;
+  i = random(500);
+  room=load_object("/obj/empty");
+  ob->add("obstacle/number",1);
+  ob->set("obstacle/liusha","done");
+  ob->add("combat_exp",i+2000);
+  command("chat "+ob->query("name")+"Á÷É³ºÓ½µ·þ¾íÁ±´ó½«£¡");
+  command("chat "+ob->query("name")+"Ë³Àû´³¹ýÎ÷ÐÐ[1;37mµÚÆß¹Ø[m£¡");
+  tell_object (ob,"ÄãÓ®µÃÁË"+chinese_number(3)+"Äê"+
+               chinese_number(i/4)+"Ìì"+
+               chinese_number((i-(i/4)*4)*3)+"Ê±³½µÄµÀÐÐ£¡\n");
+  ob->save();
+  this_object()->move(room);
+  return;
+}

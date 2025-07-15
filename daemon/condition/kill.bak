@@ -1,0 +1,29 @@
+// by fly
+// 2000-9-26  晚
+
+#include <ansi.h>
+void clone_xunbu(object me);
+
+int update_condition(object me, int duration)
+{
+        object ob;
+        int a;
+
+       if (duration < 1) {
+                tell_object(me, HIR"官府不再通缉你了！\n"NOR);
+                return 0;
+        }
+
+        if (duration > 100) 
+        {
+        "/daemon/condition/unpker.c"->pk();
+        }
+        me->apply_condition("killer", duration - 1);
+        return 1;
+}
+
+string query_type(object me)
+{
+        return "killer";
+}
+

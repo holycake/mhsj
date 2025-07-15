@@ -1,0 +1,45 @@
+// city/npc/angelus.c
+
+inherit NPC;
+inherit F_VENDOR;
+
+void create()
+{
+	set_name("张正申", ({ "zhang zhengshen", "zhang", "zhengshen", "boss"}));
+	set("gender", "男性");
+	set("age", 42);
+	set("long", "他是这家弓作坊的老板。\n");
+	set("attitude", "friendly");
+        set("vendor_goods", ({
+               "/d/nanjing/obj/bow0",
+               "/d/nanjing/obj/bow1",
+               "/d/nanjing/obj/bow2",
+               "/d/nanjing/obj/crossbow",
+        }));
+
+	setup();
+	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
+	carry_object("/d/nanjing/obj/cloth_min"+random(7))->wear();
+	carry_object("/d/nanjing/obj/shoes"+random(8))->wear();
+}
+
+void init()
+{
+	add_action("do_list", "list");
+	add_action("do_buy", "buy");
+}
+
+void greeting(object ob)
+{
+        if( !ob || environment(ob) != environment() ) return;
+        switch( random(2) ) {
+                case 0:
+                        say( "张老板笑咪咪地说道：这位" + RANK_D->query_respect(ob)
+                                + "，进来看看？本店又出了批新弓，用的可是上好的牛筋啊。\n");
+                        break;
+                case 1:
+                        say( "张老板说道：这位" + RANK_D->query_respect(ob)
+                                + "，请进请进。\n");
+                        break;
+        }
+}

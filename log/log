@@ -1,0 +1,3930 @@
+/cmds/usr/backup.c line 47: Warning: Unused local variable 'file'
+  }
+   ^
+/feature/save.c line 15: Undefined variable 'tmp'
+  tmp = clone_object(base_name(this_object()));
+               ^
+/feature/save.c line 15: Illegal lvalue
+  tmp = clone_object(base_name(this_object()));
+               ^
+/feature/save.c line 22: Warning: Unused local variable 'result'
+  }
+   ^
+/feature/save.c line 22: Warning: Unused local variable 'clean'
+  }
+   ^
+/feature/save.c line 22: Warning: Unused local variable 'backup_actions'
+  }
+   ^
+/feature/save.c line 22: Warning: Unused local variable 'backup_default_actions'
+  }
+   ^
+/feature/save.c line 25: Warning: Unused local variable 'result'
+  }
+   ^
+/feature/save.c line 25: Warning: Unused local variable 'clean'
+  }
+   ^
+/feature/save.c line 25: Warning: Unused local variable 'backup_actions'
+  }
+   ^
+/feature/save.c line 25: Warning: Unused local variable 'backup_default_actions'
+  }
+   ^
+/feature/save.c line 23: syntax error, unexpected L_DEFINED_NAME
+  assure_file(file + __SAVE_EXTENSION__);
+                     ^
+/feature/save.c line 33: syntax error, unexpected ')'
+  if( stringp(file = this_object()->query_save_file()) )
+                                                       ^
+/feature/save.c line 23: syntax error, unexpected L_DEFINED_NAME
+  assure_file(file + __SAVE_EXTENSION__);
+                     ^
+/feature/save.c line 33: syntax error, unexpected ')'
+  if( stringp(file = this_object()->query_save_file()) )
+                                                       ^
+/feature/save.c line 23: syntax error, unexpected L_DEFINED_NAME
+  assure_file(file + __SAVE_EXTENSION__);
+                     ^
+/feature/save.c line 33: syntax error, unexpected ')'
+  if( stringp(file = this_object()->query_save_file()) )
+                                                       ^
+/feature/save.c line 23: Undefined variable 'tmp_dbase'
+  tmp_dbase = efun::query_entire_dbase(tmp); // 或者使用 debug_info(0, tmp)
+                     ^
+/feature/save.c line 23: Illegal lvalue
+  tmp_dbase = efun::query_entire_dbase(tmp); // 或者使用 debug_info(0, tmp)
+                     ^
+/feature/save.c line 23: Unknown efun: query_entire_dbase
+  tmp_dbase = efun::query_entire_dbase(tmp); // 或者使用 debug_info(0, tmp)
+                                              ^
+/feature/save.c line 24: Unknown efun: query_entire_dbase
+  tmp_dbase = efun::query_entire_dbase(tmp); // 或者使用 debug_info(0, tmp)
+                                              ^
+/feature/save.c line 24: Unknown efun: query_entire_dbase
+  tmp_dbase = efun::query_entire_dbase(tmp);
+                                              ^
+/feature/save.c line 33: Warning: Unused local variable 'tmp_dbase'
+  }
+   ^
+/feature/save.c line 41: Undefined function setuid
+  setuid(tmp);
+                 ^
+/feature/save.c line 34: Undefined function closurep
+  if (closurep(db[var]) || objectp(db[var])) {
+                               ^
+/feature/save.c line 50: Undefined function setuid
+  setuid(tmp);
+                 ^
+/adm/daemons/chinesed.c line 52: Undefined function save
+  void remove() { save(); }
+                        ^
+/adm/daemons/chinesed.c line 140: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 146: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 54: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 202: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 209: Undefined function save
+  save();
+         ^
+/adm/daemons/obstacled.c line 179: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 24: Undefined function save
+  save();
+          ^
+/adm/daemons/msgd.c line 87: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 120: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 52: Undefined function save
+  void remove() { save(); }
+                        ^
+/adm/daemons/chinesed.c line 140: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 146: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 52: Undefined function save
+  void remove() { save(); }
+                        ^
+/adm/daemons/chinesed.c line 140: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 146: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 54: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 202: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 209: Undefined function save
+  save();
+         ^
+/adm/daemons/obstacled.c line 179: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 24: Undefined function save
+  save();
+          ^
+/adm/daemons/msgd.c line 87: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 120: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 52: Undefined function save
+  void remove() { save(); }
+                        ^
+/adm/daemons/chinesed.c line 140: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 146: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 52: Undefined function save
+  void remove() { save(); }
+                        ^
+/adm/daemons/chinesed.c line 140: Undefined function save
+  save();
+         ^
+/adm/daemons/chinesed.c line 146: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 54: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 202: Undefined function save
+  save();
+         ^
+/adm/daemons/emoted.c line 209: Undefined function save
+  save();
+         ^
+/adm/daemons/obstacled.c line 179: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 24: Undefined function save
+  save();
+          ^
+/adm/daemons/msgd.c line 87: Undefined function save
+  save();
+         ^
+/adm/daemons/msgd.c line 120: Undefined function save
+  save();
+         ^
+/feature/save.c line 2: syntax error, unexpected L_STRING
+  write("保存失败：query_entire_dbase() 返回非 mapping。\n");
+                                                                            ^
+/feature/save.c line 2: syntax error, unexpected L_STRING
+  write("保存失败：query_entire_dbase() 返回非 mapping。\n");
+                                                                            ^
+/feature/save.c line 21: syntax error, unexpected L_FOREACH
+  foreach (key in keys(db))
+             ^
+/feature/save.c line 23: Illegal LHS
+  mixed val = db[key];
+                              ^
+/feature/save.c line 23: Warning: Expression has no side effects, and the value is unused
+  mixed val = db[key];
+                              ^
+/feature/save.c line 24: Undefined variable 'val'
+  if (objectp(val) || functionp(val) || bufferp(val) || closurep(val))
+                          ^
+/feature/save.c line 24: Undefined function closurep
+  if (objectp(val) || functionp(val) || bufferp(val) || closurep(val))
+                                                                             ^
+/feature/save.c line 29: Warning: Unused local variable 'result'
+  }
+       ^
+/feature/save.c line 32: Undefined variable 'file'
+  result = save_object(file);
+                                ^
+/feature/save.c line 35: syntax error, unexpected L_FOREACH
+  foreach (key in keys(backup)){
+             ^
+/feature/save.c line 46: syntax error, unexpected '}'
+  }
+       ^
+/feature/save.c line 51: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  int restore()
+             ^
+/feature/save.c line 54: syntax error, unexpected ')'
+  if( stringp(file = this_object()->query_save_file()) )
+                                                       ^
+/obj/user.c line 37: Undefined function backup
+  backup();
+              ^
+/obj/user.c line 72: Unable to find the inherited function 'backup'.
+  res = ::backup();
+                     ^
+/cmds/std/buy.c line 51: Warning: Unused local variable 'ob'
+  }
+   ^
+/cmds/std/buy.c line 51: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/usr/quit.c line 86: Warning: Unused local variable 'num'
+  }
+   ^
+/cmds/usr/quit.c line 86: Warning: Unused local variable 'quit_time'
+  }
+   ^
+/d/city/basement.c line 36: Warning: Unused local variable 'box'
+  }
+   ^
+/d/city/basement.c line 99: Warning: Unused local variable 'me'
+  }
+   ^
+/d/city/basement.c line 133: Warning: Unused local variable 'deposit_box'
+  }
+   ^
+/d/city/basement.c line 133: Warning: Unused local variable 'goods'
+  }
+   ^
+/d/city/basement.c line 181: Warning: Unused local variable 'deposit_box'
+  }
+   ^
+/d/city/basement.c line 181: Warning: Unused local variable 'goods'
+  }
+   ^
+/cmds/std/give.c line 134: Warning: Unused local variable 'inv'
+  }
+   ^
+/daemon/class/puti/qianjun-bang/pili.c line 67: Warning: Unused local variable 'weapon'
+  }
+   ^
+/daemon/class/puti/qianjun-bang/qiankun.c line 62: Warning: Unused local variable 'weapon'
+  }
+   ^
+/daemon/class/puti/qianjun-bang/bang.c line 67: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/exert.c line 36: Warning: Unused local variable 'result'
+  }
+   ^
+/d/wiz/bobing.c line 146: Warning: Unused local variable 'ob'
+  }
+     ^
+/d/city/xifuhui1.c line 61: Warning: Unused local variable 'inv'
+  }
+   ^
+/d/city/npc/boss.c line 104: Warning: Unused local variable 'wife'
+  }
+   ^
+/d/city/npc/boss.c line 134: Warning: Unused local variable 'm'
+  }
+   ^
+/d/city/furong.c line 8: Warning: Illegal to declare nosave function.
+  create_food(string nmstr, string* idlist, string longstr)
+              ^
+/d/city/furong.c line 22: Warning: Illegal to declare nosave function.
+  create_water(string nmstr, string* idlist, string cup, string longstr)
+               ^
+/d/city/furong.c line 37: Warning: Illegal to declare nosave function.
+  create_wine(string nmstr, string* idlist, string cup, string longstr)
+              ^
+/obj/user.c line 222: need case statements in switch/case, not just default:
+  }
+      ^
+/obj/user.c line 222: need case statements in switch/case, not just default:
+  }
+      ^
+/obj/user.c line 223: syntax error, unexpected '}'
+  }
+   ^
+/obj/user.c line 224: syntax error, unexpected '}'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'number'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'size'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'i'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'four'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'amount'
+  }
+   ^
+/daemon/class/fighter/changquan/strike.c line 92: Warning: Unused local variable 'tar'
+  }
+   ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_dx'
+  }
+   ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_fali'
+  }
+   ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_exp'
+  }
+   ^
+/cmds/std/ask.c line 70: Undefined function query_inquiry
+  message_v""+"[36m" "$N对你悄声说道:"+query_inquiry(ob)+"!\n" NOR, ob);
+                                                                                       ^
+/cmds/std/ask.c line 70: Invalid argument types to '+' ( string vs unknown )
+  message_v""+"[36m" "$N对你悄声说道:"+query_inquiry(ob)+"!\n" NOR, ob);
+                                                                                        ^
+/cmds/std/give.c line 134: Warning: Unused local variable 'inv'
+  }
+   ^
+/adm/daemons/questd.c line 115: Warning: Unused local variable 'obj1'
+  }
+   ^
+/adm/daemons/questd.c line 115: Warning: Unused local variable 'obj2'
+  }
+   ^
+/adm/daemons/questd.c line 115: Warning: Unused local variable 'obj3'
+  }
+   ^
+/adm/daemons/questd.c line 115: Warning: Unused local variable 'next_obj'
+  }
+   ^
+/adm/daemons/cron.c line 7: Cannot #include net/daemons.h
+  #include <net/macros.h>
+  ^
+/adm/daemons/cron.c line 8: Cannot #include net/macros.h
+  #include <obstacle.h>
+  ^
+/adm/daemons/cron.c line 86: Undefined variable 'DNS_MASTER'
+  if(!dns = find_object(DNS_MASTER))
+                                    ^
+/adm/daemons/cron.c line 233: Warning: Unused local variable 'number'
+  }
+   ^
+/adm/daemons/cron.c line 7: Cannot #include net/daemons.h
+  #include <net/macros.h>
+  ^
+/adm/daemons/cron.c line 8: Cannot #include net/macros.h
+  #include <obstacle.h>
+  ^
+/adm/daemons/cron.c line 86: Undefined variable 'DNS_MASTER'
+  if(!dns = find_object(DNS_MASTER))
+                                    ^
+/adm/daemons/cron.c line 233: Warning: Unused local variable 'number'
+  }
+   ^
+/d/obj/quest/jingtangmu.c line 6: Cannot #include task.h
+  #include <ansi.h>
+  ^
+/d/obj/quest/yulinglong.c line 6: Cannot #include task.h
+  #include <ansi.h>
+  ^
+/d/obj/quest/yulinglong.c line 6: Cannot #include task.h
+  #include <ansi.h>
+  ^
+/d/obj/quest/jiudai.c line 6: Cannot #include task.h
+  void create()
+  ^
+/d/obj/quest/xiangnang.c line 6: Cannot #include task.h
+  #include <ansi.h>
+  ^
+/d/qujing/liusha/hedi4.c line 7: Cannot #include hedi.h
+/d/qujing/wuji/npc/weishi.c line 39: Warning: Unused local variable 'me'
+  }
+   ^
+/d/qujing/wuji/kezhan.c line 44: Warning: Unused local variable 'mbox'
+  }
+   ^
+/adm/daemons/shili.c line 105: Warning: Unused local variable 'tmp'
+  }
+   ^
+/d/qujing/wuzhuang/npc/zhangmen.c line 400: Warning: Unused local variable 'skill_status'
+  }
+   ^
+/d/qujing/wuzhuang/npc/zhangmen.c line 400: Warning: Unused local variable 'skillnames'
+  }
+   ^
+/d/qujing/wuzhuang/npc/zhangmen.c line 400: Warning: Unused local variable 'i'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'skill_status'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'skillnames'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'i'
+  }
+   ^
+/d/sea/npc/longwang.c line 193: Warning: Unused local variable 'master'
+  }
+   ^
+/d/sea/npc/longwang.c line 347: Warning: Unused local variable 'weapon_id'
+  }
+   ^
+/d/qujing/wuji/npc/weishi.c line 39: Warning: Unused local variable 'me'
+  }
+   ^
+/d/moon/npc/zhangmen.c line 65: Warning: Unused local variable 'who'
+  }
+   ^
+/d/moon/npc/zhangmen.c line 414: Warning: Unused local variable 'skill_status'
+  }
+   ^
+/d/moon/npc/zhangmen.c line 414: Warning: Unused local variable 'skillnames'
+  }
+   ^
+/d/moon/npc/zhangmen.c line 414: Warning: Unused local variable 'i'
+  }
+   ^
+/d/qujing/wuzhuang/npc/zhenyuan.c line 541: Warning: Unused local variable 'here'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'skill_status'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'skillnames'
+  }
+   ^
+/d/sea/npc/zhangmen.c line 408: Warning: Unused local variable 'i'
+  }
+   ^
+/d/sea/npc/longwang.c line 193: Warning: Unused local variable 'master'
+  }
+   ^
+/d/sea/npc/longwang.c line 347: Warning: Unused local variable 'weapon_id'
+  }
+   ^
+/adm/daemons/shili.c line 105: Warning: Unused local variable 'tmp'
+  }
+   ^
+/d/12gong/toby1.c line 37: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/map.c line 77: Warning: Unused local variable 'info'
+  }
+   ^
+/cmds/std/map.c line 77: Warning: Unused local variable 'cmds'
+  }
+   ^
+/cmds/std/map.c line 77: Warning: Unused local variable 'i'
+  }
+   ^
+/d/qujing/wuji/kezhan.c line 44: Warning: Unused local variable 'mbox'
+  }
+   ^
+/d/xueshan/chufang.c line 156: Warning: Unused local variable 'ii'
+  }
+   ^
+/d/qujing/wuji/npc/weishi.c line 39: Warning: Unused local variable 'me'
+  }
+   ^
+/d/sea/inside3.c line 29: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/qujing/wuzhuang/npc/zhenyuan.c line 541: Warning: Unused local variable 'here'
+  }
+   ^
+/d/obj/flower/rose.c line 43: Warning: Unused local variable 'me'
+  }
+   ^
+/d/obj/flower/rose.c line 58: Warning: Unused local variable 'me'
+  }
+   ^
+/d/moon/backyard.c line 41: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/moon/obj/guihuageng.c line 89: Warning: Unused local variable 'remaining'
+  }
+   ^
+/d/moon/backyard.c line 41: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/moon/backyard.c line 3: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave();
+                   ^
+/d/moon/backyard.c line 41: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/moon/npc/yutu.c line 80: Warning: Function kill_ob inherited from '/feature/attack.c' does not match current function in return type ( void vs int )
+  int kill_ob(object victim) {
+                            ^
+/d/moon/npc/yutu.c line 163: Warning: Unused local variable 'me'
+  }
+   ^
+/d/nanhai/npc/guanyin.c line 111: Warning: Unused local variable 'file'
+  }
+   ^
+/d/xueshan/npc/kongque-gongzhu.c line 140: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/qujing/jisaiguo/npc/xiaofan.c line 29: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanhai/npc/guanyin.c line 111: Warning: Unused local variable 'file'
+  }
+   ^
+/d/xueshan/npc/kongque-gongzhu.c line 140: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/qujing/jisaiguo/npc/xiaofan.c line 29: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/moon/npc/yutu.c line 81: syntax error, unexpected L_DEFINED_NAME, expecting ';' or '{'
+  set_skills(victim);
+              ^
+/d/moon/npc/yutu.c line 82: syntax error, unexpected L_COLON_COLON
+  ::kill_ob(victim);
+      ^
+/d/moon/npc/yutu.c line 82: Undefined variable 'victim'
+  set_skills(victim);
+                      ^
+/d/moon/npc/yutu.c line 82: Undefined variable 'victim'
+  set_skills(victim);
+                      ^
+/clone/gift/hanfei1.c line 34: Warning: Unused local variable 'name'
+  }
+   ^
+/d/city/obj/tu.c line 27: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/obj/misc/crystalball.c line 52: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/sea/inside3.c line 29: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/cmds/usr/quest.c line 130: Warning: Unused local variable 'j'
+  }
+   ^
+/cmds/usr/quest.c line 130: Warning: Unused local variable 'tag'
+  }
+   ^
+/d/changan/aolaiws.c line 124: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/changan/eastseashore.c line 137: Warning: Unused local variable 'dir'
+  }
+   ^
+/cmds/imm/summon.c line 28: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/learn.c line 187: Warning: Unused local variable 'master'
+  }
+   ^
+/d/obj/misc/seed.c line 98: Warning: Unused local variable 'name'
+  }
+   ^
+/d/obj/misc/seed.c line 98: Warning: Unused local variable 'msg'
+  }
+   ^
+/d/ourhome/honglou/npc/fairygirl.c line 87: Warning: Unused local variable 'room'
+  }
+   ^
+/d/moon/fabao-room.c line 315: Warning: Unused local variable 'legalname'
+  }
+   ^
+/cmds/std/study.c line 47: Undefined function ZJFORCECMD
+  tell_object(me,ZJFORCECMD("study "+skill+" with "+times));
+                                                            ^
+/cmds/std/study.c line 89: Undefined function INPUTTXT
+  return notify_fail(INPUTTXT("请输入研读次数：","study "+arg+" with $txt#")+"\n");
+                                                                                       ^
+/cmds/std/study.c line 89: Invalid argument types to '+' ( unknown vs string )
+  return notify_fail(INPUTTXT("请输入研读次数：","study "+arg+" with $txt#")+"\n");
+                                                                                             ^
+/cmds/std/study.c line 139: syntax error, unexpected '/'
+  if (! /cmds/skill/learn->can_learn(me, sname))
+          ^
+/cmds/std/study.c line 151: syntax error, unexpected ';'
+  my_skill = me->query_skill(sname, 1);
+                                        ^
+/cmds/std/study.c line 181: Illegal LHS
+  if (("/daemon/skill/" + sname)->query_skill_name(my_skill))
+                                                              ^
+/cmds/std/study.c line 190: Warning: Unused local variable 'args'
+  }
+   ^
+/cmds/std/study.c line 47: Undefined function ZJFORCECMD
+  tell_object(me,ZJFORCECMD("study "+skill+" with "+times));
+                                                            ^
+/cmds/std/study.c line 89: Undefined function INPUTTXT
+  return notify_fail(INPUTTXT("请输入研读次数：","study "+arg+" with $txt#")+"\n");
+                                                                                       ^
+/cmds/std/study.c line 89: Invalid argument types to '+' ( unknown vs string )
+  return notify_fail(INPUTTXT("请输入研读次数：","study "+arg+" with $txt#")+"\n");
+                                                                                             ^
+/cmds/std/study.c line 139: syntax error, unexpected '/'
+  if (! /cmds/skill/learn->can_learn(me, sname))
+          ^
+/cmds/std/study.c line 151: syntax error, unexpected ';'
+  my_skill = me->query_skill(sname, 1);
+                                        ^
+/cmds/std/study.c line 181: Illegal LHS
+  if (("/daemon/skill/" + sname)->query_skill_name(my_skill))
+                                                              ^
+/cmds/std/study.c line 190: Warning: Unused local variable 'args'
+  }
+   ^
+/d/city/npc/new.c line 88: Warning: Unused local variable 'dan'
+  }
+   ^
+/d/qujing/xuanyuan/obj/tool.c line 70: Warning: Unused local variable 'where'
+  }
+   ^
+/cmds/usr/hujiu.c line 42: Warning: Unused local variable 'target'
+  }
+   ^
+/d/qujing/xuanyuan/obj/tool.c line 70: Warning: Unused local variable 'where'
+  }
+   ^
+/d/qujing/xuanyuan/npc/daji.c line 254: Warning: Unused local variable 'me'
+  }
+   ^
+/d/qujing/xuanyuan/dadian.c line 49: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  int phase=((int)(t/120));
+             ^
+/d/qujing/xuanyuan/dadian.c line 49: Illegal LHS
+  int phase=((int)(t/120));
+                             ^
+/d/qujing/xuanyuan/dadian.c line 49: Warning: Expression has no side effects, and the value is unused
+  int phase=((int)(t/120));
+                             ^
+/d/qujing/xuanyuan/dadian.c line 50: Undefined variable 'phase'
+  if((phase==3)&&(!query("hungry"))) feel_hungry(where);
+             ^
+/d/qujing/xuanyuan/baozang0.c line 58: Undefined variable 'silver'
+  silver =new("/obj/money/silver");
+               ^
+/d/qujing/xuanyuan/baozang0.c line 58: Illegal lvalue
+  silver =new("/obj/money/silver");
+               ^
+/d/qujing/xuanyuan/baozang0.c line 59: Undefined variable 'necklace'
+  necklace =new("/d/obj/misc/necklace");
+                 ^
+/d/qujing/xuanyuan/baozang0.c line 59: Illegal lvalue
+  necklace =new("/d/obj/misc/necklace");
+                 ^
+/d/qujing/xuanyuan/baozang0.c line 76: Warning: Unused local variable 'manao'
+  }
+   ^
+/d/qujing/xuanyuan/baozang0.c line 76: Warning: Unused local variable 'feicui'
+  }
+   ^
+/d/qujing/xuanyuan/obj/tool.c line 70: Warning: Unused local variable 'where'
+  }
+   ^
+/d/qujing/xuanyuan/sleeproom.c line 42: syntax error, unexpected ';'
+  me->add("daoxing",random(40);
+                                  ^
+/d/qujing/xuanyuan/chufang.c line 43: syntax error, unexpected ';'
+  me->add("combat_exp",random(40);
+                                        ^
+/cmds/std/put.c line 101: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/std/put.c line 101: Warning: Unused local variable 'amount'
+  }
+   ^
+/cmds/std/put.c line 86: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string full_name = chinese_number(amount) + unit + name;
+                          ^
+/cmds/std/put.c line 86: Illegal LHS
+  string full_name = chinese_number(amount) + unit + name;
+                                                                  ^
+/cmds/std/put.c line 86: Warning: Expression has no side effects, and the value is unused
+  string full_name = chinese_number(amount) + unit + name;
+                                                                  ^
+/cmds/std/put.c line 88: Undefined variable 'full_name'
+  message_vision(sprintf("$N将%s放进%s。\n", full_name, dest->name()), me);
+                                                                   ^
+/d/city/meigui.c line 8: Warning: Illegal to declare nosave function.
+  create_food(string nmstr, string* idlist, string longstr)
+              ^
+/d/city/meigui.c line 22: Warning: Illegal to declare nosave function.
+  create_water(string nmstr, string* idlist, string cup, string longstr)
+               ^
+/d/city/meigui.c line 37: Warning: Illegal to declare nosave function.
+  create_wine(string nmstr, string* idlist, string cup, string longstr)
+              ^
+/d/city/mudan.c line 8: Warning: Illegal to declare nosave function.
+  create_food(string nmstr, string* idlist, string longstr)
+              ^
+/d/city/mudan.c line 22: Warning: Illegal to declare nosave function.
+  create_water(string nmstr, string* idlist, string cup, string longstr)
+               ^
+/d/city/mudan.c line 37: Warning: Illegal to declare nosave function.
+  create_wine(string nmstr, string* idlist, string cup, string longstr)
+              ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_dx'
+  }
+   ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_fali'
+  }
+   ^
+/cmds/std/check.c line 78: Warning: Unused local variable 'desc_exp'
+  }
+   ^
+/d/city/misc/ji_shi.c line 153: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/exert.c line 23: Illegal character constant
+  me->improve_skill('force', random( (int)me->query_skill("force", 1)*10), 1);
+                         ^
+/cmds/std/exert.c line 23: syntax error, unexpected L_IDENTIFIER
+  me->improve_skill('force', random( (int)me->query_skill("force", 1)*10), 1);
+                             ^
+/cmds/std/exert.c line 23: Illegal character constant
+  me->improve_skill('force', random( (int)me->query_skill("force", 1)*10), 1);
+                               ^
+/cmds/std/exert.c line 28: Illegal character constant
+  me->improve_skill('force', random( (int)me->query_skill("force", 1)*10), 1);
+                         ^
+/cmds/std/exert.c line 28: Illegal character constant
+  me->improve_skill('force', random( (int)me->query_skill("force", 1)*10), 1);
+                               ^
+/cmds/std/exercise.c line 119: Undefined variable 'force'
+  me->improve_skill(force, random( (int)me->query_skill("force", 1)*10), 1);
+                           ^
+/d/obj/misc/baguafu.c line 24: Warning: Unused local variable 'me'
+  }
+   ^
+/daemon/class/xuanyuan/tianyi-zhen/caidie.c line 49: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/usr/quit.c line 84: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/usr/quit.c line 84: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/usr/quit.c line 44: Undefined variable 'inv'
+  inv = all_inventory(me);
+         ^
+/cmds/usr/quit.c line 44: Illegal lvalue
+  inv = all_inventory(me);
+         ^
+/cmds/usr/quit.c line 45: Undefined variable 'i'
+  for(i=0; i<sizeof(inv); i++)
+          ^
+/cmds/usr/quit.c line 45: Illegal lvalue
+  for(i=0; i<sizeof(inv); i++)
+          ^
+/obj/money/gold.c line 21: Warning: Function query_autoload inherited from '/std/money.c' does not match current function in return type ( string vs int )
+  int query_autoload() { return 1;
+                      ^
+/obj/user.c line 57: Warning: Number of arguments disagrees with previous definition.
+  int save(int raw)
+                   ^
+/d/qujing/xuanyuan/baozang0.c line 50: Undefined variable 'ob'
+  if( !(ob = me->query_temp("weapon")) || ( (string)ob->query("skill_type")!="axe" && (string)ob->query("skill_type")!...
+                                                                                                                         ^
+/d/qujing/xuanyuan/baozang0.c line 50: Illegal lvalue
+  if( !(ob = me->query_temp("weapon")) || ( (string)ob->query("skill_type")!="axe" && (string)ob->query("skill_type")!...
+                                                                                                                         ^
+/d/qujing/xuanyuan/baozang0.c line 84: Warning: Unused local variable 'sob'
+  }
+   ^
+/daemon/class/force/transfer.c line 47: Warning: Unused local variable 'trans'
+  }
+   ^
+/d/city/chufang.c line 62: Warning: Unused local variable 'ob1'
+  }
+   ^
+/daemon/class/moon/snowsword/tian.c line 120: Warning: Unused local variable 'weapon'
+  }
+   ^
+/daemon/class/moon/snowsword/tian.c line 120: Warning: Unused local variable 'times'
+  }
+   ^
+/adm/daemons/logind.c line 713: Too few arguments to 'random'.
+  user->set("per", random() );
+                            ^
+/adm/daemons/race/beast.c line 135: syntax error, unexpected invalid token
+  #ob->set_weight(BASE_WEIGHT + (my["str"] - 10)* 2000);
+    ^
+/adm/daemons/race/beast.c line 142: Undefined variable 'me'
+  act = me->query("verbs");
+             ^
+/adm/daemons/race/beast.c line 142: Illegal LHS
+  act = me->query("verbs");
+                            ^
+/adm/daemons/race/beast.c line 142: Warning: Expression has no side effects, and the value is unused
+  act = me->query("verbs");
+                            ^
+/adm/daemons/race/beast.c line 143: Undefined variable 'act'
+  return combat_action[act[random(sizeof(act))]];
+                            ^
+/adm/daemons/race/monster.c line 6: Undefined variable 'actions'
+  actions = keys(combat_action);
+            ^
+/adm/daemons/race/monster.c line 6: Illegal lvalue
+  actions = keys(combat_action);
+            ^
+/adm/daemons/race/monster.c line 6: Undefined variable 'combat_action'
+  actions = keys(combat_action);
+                                ^
+/d/huanggong/npc/pang.c line 326: Warning: Unused local variable 'i'
+  }
+   ^
+/d/huanggong/npc/pang.c line 326: Warning: Unused local variable 'list'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'all'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'list'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'inv'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'i'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'j'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'y'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'd'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'h'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/qujing/wuzhuang/anshi.c line 47: Undefined function generate_key
+  generate_key()
+                  ^
+/d/qujing/wuzhuang/anshi.c line 48: syntax error, unexpected L_DEFINED_NAME
+  set("started", 1);
+       ^
+/d/qujing/wuzhuang/anshi.c line 47: Undefined function generate_key
+  generate_key();
+                  ^
+/d/qujing/wuzhuang/anshi.c line 47: Undefined function generate_key
+  generate_key();
+                  ^
+/d/qujing/wuzhuang/intree.c line 85: Warning: Unused local variable 'guo1'
+  }
+   ^
+/d/qujing/wuzhuang/renshenguo-yuan.c line 86: Warning: Unused local variable 'here'
+  }
+   ^
+/d/lingtai/npc/shixong.c line 46: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/lingtai/inside4.c line 35: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/huanggong/npc/pang.c line 326: Warning: Unused local variable 'i'
+  }
+   ^
+/d/huanggong/npc/pang.c line 326: Warning: Unused local variable 'list'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'all'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'list'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'inv'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'i'
+  }
+   ^
+/d/huanggong/npc/pang.c line 372: Warning: Unused local variable 'j'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'y'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'd'
+  }
+   ^
+/d/huanggong/npc/pang.c line 431: Warning: Unused local variable 'h'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'src'
+  }
+   ^
+/d/huanggong/npc/wu.h line 442: Warning: Unused local variable 'dst'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'player_name'
+  }
+   ^
+/d/huanggong/npc/wu.h line 515: Warning: Unused local variable 'current_player'
+  }
+   ^
+/cmds/std/look.c line 37: syntax error, unexpected ']'
+  ]),
+           ^
+/cmds/std/look.c line 194: syntax error, unexpected ';'
+  ]);
+     ^
+/cmds/std/look.c line 202: syntax error, unexpected ';'
+  });
+     ^
+/cmds/std/look.c line 210: Undefined variable 'me'
+  ridee = me->ride();
+                ^
+/cmds/std/look.c line 210: syntax error, unexpected ';'
+  ridee = me->ride();
+                       ^
+/cmds/std/look.c line 212: Undefined variable 'ridee'
+  ridemsg = ridee->query("ride/msg")+NOR+WHT"在"+ridee->name()+NOR+WHT"上"NOR;
+                       ^
+/cmds/std/look.c line 26: syntax error, unexpected ','
+  ""+"[34m" "骨瘦嶙峋面色枯，双眸呆滞似昏途。腰身如竹风中摆，步履蹒跚影�""+"[2;37;...
+                                                                                                                     ^
+/cmds/std/look.c line 194: syntax error, unexpected ';'
+  ]);
+     ^
+/cmds/std/look.c line 202: syntax error, unexpected ';'
+  });
+     ^
+/cmds/std/look.c line 210: Undefined variable 'me'
+  ridee = me->ride();
+                ^
+/cmds/std/look.c line 210: syntax error, unexpected ';'
+  ridee = me->ride();
+                       ^
+/cmds/std/look.c line 212: Undefined variable 'ridee'
+  ridemsg = ridee->query("ride/msg")+NOR+WHT"在"+ridee->name()+NOR+WHT"上"NOR;
+                       ^
+/cmds/usr/who.c line 5: Cannot #include net/dns.h
+/cmds/usr/who.c line 34: Undefined variable 'RWHO_Q'
+  RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
+                ^
+/cmds/usr/who.c line 124: Warning: Unused local variable 'cmds'
+  }
+   ^
+/cmds/usr/who.c line 124: Warning: Unused local variable 'comp'
+  }
+   ^
+/cmds/usr/who.c line 5: Cannot #include net/dns.h
+/cmds/usr/who.c line 34: Undefined variable 'RWHO_Q'
+  RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
+                ^
+/cmds/usr/who.c line 124: Warning: Unused local variable 'cmds'
+  }
+   ^
+/cmds/usr/who.c line 124: Warning: Unused local variable 'comp'
+  }
+   ^
+/cmds/std/study.c line 91: Undefined variable 'myskill'
+  ("/daemon/skill/" + skill["name"])->type()=="martial" && myskill*myskill*myskill/10>(int)me->query("c...
+                                                                                                          ^
+/feature/skill.c line 238: Undefined variable 'lv'
+  write("技能等级:"+lv+"，限制:"+exp/550);
+                              ^
+/cmds/std/learn.c line 147: syntax error, unexpected '+'
+  write(+skill+"也许是缺乏实战经验，你对" + ob->name() + "的回答总是无法领会。\n");
+                          ^
+/cmds/std/learn.c line 147: Undefined function can_improve_skill
+  write(can_improve_skill(skill)+"也许是缺乏实战经验，你对" + ob->name() + "的回答总�...
+                                                                                                         ^
+/cmds/std/learn.c line 147: Invalid argument types to '+' ( unknown vs string )
+  write(can_improve_skill(skill)+"也许是缺乏实战经验，你对" + ob->name() + "的回答总�...
+                                                                                                         ^
+/cmds/std/learn.c line 144: Illegal lvalue
+  if( (int)me->query("sen") > sen_cos("/daemon/skill/" + skill)->type() = "martial")
+                                                                          ^
+/cmds/std/learn.c line 144: Illegal lvalue
+  if( (int)me->query("sen") > sen_cos("/daemon/skill/" + skill)->type() = "martial" && me->query_skill(skill, 1) > me-...
+                                                                                                                         ^
+/cmds/std/learn.c line 144: Illegal lvalue
+  if( (int)me->query("sen") > sen_cost ("/daemon/skill/" + skill)->type() = "martial") && (me->query_skill(skill, 1) >...
+                                                                                                                         ^
+/d/city/chufang.c line 62: Warning: Unused local variable 'ob1'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'obj'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'obj2'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'old_env'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'amount'
+  }
+   ^
+/cmds/std/ji.c line 50: Warning: Unused local variable 'no_get'
+  }
+   ^
+/cmds/std/learn.c line 144: Bad type of index: "string "
+  i("/daemon/skill/" + skill["name"])->type()=="martial" && me->query_skill(skill, 1) > me->query("combat_exp") / 550 )
+                                      ^
+/d/city/npc/sanhua-counter.c line 7: Warning: Redeclaration of global variable 'last_time'.
+  int last_time;
+                ^
+/cmds/std/learn.c line 144: Bad type of index: "string "
+  ("/daemon/skill/" + skill["name"])->type()=="martial" &&  me->query_skill(skill, 1) > me->query("combat_exp") / 550 )
+                                     ^
+/d/dntg/sky/dadao6.c line 10: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave();
+                   ^
+/d/dntg/sky/dadao5.c line 10: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave();
+                   ^
+/d/dntg/hgs/zhaiyuan.c line 31: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave()
+                   ^
+/d/kaifeng/npc/xianglan.c line 5: Cannot #include quest_ms.c
+  #include <reporting.c>
+  ^
+/d/kaifeng/npc/xianglan.c line 6: Cannot #include reporting.c
+/d/kaifeng/npc/xianglan.c line 97: Undefined variable 'quests_misc'
+  quest_keys = sort_quests (quests_misc);
+                                            ^
+/d/kaifeng/npc/xianglan.c line 97: Undefined function sort_quests
+  quest_keys = sort_quests (quests_misc);
+                                            ^
+/d/kaifeng/npc/xianglan.c line 97: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_misc);
+                                             ^
+/d/kaifeng/npc/xianglan.c line 100: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/xu.c line 53: Warning: Unused local variable 'myid'
+  }
+   ^
+/d/kaifeng/npc/xgong.c line 5: Cannot #include quest_wp.c
+  #include <reporting.c>
+  ^
+/d/kaifeng/npc/xgong.c line 6: Cannot #include reporting.c
+/d/kaifeng/npc/xgong.c line 97: Undefined variable 'quests_weapon'
+  quest_keys = sort_quests (quests_weapon);
+                                              ^
+/d/kaifeng/npc/xgong.c line 97: Undefined function sort_quests
+  quest_keys = sort_quests (quests_weapon);
+                                              ^
+/d/kaifeng/npc/xgong.c line 97: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_weapon);
+                                               ^
+/d/kaifeng/npc/xgong.c line 100: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/xpo.c line 5: Cannot #include quest_am.c
+  #include <reporting.c>
+  ^
+/d/kaifeng/npc/xpo.c line 6: Cannot #include reporting.c
+/d/kaifeng/npc/xpo.c line 95: Undefined variable 'quests_armor'
+  quest_keys = sort_quests (quests_armor);
+                                             ^
+/d/kaifeng/npc/xpo.c line 95: Undefined function sort_quests
+  quest_keys = sort_quests (quests_armor);
+                                             ^
+/d/kaifeng/npc/xpo.c line 95: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_armor);
+                                              ^
+/d/kaifeng/npc/xpo.c line 98: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/yuwang5.c line 136: Warning: Unused local variable 'nameids'
+  }
+   ^
+/d/kaifeng/yuwang5.c line 400: Warning: Unused local variable 'players'
+  }
+   ^
+/d/kaifeng/yuwang5.c line 400: Warning: Unused local variable 'plys'
+  }
+   ^
+/d/kaifeng/npc/ye.c line 421: Warning: Unused local variable 'high'
+  }
+   ^
+/d/kaifeng/npc/ye.c line 636: Warning: Unused local variable 'i'
+  }
+   ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/jz/npc/wang.c line 30: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/kaifeng/npc/quest_am.c line 4: Cannot #include quest.c
+/d/kaifeng/npc/reporting.c line 26: Warning: Unused local variable 'str'
+  }
+   ^
+/d/kaifeng/npc/xpo.c line 95: Undefined function sort_quests
+  quest_keys = sort_quests (quests_armor);
+                                             ^
+/d/kaifeng/npc/xpo.c line 95: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_armor);
+                                              ^
+/d/kaifeng/npc/xpo.c line 98: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/xpo.c line 98: Bad assignment ( int vs unknown ).
+  i = quest_accurate_index (quest_keys, who);
+                                               ^
+/d/kaifeng/npc/xpo.c line 99: Undefined function quest_random_index
+  i = quest_random_index (quest_keys, i, who, "quest/cache/armor");
+                                                                    ^
+/d/kaifeng/npc/reporting.c line 26: Warning: Unused local variable 'str'
+  }
+   ^
+/d/jz/npc/yayi.c line 48: Warning: Unused local variable 'id'
+  }
+   ^
+/d/jz/npc/zhang.c line 106: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/kaifeng/npc/quest_wp.c line 4: Cannot #include quest.c
+/d/kaifeng/npc/xgong.c line 97: Undefined function sort_quests
+  quest_keys = sort_quests (quests_weapon);
+                                              ^
+/d/kaifeng/npc/xgong.c line 97: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_weapon);
+                                               ^
+/d/kaifeng/npc/xgong.c line 100: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/xgong.c line 100: Bad assignment ( int vs unknown ).
+  i = quest_accurate_index (quest_keys, who);
+                                               ^
+/d/kaifeng/npc/xgong.c line 101: Undefined function quest_random_index
+  i = quest_random_index (quest_keys, i, who, "quest/cache/weapon");
+                                                                     ^
+/d/kaifeng/npc/xianglan.c line 5: Cannot #include quest_ms.c
+  #include <reporting.c>
+  ^
+/d/kaifeng/npc/xianglan.c line 6: Cannot #include reporting.c
+/d/kaifeng/npc/xianglan.c line 97: Undefined variable 'quests_misc'
+  quest_keys = sort_quests (quests_misc);
+                                            ^
+/d/kaifeng/npc/xianglan.c line 97: Undefined function sort_quests
+  quest_keys = sort_quests (quests_misc);
+                                            ^
+/d/kaifeng/npc/xianglan.c line 97: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_misc);
+                                             ^
+/d/kaifeng/npc/xianglan.c line 100: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/quest_wp.c line 4: Cannot #include quest.c
+/d/kaifeng/npc/xgong.c line 97: Undefined function sort_quests
+  quest_keys = sort_quests (quests_weapon);
+                                              ^
+/d/kaifeng/npc/xgong.c line 97: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_weapon);
+                                               ^
+/d/kaifeng/npc/xgong.c line 100: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/kaifeng/npc/xgong.c line 100: Bad assignment ( int vs unknown ).
+  i = quest_accurate_index (quest_keys, who);
+                                               ^
+/d/kaifeng/npc/xgong.c line 101: Undefined function quest_random_index
+  i = quest_random_index (quest_keys, i, who, "quest/cache/weapon");
+                                                                     ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/cmds/std/look.c line 788: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  int help (object me)
+          ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/cmds/std/look.c line 739: Warning: Unused local variable 'body_type'
+  }
+   ^
+/cmds/std/look.c line 739: Warning: Unused local variable 'gender'
+  }
+   ^
+/cmds/std/look.c line 739: Warning: Unused local variable 'skin'
+  }
+   ^
+/cmds/std/look.c line 739: Warning: Unused local variable 'per'
+  }
+   ^
+/cmds/std/look.c line 433: Arguments to < do not have compatible types : ( string vs int )
+  if (per < 15) skin = "肌肤粗劣"; else if (per <= 24) skin = "肌肤细腻"; else skin = "肌肤莹润如玉";
+                ^
+/cmds/std/look.c line 433: Arguments to <= do not have compatible types : ( string vs int )
+  if (per < 15) skin = "肌肤粗劣"; else if (per <= 24) skin = "肌肤细腻"; else skin = "肌肤莹润如玉";
+                                                           ^
+/cmds/std/look.c line 437: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 441: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 445: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 449: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 438: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 442: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 446: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 450: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 454: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/cmds/std/look.c line 460: Arguments to > do not have compatible types : ( string vs int )
+  if (oage > 12)
+                  ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/fen.c line 52: Warning: Unused local variable 'i'
+  }
+   ^
+/d/changan/fen.c line 52: Warning: Unused local variable 'damage'
+  }
+   ^
+/cmds/std/look.c line 437: syntax error, unexpected invalid token
+      if (per < 15) skin = "肌肤粗劣";
+   ^
+/cmds/std/look.c line 437: Illegal LHS
+      if (per < 15) skin = "肌肤粗劣";
+                                            ^
+/cmds/std/look.c line 437: Warning: Expression has no side effects, and the value is unused
+      if (per < 15) skin = "肌肤粗劣";
+                                            ^
+/cmds/std/look.c line 438: syntax error, unexpected invalid token
+      else if (per <= 24) skin = "肌肤细腻";
+   ^
+/cmds/std/look.c line 438: Illegal LHS
+      else if (per <= 24) skin = "肌肤细腻";
+                                                  ^
+/cmds/std/look.c line 438: Warning: Expression has no side effects, and the value is unused
+      else if (per <= 24) skin = "肌肤细腻";
+                                                  ^
+/cmds/std/look.c line 439: syntax error, unexpected invalid token
+      else skin = "肌肤莹润如玉";
+   ^
+/cmds/std/look.c line 439: Illegal LHS
+      else skin = "肌肤莹润如玉";
+                                         ^
+/cmds/std/look.c line 439: Warning: Expression has no side effects, and the value is unused
+      else skin = "肌肤莹润如玉";
+                                         ^
+/cmds/std/look.c line 443: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 444: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 445: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 447: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢纤细，不盈一握";
+                                                         ^
+/cmds/std/look.c line 448: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前微隆，形如新月，弧线圆润";
+                                                                        ^
+/cmds/std/look.c line 449: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿匀称，线条柔和，举步轻盈";
+                                                                       ^
+/cmds/std/look.c line 451: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "杨柳细腰，束素纤纤，动静之间，如弱柳扶风";
+                                                                                          ^
+/cmds/std/look.c line 452: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前双峰挺秀，玉乳浑圆，颤巍巍动人心魄";
+                                                                                       ^
+/cmds/std/look.c line 453: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "一双玉腿修长笔直，亭亭玉立，行不闻声，宛若凌波";
+                                                                                                  ^
+/cmds/std/look.c line 460: Warning: Expression has no side effects, and the value is unused
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 463: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 464: Warning: Expression has no side effects, and the value is unused
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 468: Warning: Expression has no side effects, and the value is unused
+              str = "体态娉婷，骨秀神清。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 469: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 472: Warning: Expression has no side effects, and the value is unused
+              str = "身形温婉，骨肉匀停。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 473: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 476: Warning: Expression has no side effects, and the value is unused
+              str = "体态丰腴，曲线犹存。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 479: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += "胸乳虽丰，略显松垂。" + legs_desc + "。";
+                                                                                                    ^
+/cmds/std/look.c line 480: Warning: Expression has no side effects, and the value is unused
+                  else str += chest_desc + "。" + legs_desc + "。";
+                                                                             ^
+/cmds/std/look.c line 484: Warning: Expression has no side effects, and the value is unused
+              str = "体态臃肿，肥肉堆积。腰腹圆如大鼓，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 487: Warning: Expression has no side effects, and the value is unused
+                  str += "胸乳肥硕，形如巨囊。" + "双腿粗肥，足部臃肿。";
+                                                                                                     ^
+/cmds/std/look.c line 492: Warning: Expression has no side effects, and the value is unused
+  str = "身形枯瘦，肋骨凸显。腰腹窄如柴棍，" + skin + "。";
+                                                                               ^
+/cmds/std/look.c line 437: syntax error, unexpected invalid token
+      // 根据 per 值确定腰、胸、腿的描述
+   ^
+/cmds/std/look.c line 439: Illegal LHS
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 439: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 440: syntax error, unexpected invalid token
+          chest_desc = "胸前平坦，育亦不彰";
+   ^
+/cmds/std/look.c line 440: Illegal LHS
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 440: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 441: syntax error, unexpected invalid token
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+   ^
+/cmds/std/look.c line 441: Illegal LHS
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 441: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 443: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢纤细，不盈一握";
+                                                         ^
+/cmds/std/look.c line 444: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前微隆，形如新月，弧线圆润";
+                                                                        ^
+/cmds/std/look.c line 445: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿匀称，线条柔和，举步轻盈";
+                                                                       ^
+/cmds/std/look.c line 447: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "杨柳细腰，束素纤纤，动静之间，如弱柳扶风";
+                                                                                          ^
+/cmds/std/look.c line 448: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前双峰挺秀，玉乳浑圆，颤巍巍动人心魄";
+                                                                                       ^
+/cmds/std/look.c line 449: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "一双玉腿修长笔直，亭亭玉立，行不闻声，宛若凌波";
+                                                                                                  ^
+/cmds/std/look.c line 456: Warning: Expression has no side effects, and the value is unused
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 459: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 460: Warning: Expression has no side effects, and the value is unused
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 464: Warning: Expression has no side effects, and the value is unused
+              str = "体态娉婷，骨秀神清。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 465: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 468: Warning: Expression has no side effects, and the value is unused
+              str = "身形温婉，骨肉匀停。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 469: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 472: Warning: Expression has no side effects, and the value is unused
+              str = "体态丰腴，曲线犹存。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 475: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += "胸乳虽丰，略显松垂。" + legs_desc + "。";
+                                                                                                    ^
+/cmds/std/look.c line 476: Warning: Expression has no side effects, and the value is unused
+                  else str += chest_desc + "。" + legs_desc + "。";
+                                                                             ^
+/cmds/std/look.c line 480: Warning: Expression has no side effects, and the value is unused
+              str = "体态臃肿，肥肉堆积。腰腹圆如大鼓，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 483: Warning: Expression has no side effects, and the value is unused
+                  str += "胸乳肥硕，形如巨囊。" + "双腿粗肥，足部臃肿。";
+                                                                                                     ^
+/cmds/std/look.c line 488: Warning: Expression has no side effects, and the value is unused
+  str = "身形枯瘦，肋骨凸显。腰腹窄如柴棍，" + skin + "。";
+                                                                               ^
+/cmds/std/look.c line 437: syntax error, unexpected invalid token
+      if (per < 18) {
+   ^
+/cmds/std/look.c line 438: Illegal LHS
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 438: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 439: syntax error, unexpected invalid token
+          chest_desc = "胸前平坦，育亦不彰";
+   ^
+/cmds/std/look.c line 439: Illegal LHS
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 439: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 440: syntax error, unexpected invalid token
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+   ^
+/cmds/std/look.c line 440: Illegal LHS
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 440: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 442: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢纤细，不盈一握";
+                                                         ^
+/cmds/std/look.c line 443: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前微隆，形如新月，弧线圆润";
+                                                                        ^
+/cmds/std/look.c line 444: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿匀称，线条柔和，举步轻盈";
+                                                                       ^
+/cmds/std/look.c line 446: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "杨柳细腰，束素纤纤，动静之间，如弱柳扶风";
+                                                                                          ^
+/cmds/std/look.c line 447: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前双峰挺秀，玉乳浑圆，颤巍巍动人心魄";
+                                                                                       ^
+/cmds/std/look.c line 448: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "一双玉腿修长笔直，亭亭玉立，行不闻声，宛若凌波";
+                                                                                                  ^
+/cmds/std/look.c line 455: Warning: Expression has no side effects, and the value is unused
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 458: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 459: Warning: Expression has no side effects, and the value is unused
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 463: Warning: Expression has no side effects, and the value is unused
+              str = "体态娉婷，骨秀神清。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 464: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 467: Warning: Expression has no side effects, and the value is unused
+              str = "身形温婉，骨肉匀停。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 468: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 471: Warning: Expression has no side effects, and the value is unused
+              str = "体态丰腴，曲线犹存。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 474: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += "胸乳虽丰，略显松垂。" + legs_desc + "。";
+                                                                                                    ^
+/cmds/std/look.c line 475: Warning: Expression has no side effects, and the value is unused
+                  else str += chest_desc + "。" + legs_desc + "。";
+                                                                             ^
+/cmds/std/look.c line 479: Warning: Expression has no side effects, and the value is unused
+              str = "体态臃肿，肥肉堆积。腰腹圆如大鼓，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 482: Warning: Expression has no side effects, and the value is unused
+                  str += "胸乳肥硕，形如巨囊。" + "双腿粗肥，足部臃肿。";
+                                                                                                     ^
+/cmds/std/look.c line 487: Warning: Expression has no side effects, and the value is unused
+  str = "身形枯瘦，肋骨凸显。腰腹窄如柴棍，" + skin + "。";
+                                                                               ^
+/cmds/std/look.c line 437: syntax error, unexpected invalid token
+      if (per < 18) {
+   ^
+/cmds/std/look.c line 438: Illegal LHS
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 438: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢略显粗直，曲线不彰";
+                                                               ^
+/cmds/std/look.c line 439: syntax error, unexpected invalid token
+          chest_desc = "胸前平坦，育亦不彰";
+   ^
+/cmds/std/look.c line 439: Illegal LHS
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 439: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前平坦，育亦不彰";
+                                                         ^
+/cmds/std/look.c line 440: syntax error, unexpected invalid token
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+   ^
+/cmds/std/look.c line 440: Illegal LHS
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 440: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿瘦削或略显臃肿，步履沉稳";
+                                                                       ^
+/cmds/std/look.c line 442: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "腰肢纤细，不盈一握";
+                                                         ^
+/cmds/std/look.c line 443: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前微隆，形如新月，弧线圆润";
+                                                                        ^
+/cmds/std/look.c line 444: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "双腿匀称，线条柔和，举步轻盈";
+                                                                       ^
+/cmds/std/look.c line 446: Warning: Expression has no side effects, and the value is unused
+          waist_desc = "杨柳细腰，束素纤纤，动静之间，如弱柳扶风";
+                                                                                          ^
+/cmds/std/look.c line 447: Warning: Expression has no side effects, and the value is unused
+          chest_desc = "胸前双峰挺秀，玉乳浑圆，颤巍巍动人心魄";
+                                                                                       ^
+/cmds/std/look.c line 448: Warning: Expression has no side effects, and the value is unused
+          legs_desc = "一双玉腿修长笔直，亭亭玉立，行不闻声，宛若凌波";
+                                                                                                  ^
+/cmds/std/look.c line 455: Warning: Expression has no side effects, and the value is unused
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 458: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 459: Warning: Expression has no side effects, and the value is unused
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 463: Warning: Expression has no side effects, and the value is unused
+              str = "体态娉婷，骨秀神清。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 464: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 467: Warning: Expression has no side effects, and the value is unused
+              str = "身形温婉，骨肉匀停。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 468: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 471: Warning: Expression has no side effects, and the value is unused
+              str = "体态丰腴，曲线犹存。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 474: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += "胸乳虽丰，略显松垂。" + legs_desc + "。";
+                                                                                                    ^
+/cmds/std/look.c line 475: Warning: Expression has no side effects, and the value is unused
+                  else str += chest_desc + "。" + legs_desc + "。";
+                                                                             ^
+/cmds/std/look.c line 479: Warning: Expression has no side effects, and the value is unused
+              str = "体态臃肿，肥肉堆积。腰腹圆如大鼓，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 482: Warning: Expression has no side effects, and the value is unused
+                  str += "胸乳肥硕，形如巨囊。" + "双腿粗肥，足部臃肿。";
+                                                                                                     ^
+/cmds/std/look.c line 487: Warning: Expression has no side effects, and the value is unused
+  str = "身形枯瘦，肋骨凸显。腰腹窄如柴棍，" + skin + "。";
+                                                                               ^
+/cmds/std/look.c line 451: syntax error, unexpected invalid token
+      // 开始拼接最终描述字符串
+   ^
+/cmds/std/look.c line 455: Illegal LHS
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 455: Warning: Expression has no side effects, and the value is unused
+              str = "体态枯瘦，骨架嶙峋。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 456: syntax error, unexpected invalid token
+              if (oage > 12) {
+   ^
+/cmds/std/look.c line 458: Illegal LHS
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 458: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += chest_desc + "。" + legs_desc + "。";
+                                                                                      ^
+/cmds/std/look.c line 459: syntax error, unexpected invalid token
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+   ^
+/cmds/std/look.c line 459: Illegal LHS
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 459: Warning: Expression has no side effects, and the value is unused
+                  else str += "胸前虽有起伏，然被瘦骨所衬，更显单薄。" + legs_desc + "。";
+                                                                                                                      ^
+/cmds/std/look.c line 463: Warning: Expression has no side effects, and the value is unused
+              str = "体态娉婷，骨秀神清。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 464: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 467: Warning: Expression has no side effects, and the value is unused
+              str = "身形温婉，骨肉匀停。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 468: Warning: Expression has no side effects, and the value is unused
+              if (oage > 12) str += chest_desc + "。" + legs_desc + "。";
+                                                                                 ^
+/cmds/std/look.c line 471: Warning: Expression has no side effects, and the value is unused
+              str = "体态丰腴，曲线犹存。" + waist_desc + "，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 474: Warning: Expression has no side effects, and the value is unused
+                  if (per < 18) str += "胸乳虽丰，略显松垂。" + legs_desc + "。";
+                                                                                                    ^
+/cmds/std/look.c line 475: Warning: Expression has no side effects, and the value is unused
+                  else str += chest_desc + "。" + legs_desc + "。";
+                                                                             ^
+/cmds/std/look.c line 479: Warning: Expression has no side effects, and the value is unused
+              str = "体态臃肿，肥肉堆积。腰腹圆如大鼓，" + skin + "。";
+                                                                                               ^
+/cmds/std/look.c line 482: Warning: Expression has no side effects, and the value is unused
+                  str += "胸乳肥硕，形如巨囊。" + "双腿粗肥，足部臃肿。";
+                                                                                                     ^
+/cmds/std/look.c line 487: Warning: Expression has no side effects, and the value is unused
+  str = "身形枯瘦，肋骨凸显。腰腹窄如柴棍，" + skin + "。";
+                                                                               ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/cmds/std/look.c line 461: syntax error, unexpected '}'
+  }
+      ^
+/cmds/std/look.c line 463: Illegal LHS
+  str = "身体瘦长，";
+                              ^
+/cmds/std/look.c line 465: syntax error, unexpected '}'
+  }
+      ^
+/cmds/std/look.c line 466: syntax error, unexpected L_STRING
+  str += skin + "。"+ waist_desc"。";
+                                         ^
+/cmds/std/look.c line 467: Illegal LHS
+  if (oage > 12) str += chest_desc + "。"+legs_desc;
+                                                        ^
+/cmds/std/look.c line 467: Illegal LHS
+  if (oage > 12) str += chest_desc + "。"+legs_desc;
+                                                        ^
+/cmds/std/look.c line 534: Warning: Expression has no side effects, and the value is unused
+  ofamily=obj->query_temp("family");
+                                      ^
+/cmds/std/look.c line 466: syntax error, unexpected L_STRING
+  str += skin + "。"+ waist_desc"。";
+                                         ^
+/cmds/std/look.c line 467: Illegal LHS
+  if (oage > 12) str += chest_desc + "。"+legs_desc;
+                                                        ^
+/cmds/std/look.c line 478: syntax error, unexpected L_STRING
+  str += skin + "。"+ waist_desc"。";
+                                         ^
+/cmds/std/look.c line 479: Illegal LHS
+  if (oage > 12) str += chest_desc + "。"+legs_desc;
+                                                        ^
+/d/lingtai/npc/shixong.c line 46: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/wiz/npc/seller.c line 91: Warning: Number of arguments disagrees with previous definition.
+  int do_bid()
+              ^
+/d/wiz/npc/seller.c line 95: Warning: Number of arguments disagrees with previous definition.
+  int do_status()
+                   ^
+/d/wiz/zoulang.c line 5: Warning: Number of arguments disagrees with previous definition.
+  int valid_leave();
+                   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/aolaiws.c line 124: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/wuguan/school2.c line 59: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/wuguan/npc/zongguan.c line 76: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/wuguan/npc/zongguan.c line 145: Warning: Unused local variable 'boyu'
+  }
+   ^
+/d/job/wuguan/job.c line 280: Warning: Unused local variable 'exp'
+  }
+   ^
+/d/job/wuguan/job.c line 280: Warning: Unused local variable 'pot'
+  }
+   ^
+/d/job/wuguan/job.c line 280: Warning: Unused local variable 'silv'
+  }
+   ^
+/d/job/wuguan/job.c line 425: Warning: Unused local variable 'exp'
+  }
+   ^
+/d/job/wuguan/job.c line 425: Warning: Unused local variable 'pot'
+  }
+   ^
+/d/job/wuguan/job.c line 425: Warning: Unused local variable 'silv'
+  }
+   ^
+/d/job/wuguan/job.c line 463: Warning: Unused local variable 'exp'
+  }
+   ^
+/d/job/wuguan/job.c line 463: Warning: Unused local variable 'pot'
+  }
+   ^
+/d/job/wuguan/job.c line 463: Warning: Unused local variable 'silv'
+  }
+   ^
+/d/wuguan/schoolbook.c line 58: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/kaifeng/npc/zhubajie.c line 5: Cannot #include quest_fd.c
+  #include <reporting.c>
+  ^
+/d/kaifeng/npc/zhubajie.c line 6: Cannot #include reporting.c
+  string ask_mieyao(object me);
+  ^
+/d/kaifeng/npc/zhubajie.c line 175: Undefined variable 'quests_food'
+  quest_keys = sort_quests (quests_food);
+                                            ^
+/d/kaifeng/npc/zhubajie.c line 175: Undefined function sort_quests
+  quest_keys = sort_quests (quests_food);
+                                            ^
+/d/kaifeng/npc/zhubajie.c line 175: Bad assignment ( int * vs unknown ).
+  quest_keys = sort_quests (quests_food);
+                                             ^
+/d/kaifeng/npc/zhubajie.c line 178: Undefined function quest_accurate_index
+  i = quest_accurate_index (quest_keys, who);
+                                              ^
+/d/tianpeng/obj/maizi.c line 27: Warning: Function init inherited from '/feature/food.c' does not match current function in return type ( void vs int )
+  int init ()
+             ^
+/d/tianpeng/obj/guzi.c line 27: Warning: Function init inherited from '/feature/food.c' does not match current function in return type ( void vs int )
+  int init ()
+             ^
+/d/meishan/npc/laotai.c line 30: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/meishan/npc/miaozhu.c line 56: Warning: Unused local variable 'm'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/meishan/npc/laotai.c line 30: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/meishan/npc/miaozhu.c line 56: Warning: Unused local variable 'm'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/cmds/std/respirate.c line 65: Warning: Unused local variable 'magic_skill'
+  }
+   ^
+/cmds/std/look.c line 699: Undefined function is_corpse
+  if ( ! is_corpse()){
+                     ^
+/d/city/npc/leigong.c line 74: Warning: Number of arguments disagrees with previous definition.
+  void die(object ob,object zhu)
+                                ^
+/d/city/npc/leigong.c line 74: Warning: Number of arguments disagrees with previous definition.
+  void die(object ob,object zhu)
+                                ^
+/d/city/npc/xiaoer.c line 161: syntax error, unexpected L_STRING
+  liquid_name = YEL"桂花酒"NOR;
+                                      ^
+/d/city/npc/xiaoer.c line 162: syntax error, unexpected L_STRING
+  liquid_name = YEL"桂花酒"NOR;
+                                      ^
+/d/city/npc/xiaoer.c line 162: syntax error, unexpected L_STRING
+  liquid_name = YEL"桂花酒"NOR;
+                                      ^
+/d/city/npc/xiaoer.c line 163: Undefined function accept_object
+  if (!accept_object(me, ob))
+                                    ^
+/d/city/npc/xiaoer.c line 224: Unable to find the inherited function 'do_give'.
+  return ::do_give(arg);
+                            ^
+/d/city/npc/xiaoer.c line 187: syntax error, unexpected L_DEFINED_NAME
+  command("qiangpo this_object()->query("id") to give "+ob->query("id")+" to " + who->query("id"));
+                                                   ^
+/d/city/npc/xiaoer.c line 198: syntax error, unexpected ';'
+  object me = this_player();
+                                ^
+/d/city/npc/xiaoer.c line 207: Undefined variable 'target_id'
+  target = present(target_id, environment(me));
+                                 ^
+/d/city/npc/xiaoer.c line 207: Undefined variable 'me'
+  target = present(target_id, environment(me));
+                                                 ^
+/d/city/npc/xiaoer.c line 207: syntax error, unexpected ';'
+  target = present(target_id, environment(me));
+                                                   ^
+/d/city/npc/xiaoer.c line 210: Undefined variable 'item'
+  ob = present(item, me);
+                         ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/shendian/babu/obj/shelizi.c line 20: Warning: Function init inherited from '/feature/unique.c' does not match current function in return type ( void vs int )
+  int init()
+            ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/city/npc/leigong.c line 74: Warning: Number of arguments disagrees with previous definition.
+  void die(object ob,object zhu)
+                                ^
+/d/city/npc/leigong.c line 74: Warning: Number of arguments disagrees with previous definition.
+  void die(object ob,object zhu)
+                                ^
+/d/lingtai/npc/shixong.c line 46: Warning: Unused local variable 'ob'
+  }
+   ^
+/cmds/std/perform.c line 71: Warning: Unused local variable 'skill'
+  }
+   ^
+/daemon/class/moon/snowsword/huifeng.c line 67: Warning: Unused local variable 'damage'
+  }
+   ^
+/daemon/class/moon/snowsword/huifeng.c line 67: Warning: Unused local variable 'qixue'
+  }
+   ^
+/daemon/class/moon/snowsword/fenfei.c line 77: Warning: Unused local variable 'msg'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'ap2'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'ap3'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'ap4'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'dp2'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'dp3'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'dp4'
+  }
+   ^
+/daemon/class/moon/moonshentong/huimeng.c line 70: Warning: Unused local variable 'howlong'
+  }
+   ^
+/daemon/class/moon/moonshentong/qingwang.c line 94: Warning: Unused local variable 'msg'
+  }
+   ^
+/daemon/class/moon/moonshentong/qingwang.c line 94: Warning: Unused local variable 'ap4'
+  }
+   ^
+/daemon/class/moon/moonshentong/qingwang.c line 94: Warning: Unused local variable 'dp4'
+  }
+   ^
+/daemon/class/moon/baihua-zhang/diezhang.c line 95: Warning: Unused local variable 'weapon'
+  }
+   ^
+/d/qujing/xuanyuan/sleeproom.c line 43: Undefined function query_skill
+  me->improve_skill("xuanhu-shentong",random(query_skill("xuanhu-shentong",1)/10));
+                                                                                ^
+/d/qujing/xuanyuan/sleeproom.c line 43: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("xuanhu-shentong",random(query_skill("xuanhu-shentong",1)/10));
+                                                                                   ^
+/d/qujing/xuanyuan/sleeproom.c line 44: Undefined function query_skill
+  me->improve_skill("spells",random(query_skill("spells",1)/10));
+                                                              ^
+/d/qujing/xuanyuan/sleeproom.c line 44: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("spells",random(query_skill("spells",1)/10));
+                                                                 ^
+/d/moon/ontop2.c line 78: Undefined function query_skill
+  if ((int)me->query_skill("dodge", 1)<150) me->improve_skill("dodge", random(query_skill("dodge",1)/10));
+                                                                                                       ^
+/d/moon/ontop2.c line 78: Invalid types to '/' ( unknown vs int )
+  if ((int)me->query_skill("dodge", 1)<150) me->improve_skill("dodge", random(query_skill("dodge",1)/10));
+                                                                                                          ^
+/d/moon/ontop2.c line 79: Undefined function query_skill
+  if ((int)me->query_skill("moondance", 1) < 150 && (string)me->query("family/family_name")=="月宫") me->improve_s...
+                                                                                                                       ^
+/d/moon/ontop2.c line 79: Invalid types to '/' ( unknown vs int )
+  if ((int)me->query_skill("moondance", 1) < 150 && (string)me->query("family/family_name")=="月宫") me->improve_s...
+                                                                                                                       ^
+/d/moon/ontop2.c line 116: Undefined function query_skill
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                        ^
+/d/moon/ontop2.c line 116: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                           ^
+/d/moon/ontop2.c line 78: Undefined function query_skill
+  if ((int)me->query_skill("dodge", 1)<150) me->improve_skill("dodge", random((int)query_skill("dodge",1)/10));
+                                                                                                            ^
+/d/moon/ontop2.c line 79: Undefined function query_skill
+  if ((int)me->query_skill("moondance", 1) < 150 && (string)me->query("family/family_name")=="月宫") me->improve_s...
+                                                                                                                       ^
+/d/moon/ontop2.c line 116: Undefined function query_skill
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                        ^
+/d/moon/ontop2.c line 116: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                           ^
+/d/moon/ontop2.c line 117: Undefined function query_skill
+  if ( (int)me->query_skill("baihua-zhang", 1)< 150 && (string)me->query("family/family_name")=="月宫") me-...
+                                                                                                                ^
+/d/moon/ontop2.c line 117: Invalid types to '/' ( unknown vs int )
+  if ( (int)me->query_skill("baihua-zhang", 1)< 150 && (string)me->query("family/family_name")=="月宫") me-...
+                                                                                                                ^
+/d/moon/ontop2.c line 116: Undefined function query_skill
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                        ^
+/d/moon/ontop2.c line 116: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                           ^
+/d/moon/ontop2.c line 117: Undefined function query_skill
+  if ( (int)me->query_skill("baihua-zhang", 1)< 150 && (string)me->query("family/family_name")=="月宫") me-...
+                                                                                                                ^
+/d/moon/ontop2.c line 117: Invalid types to '/' ( unknown vs int )
+  if ( (int)me->query_skill("baihua-zhang", 1)< 150 && (string)me->query("family/family_name")=="月宫") me-...
+                                                                                                                ^
+/d/moon/ontop2.c line 118: Undefined function query_skill
+  if ( (int)me->query_skill("snowsword", 1)< 150 && (string)me->query("family/family_name")=="月宫") me->im...
+                                                                                                                ^
+/d/moon/ontop2.c line 118: Invalid types to '/' ( unknown vs int )
+  if ( (int)me->query_skill("snowsword", 1)< 150 && (string)me->query("family/family_name")=="月宫") me->im...
+                                                                                                                ^
+/d/moon/ontop2.c line 116: Undefined function query_skill
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                        ^
+/d/moon/ontop2.c line 116: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                           ^
+/d/moon/ontop2.c line 116: Undefined function query_skill
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                        ^
+/d/moon/ontop2.c line 116: Invalid types to '/' ( unknown vs int )
+  me->improve_skill("unarmed", random(query_skill("unarmed",1)/10));
+                                                                           ^
+/std/room/hockshop.c line 62: Undefined variable 'GOLD_OB'
+  ob = new(GOLD_OB);
+                           ^
+/d/penglai/obj/baihuaniang.c line 57: Warning: Unused local variable 'food'
+  }
+   ^
+/d/penglai/obj/baihuaniang.c line 57: Warning: Unused local variable 'water'
+  }
+   ^
+/std/room/hockshop.c line 220: Warning: Unused local variable 'oldnum'
+  }
+   ^
+/daemon/class/xuanyuan/tianyi-zhen/caidie.c line 49: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/wiz/ls.c line 82: Warning: Unused local variable 'mark_loaded'
+  }
+   ^
+/cmds/wiz/ls.c line 82: Warning: Unused local variable 'f'
+  }
+   ^
+/daemon/class/xuanyuan/tianyi-zhen/jue.c line 69: Warning: Unused local variable 'weapon'
+  }
+   ^
+/d/city/npc/keeper.c line 58: syntax error, unexpected L_STRING
+  tell_object(who, HIC "你心怀善念，福缘也随之增长了一点。\n" NOR);
+                                                                                          ^
+/adm/daemons/locationd.c line 4: Warning: redefinition of #define MAPS_D
+
+  #define LIMIT_LENGTH    60
+  ^
+/adm/daemons/locationd.c line 16: Undefined variable 'MAPS_DIR'
+  line=read_file(MAPS_DIR);
+                           ^
+/adm/daemons/locationd.c line 4: Warning: redefinition of #define MAPS_D
+
+  #define LIMIT_LENGTH    60
+  ^
+/adm/daemons/locationd.c line 16: Undefined variable 'MAPS_DIR'
+  line=read_file(MAPS_DIR);
+                           ^
+/adm/daemons/locationd.c line 4: Warning: redefinition of #define MAPS_D
+
+  #define LIMIT_LENGTH 60
+  ^
+/adm/daemons/locationd.c line 16: Too few arguments to 'read_file'.
+  line=read_file(MAPS_D);
+                         ^
+/d/lingtai/npc/zhangmen.c line 244: Undefined variable 'weapon_cnt'
+  weapon_cnt = 0;
+               ^
+/d/lingtai/npc/zhangmen.c line 244: Illegal lvalue
+  weapon_cnt = 0;
+               ^
+/d/lingtai/npc/zhangmen.c line 245: Undefined variable 'armor_cnt'
+  armor_cnt = 0;
+              ^
+/d/lingtai/npc/zhangmen.c line 245: Illegal lvalue
+  armor_cnt = 0;
+              ^
+/d/lingtai/npc/zhangmen.c line 244: Undefined variable 'weapon_cnt'
+  weapon_cnt = 0;
+               ^
+/d/lingtai/npc/zhangmen.c line 244: Illegal lvalue
+  weapon_cnt = 0;
+               ^
+/d/lingtai/npc/zhangmen.c line 245: Undefined variable 'armor_cnt'
+  armor_cnt = 0;
+              ^
+/d/lingtai/npc/zhangmen.c line 245: Illegal lvalue
+  armor_cnt = 0;
+              ^
+/d/nanjing/npc/bing_shoucheng.c line 10: Undefined variable 'NPC_D'
+  NPC_D->generate_cn_name(this_object());
+          ^
+/d/nanjing/npc/bing_shoucheng.c line 10: Undefined variable 'NPC_D'
+  NPC_D->generate_cn_name(this_object());
+          ^
+/d/shendian/babu/axiuluo.c line 112: Warning: Unused local variable 'huobing'
+  }
+   ^
+/include/npc/chinese.c line 11: Invalid UTF8 codepoint in string literal
+  "��" : "bai"
+              ^
+/include/npc/chinese.c line 12: Invalid UTF8 codepoint in string literal
+  "��" : "cai"
+              ^
+/include/npc/chinese.c line 13: Invalid UTF8 codepoint in string literal
+  "��" : "cao"
+              ^
+/include/npc/chinese.c line 14: Invalid UTF8 codepoint in string literal
+  "��" : "chen"
+              ^
+/include/npc/chinese.c line 15: Invalid UTF8 codepoint in string literal
+  "��" : "dai"
+              ^
+/include/npc/chinese.c line 16: Invalid UTF8 codepoint in string literal
+  "�" : "dou"
+              ^
+/include/npc/chinese.c line 11: Invalid UTF8 codepoint in string literal
+  "��" : "bai"
+              ^
+/include/npc/chinese.c line 12: Invalid UTF8 codepoint in string literal
+  "��" : "cai"
+              ^
+/include/npc/chinese.c line 13: Invalid UTF8 codepoint in string literal
+  "��" : "cao"
+              ^
+/include/npc/chinese.c line 14: Invalid UTF8 codepoint in string literal
+  "��" : "chen"
+              ^
+/include/npc/chinese.c line 15: Invalid UTF8 codepoint in string literal
+  "��" : "dai"
+              ^
+/include/npc/chinese.c line 16: Invalid UTF8 codepoint in string literal
+  "�" : "dou"
+              ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/std/char/npc.c line 19: Illegal to inherit after defining global variables.
+  inheri"/std/char";
+                    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/npc/bing_xunluo.c line 3: Warning: Redeclaration of global variable 'ma_sname'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc";
+                                                      ^
+/d/nanjing/npc/bing_xunluo.c line 3: Warning: Redeclaration of global variable 'ma_pname'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc";
+                                                      ^
+/d/nanjing/npc/bing_xunluo.c line 3: Warning: Redeclaration of global variable 'ma_sname'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc";
+                                                      ^
+/d/nanjing/npc/bing_xunluo.c line 3: Warning: Redeclaration of global variable 'ma_pname'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc";
+                                                      ^
+/d/city/npc/seng.c line 2: Warning: Redeclaration of global variable 'ma_sname'.
+  #define BLINK ESC+"[5m"         /*"/std/char/npc";
+                                                    ^
+/d/city/npc/seng.c line 2: Warning: Redeclaration of global variable 'ma_pname'.
+  #define BLINK ESC+"[5m"         /*"/std/char/npc";
+                                                    ^
+/std/char/npcsave.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  #include <user.h>"/std/char/npc";
+                                   ^
+/std/char/npcsave.c line 28: Warning: Redeclaration of global variable 'ma_pname'.
+  #include <user.h>"/std/char/npc";
+                                   ^
+/feature/vendor_sale.c line 5: Warning: Redeclaration of global variable 'ma_sname'.
+  #include <dbase.h>"/std/char/npcsave";
+                                         ^
+/feature/vendor_sale.c line 5: Warning: Redeclaration of global variable 'ma_pname'.
+  #include <dbase.h>"/std/char/npcsave";
+                                         ^
+/d/city/npc/xiaoer.c line 2: Warning: Redeclaration of global variable 'ma_sname'.
+  #define F_EQUIP			"/feature/eq"/feature/vendor_sale.c";
+                                                         ^
+/d/city/npc/xiaoer.c line 2: Warning: Redeclaration of global variable 'ma_pname'.
+  #define F_EQUIP			"/feature/eq"/feature/vendor_sale.c";
+                                                         ^
+/d/ourhome/npc/bigeye.c line 5: Warning: Redeclaration of global variable 'ma_sname'.
+  #define BLINK ESC+"[5m"         /* "/std/char/npcsave";
+                                                         ^
+/d/ourhome/npc/bigeye.c line 5: Warning: Redeclaration of global variable 'ma_pname'.
+  #define BLINK ESC+"[5m"         /* "/std/char/npcsave";
+                                                         ^
+/d/wiz/npc/caishen.c line 6: Warning: Redeclaration of global variable 'ma_sname'.
+  //a player is allowed to carry 200-2000 gold depending on his/her dao-xing."/std/char/npc";
+                                                                                             ^
+/d/wiz/npc/caishen.c line 6: Warning: Redeclaration of global variable 'ma_pname'.
+  //a player is allowed to carry 200-2000 gold depending on his/her dao-xing."/std/char/npc";
+                                                                                             ^
+/adm/daemons/npcd.c line 4: Warning: Unknown #pragma, ignored.
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/obj/cloth_min3.c line 9: syntax error, unexpected L_STRING
+  set_name(RED"枣色直身"NOR, ({ "zao zhi", "cloth", "pao" }));
+                             ^
+/d/nanjing/obj/cloth_min3.c line 9: syntax error, unexpected L_STRING
+  set_name(RED"枣色直身"NOR, ({ "zao zhi", "cloth", "pao" }));
+                             ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/npc/wulai.c line 42: syntax error, unexpected L_STRING
+  tell_object(ob, HIC "\n当前任务进度"+ ob->query_temp("step/wulai") +"/10\n" NOR);
+                                              ^
+/d/nanjing/npc/wulai.c line 52: Illegal LHS
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                      ^
+/d/nanjing/npc/wulai.c line 52: syntax error, unexpected ')'
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                       ^
+/d/nanjing/npc/wulai.c line 53: Illegal LHS
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 53: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 54: syntax error, unexpected L_ELSE
+  else if (environment() == find_object(dest = "/d/nanjing/gate_sanshan"))
+       ^
+/d/nanjing/npc/wulai.c line 55: Illegal LHS
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/wulai.c line 55: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/boss_tang.c line 4: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/d/nanjing/npc/guan_zhuwannian.c line 4: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/npc/wulai.c line 42: syntax error, unexpected L_STRING
+  tell_object(ob, HIC "\n当前任务进度"+ ob->query_temp("step/wulai") +"/10\n" NOR);
+                                              ^
+/d/nanjing/npc/wulai.c line 52: Illegal LHS
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                      ^
+/d/nanjing/npc/wulai.c line 52: syntax error, unexpected ')'
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                       ^
+/d/nanjing/npc/wulai.c line 53: Illegal LHS
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 53: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 54: syntax error, unexpected L_ELSE
+  else if (environment() == find_object(dest = "/d/nanjing/gate_sanshan"))
+       ^
+/d/nanjing/npc/wulai.c line 55: Illegal LHS
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/wulai.c line 55: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/boss_shu.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/daemon/skill/dan-dao.c line 4: syntax error, unexpected L_STRING
+  ([      "action": HIW"$N使出"+HIR+"「埋头刀势」"+HIW+"，开左边门户，将左边身体向敌，饵$n"+HIW...
+                                                                                                                          ^
+/daemon/skill/dan-dao.c line 144: Undefined variable 'action'
+  for (i = sizeof(action)-1; i >= 0; i--)
+                                 ^
+/daemon/skill/dan-dao.c line 144: syntax error, unexpected ';'
+  for (i = sizeof(action)-1; i >= 0; i--)
+                                    ^
+/daemon/skill/dan-dao.c line 151: Undefined variable 'me'
+  level = (int) me->query_skill("dan-dao", 1);
+                            ^
+/daemon/skill/dan-dao.c line 151: syntax error, unexpected ';'
+  level = (int) me->query_skill("dan-dao", 1);
+                                                      ^
+/daemon/skill/dan-dao.c line 152: syntax error, unexpected ';'
+  for (i = sizeof(action); i > 0; i--)
+                                  ^
+/d/nanjing/npc/boss_tang.c line 4: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/d/nanjing/npc/boss_shu.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/d/nanjing/npc/wulai.c line 42: syntax error, unexpected L_STRING
+  tell_object(ob, HIC "\n当前任务进度"+ ob->query_temp("step/wulai") +"/10\n" NOR);
+                                              ^
+/d/nanjing/npc/wulai.c line 52: Illegal LHS
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                      ^
+/d/nanjing/npc/wulai.c line 52: syntax error, unexpected ')'
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                       ^
+/d/nanjing/npc/wulai.c line 53: Illegal LHS
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 53: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 54: syntax error, unexpected L_ELSE
+  else if (environment() == find_object(dest = "/d/nanjing/gate_sanshan"))
+       ^
+/d/nanjing/npc/wulai.c line 55: Illegal LHS
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/wulai.c line 55: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/boss_tang.c line 4: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_DEALER;
+                  ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/npc/wulai.c line 42: syntax error, unexpected L_STRING
+  tell_object(ob, HIC "\n当前任务进度"+ ob->query_temp("step/wulai") +"/10\n" NOR);
+                                              ^
+/d/nanjing/npc/wulai.c line 52: Illegal LHS
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                      ^
+/d/nanjing/npc/wulai.c line 52: syntax error, unexpected ')'
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                       ^
+/d/nanjing/npc/wulai.c line 53: Illegal LHS
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 53: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 54: syntax error, unexpected L_ELSE
+  else if (environment() == find_object(dest = "/d/nanjing/gate_sanshan"))
+       ^
+/d/nanjing/npc/wulai.c line 55: Illegal LHS
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/wulai.c line 55: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/npc_shaonv.c line 17: syntax error, unexpected L_STRING
+  set("title", HIM"南京少女"NOR);
+                                 ^
+/d/nanjing/npc/npc_shaonv.c line 52: Illegal LHS
+  if( interactive(ob = this_player()) && !is_fighting() )
+                                      ^
+/d/nanjing/npc/npc_shaonv.c line 52: syntax error, unexpected ')'
+  if( interactive(ob = this_player()) && !is_fighting() )
+                                                          ^
+/d/nanjing/npc/wulai.c line 42: syntax error, unexpected L_STRING
+  tell_object(ob, HIC "\n当前任务进度"+ ob->query_temp("step/wulai") +"/10\n" NOR);
+                                              ^
+/d/nanjing/npc/wulai.c line 52: Illegal LHS
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                      ^
+/d/nanjing/npc/wulai.c line 52: syntax error, unexpected ')'
+  if (environment() == find_object(dest = "/d/nanjing/road_sanshan1"))
+                                                                       ^
+/d/nanjing/npc/wulai.c line 53: Illegal LHS
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 53: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/gate_sanshan";
+                                     ^
+/d/nanjing/npc/wulai.c line 54: syntax error, unexpected L_ELSE
+  else if (environment() == find_object(dest = "/d/nanjing/gate_sanshan"))
+       ^
+/d/nanjing/npc/wulai.c line 55: Illegal LHS
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/npc/wulai.c line 55: Warning: Expression has no side effects, and the value is unused
+  dest = "/d/nanjing/road_sanshan1";
+                                      ^
+/d/nanjing/obj/skirt_nv21.c line 6: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit SKIRT;
+               ^
+/d/nanjing/obj/skirt_nv21.c line 6: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit SKIRT;
+               ^
+/d/nanjing/obj/skirt_nv21.c line 5: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit SKIRT;
+               ^
+/std/armor/skirt.c line 10: Invalid UTF8 codepoint in string literal
+  set("armor_type", TYP"skirt");set("armor_buwei", "����");
+                                                                  ^
+/std/armor/skirt.c line 14: Invalid UTF8 codepoint in string literal
+  set("armor_buwei", "����");
+                                   ^
+/std/armor/skirt.c line 30: Invalid UTF8 codepoint in string literal
+  return notify_fail("��ֻ��˺���ϵ��·���\n");
+                                               ^
+/std/armor/skirt.c line 33: Invalid UTF8 codepoint in string literal
+  return notify_fail( name() + "����ڣ��¡��Ѿ�û�ж��ŵĲ���˺�ˡ�\n");
+                                                                         ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                        ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                                                      ^
+/std/armor/skirt.c line 10: Invalid UTF8 codepoint in string literal
+  set("armor_type", TYP"skirt");set("armor_buwei", "����");
+                                                                  ^
+/std/armor/skirt.c line 14: Invalid UTF8 codepoint in string literal
+  set("armor_buwei", "����");
+                                   ^
+/std/armor/skirt.c line 30: Invalid UTF8 codepoint in string literal
+  return notify_fail("��ֻ��˺���ϵ��·���\n");
+                                               ^
+/std/armor/skirt.c line 33: Invalid UTF8 codepoint in string literal
+  return notify_fail( name() + "����ڣ��¡��Ѿ�û�ж��ŵĲ���˺�ˡ�\n");
+                                                                         ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                        ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                                                      ^
+/std/armor/skirt.c line 10: Invalid UTF8 codepoint in string literal
+  set("armor_type", TYP"skirt");set("armor_buwei", "����");
+                                                                  ^
+/std/armor/skirt.c line 14: Invalid UTF8 codepoint in string literal
+  set("armor_buwei", "����");
+                                   ^
+/std/armor/skirt.c line 30: Invalid UTF8 codepoint in string literal
+  return notify_fail("��ֻ��˺���ϵ��·���\n");
+                                               ^
+/std/armor/skirt.c line 33: Invalid UTF8 codepoint in string literal
+  return notify_fail( name() + "����ڣ��¡��Ѿ�û�ж��ŵĲ���˺�ˡ�\n");
+                                                                         ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                        ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                                                      ^
+/std/armor/skirt.c line 10: Invalid UTF8 codepoint in string literal
+  set("armor_type", TYP"skirt");set("armor_buwei", "����");
+                                                                  ^
+/std/armor/skirt.c line 14: Invalid UTF8 codepoint in string literal
+  set("armor_buwei", "����");
+                                   ^
+/std/armor/skirt.c line 30: Invalid UTF8 codepoint in string literal
+  return notify_fail("��ֻ��˺���ϵ��·���\n");
+                                               ^
+/std/armor/skirt.c line 33: Invalid UTF8 codepoint in string literal
+  return notify_fail( name() + "����ڣ��¡��Ѿ�û�ж��ŵĲ���˺�ˡ�\n");
+                                                                         ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                        ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                                                      ^
+/std/armor/skirt.c line 10: Invalid UTF8 codepoint in string literal
+  set("armor_type", TYP"skirt");set("armor_buwei", "����");
+                                                                  ^
+/std/armor/skirt.c line 14: Invalid UTF8 codepoint in string literal
+  set("armor_buwei", "����");
+                                   ^
+/std/armor/skirt.c line 30: Invalid UTF8 codepoint in string literal
+  return notify_fail("��ֻ��˺���ϵ��·���\n");
+                                               ^
+/std/armor/skirt.c line 33: Invalid UTF8 codepoint in string literal
+  return notify_fail( name() + "����ڣ��¡��Ѿ�û�ж��ŵĲ���˺�ˡ�\n");
+                                                                         ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                        ^
+/std/armor/skirt.c line 35: Invalid UTF8 codepoint in string literal
+  message_vision("$N��" + name() + "˺��һ��������\n", this_player() );
+                                                      ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/adm/daemons/npcd.c line 22: syntax error, unexpected invalid token
+  }\
+    ^
+/include/npc/indian.c line 28: Warning: Redeclaration of global variable 'ma_sname'.
+  ]);
+     ^
+/include/npc/indian.c line 55: Warning: Redeclaration of global variable 'ma_pname'.
+  ]);
+     ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/kz_jixian.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit CREATE_CHAT_ROOM;
+                          ^
+/d/nanjing/kz_jixian.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit CREATE_CHAT_ROOM;
+                          ^
+/d/nanjing/kz_jixian.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit CREATE_CHAT_ROOM;
+                          ^
+/d/nanjing/kz_jixian.c line 35: Undefined function add_all_action
+  add_all_action();
+                          ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/majiu.c line 5: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit TRANS_ROOM;
+                    ^
+/d/nanjing/majiu.c line 5: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit TRANS_ROOM;
+                    ^
+/d/nanjing/majiu.c line 8: Undefined function set
+  set("short","马厩");
+                             ^
+/d/nanjing/majiu.c line 14: Undefined function set
+  );
+   ^
+/d/nanjing/majiu.c line 15: Undefined function set
+  set("item_desc", (["paizi" : "武侠世界才骑马，我们都用飞的！\n", ]));
+                                                                                      ^
+/d/nanjing/majiu.c line 16: Undefined function set
+  set("outdoors", "nanjing");
+                                  ^
+/d/nanjing/majiu.c line 17: Undefined function set
+  set("no_fight", 1);
+                          ^
+/d/nanjing/majiu.c line 22: Undefined function set
+  ]));
+           ^
+/d/nanjing/npc/yangyanyan.c line 2: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_BANKER;
+                  ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'dbase'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'tmp_dbase'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'default_ob'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_set'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_delete'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_query'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function 'query_max_items'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function 'query_max_encumbrance'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 155: Warning: Unused local variable 'obs'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'what'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'money_limit'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'what_ob'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'me'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 248: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'dbase'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'tmp_dbase'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Warning: Redeclaration of global variable 'default_ob'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_set'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_delete'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function '_query'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function 'query_max_items'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 4: Illegal to redefine 'nomask' function 'query_max_encumbrance'.
+  #define BLINK ESC+"[5m"         /* I"/std/char/npc"/std/room/bank";
+                                                                     ^
+/d/nanjing/npc/yangyanyan.c line 155: Warning: Unused local variable 'obs'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'what'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'money_limit'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'what_ob'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 191: Warning: Unused local variable 'me'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 248: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 154: Warning: Unused local variable 'obs'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 190: Warning: Unused local variable 'what'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 190: Warning: Unused local variable 'money_limit'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 190: Warning: Unused local variable 'what_ob'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 190: Warning: Unused local variable 'me'
+  }
+   ^
+/d/nanjing/npc/yangyanyan.c line 247: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/room_zhangfang.c line 2: Warning: Redeclaration of global variable 'dbase'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Warning: Redeclaration of global variable 'tmp_dbase'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Warning: Redeclaration of global variable 'default_ob'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Warning: Redeclaration of global variable 'doors'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Illegal to redefine 'nomask' function '_set'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Illegal to redefine 'nomask' function '_delete'.
+  i"/std/room"/std/room/bank";
+                              ^
+/d/nanjing/room_zhangfang.c line 2: Illegal to redefine 'nomask' function '_query'.
+  i"/std/room"/std/room/bank";
+                              ^
+/cmds/std/massage.c line 288: Undefined function sort_string
+  msg1 = sort_string(msg1, 64);
+                                      ^
+/cmds/std/massage.c line 288: Bad assignment ( string vs unknown ).
+  msg1 = sort_string(msg1, 64);
+                                       ^
+/cmds/std/massage.c line 289: Undefined function sort_string
+  msg2 = sort_string(msg2, 64);
+                                      ^
+/cmds/std/massage.c line 289: Bad assignment ( string vs unknown ).
+  msg2 = sort_string(msg2, 64);
+                                       ^
+/cmds/std/massage.c line 290: Undefined function sort_string
+  msg  = sort_string(msg, 64);
+                                     ^
+/cmds/std/massage.c line 290: Bad assignment ( string vs unknown ).
+  msg  = sort_string(msg, 64);
+                                      ^
+/cmds/std/massage.c line 553: Undefined function sort_string
+  msg1 = sort_string(msg1, 64);
+                                      ^
+/cmds/std/massage.c line 553: Bad assignment ( string vs unknown ).
+  msg1 = sort_string(msg1, 64);
+                                       ^
+/cmds/std/massage.c line 554: Undefined function sort_string
+  msg2 = sort_string(msg2, 64);
+                                      ^
+/cmds/std/massage.c line 554: Bad assignment ( string vs unknown ).
+  msg2 = sort_string(msg2, 64);
+                                       ^
+/cmds/std/massage.c line 555: Undefined function sort_string
+  msg  = sort_string(msg, 64);
+                                     ^
+/cmds/std/massage.c line 555: Bad assignment ( string vs unknown ).
+  msg  = sort_string(msg, 64);
+                                      ^
+/cmds/std/qiangjian.c line 5: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit F_LEVEL;
+                 ^
+/cmds/std/qiangjian.c line 5: Unrecognised # directive
+  //inherit F_CLEAN_UP;
+  ^
+/cmds/std/qiangjian.c line 89: Warning: Unused local variable 'no_tell'
+  }
+   ^
+/cmds/std/qiangjian.c line 89: Warning: Unused local variable 'can_tell'
+  }
+   ^
+/cmds/std/qiangjian.c line 124: Undefined function message_combatd
+  "是$N只在$p的耳根上一掐，$n便失去了�""+"[2;37;0m"), me, target, damage_info,10,action["damag...
+                                                                                                                 ^
+/cmds/std/qiangjian.c line 753: Warning: Unused local variable 'p'
+  }
+   ^
+/cmds/std/qiangjian.c line 753: Warning: Unused local variable 'notice'
+  }
+   ^
+/cmds/std/qiangjian.c line 797: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/qiangjian.c line 89: Warning: Unused local variable 'no_tell'
+  }
+   ^
+/cmds/std/qiangjian.c line 89: Warning: Unused local variable 'can_tell'
+  }
+   ^
+/cmds/std/qiangjian.c line 124: Undefined function message_combatd
+  "是$N只在$p的耳根上一掐，$n便失去了�""+"[2;37;0m"), me, target, damage_info,10,action["damag...
+                                                                                                                 ^
+/cmds/std/qiangjian.c line 753: Warning: Unused local variable 'p'
+  }
+   ^
+/cmds/std/qiangjian.c line 753: Warning: Unused local variable 'notice'
+  }
+   ^
+/cmds/std/qiangjian.c line 797: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/obj/gun4.c line 143: Warning: Unused local variable 'item'
+  }
+   ^
+/d/nanjing/obj/gun4.c line 143: Warning: Unused local variable 'action'
+  }
+   ^
+/d/nanjing/obj/gun4.c line 191: Warning: Unused local variable 'msg'
+  }
+   ^
+/d/nanjing/obj/gun4.c line 191: Warning: Unused local variable 'finish'
+  }
+   ^
+/d/nanjing/obj/gun3.c line 163: Warning: Unused local variable 'item'
+  }
+   ^
+/d/nanjing/obj/gun3.c line 163: Warning: Unused local variable 'action'
+  }
+   ^
+/d/nanjing/obj/gun3.c line 203: syntax error, unexpected '{'
+  {
+           ^
+/d/nanjing/obj/gun3.c line 213: syntax error, unexpected ';'
+  b = (int)me->query("level")*random(1000);
+                                                           ^
+/d/nanjing/obj/gun3.c line 200: syntax error, unexpected '{'
+  {
+           ^
+/d/nanjing/obj/gun3.c line 210: syntax error, unexpected ';'
+  b = (int)me->query("level")*random(1000);
+                                                           ^
+/d/nanjing/obj/gun2.c line 199: syntax error, unexpected '{'
+  {
+           ^
+/d/nanjing/obj/gun2.c line 209: syntax error, unexpected ';'
+  b = (int)me->query("level")*random(1000);
+                                                           ^
+/d/nanjing/obj/gun0.c line 162: Warning: Unused local variable 'item'
+  }
+   ^
+/d/nanjing/obj/gun0.c line 162: Warning: Unused local variable 'action'
+  }
+   ^
+/d/nanjing/obj/gun0.c line 202: syntax error, unexpected '{'
+  {
+           ^
+/d/nanjing/obj/gun0.c line 212: syntax error, unexpected ';'
+  b = (int)me->query("level")*random(1000);
+                                                           ^
+/cmds/std/qiangjian.c line 89: Warning: Unused local variable 'no_tell'
+  }
+   ^
+/cmds/std/qiangjian.c line 464: Warning: Unused local variable 'damage_info'
+  }
+   ^
+/cmds/std/qiangjian.c line 752: Warning: Unused local variable 'p'
+  }
+   ^
+/cmds/std/qiangjian.c line 752: Warning: Unused local variable 'notice'
+  }
+   ^
+/cmds/std/qiangjian.c line 796: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/qiangjian.c line 66: Undefined variable 'victim'
+  me->start_call_out((: call_other, me, "raping", victim :), 1);
+                                                             ^
+/d/nanjing/npc/wengnanxi.c line 158: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/chenjing.c line 100: Undefined variable 'F_LEVEL'
+  F_LEVEL->improve_level(me);
+              ^
+/d/nanjing/npc/chenjing.c line 108: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_tianfu(me);
+                ^
+/d/nanjing/npc/chenjing.c line 117: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_skills(me);
+              ^
+/d/nanjing/npc/chenjing.c line 171: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/lifenfang.c line 135: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/xuhuina.c line 199: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/zhengyu.c line 157: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/wengnanxi.c line 158: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/chenjing.c line 100: Undefined variable 'F_LEVEL'
+  F_LEVEL->improve_level(me);
+              ^
+/d/nanjing/npc/chenjing.c line 108: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_tianfu(me);
+                ^
+/d/nanjing/npc/chenjing.c line 117: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_skills(me);
+              ^
+/d/nanjing/npc/chenjing.c line 171: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/linshiwei.c line 209: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/look.c line 586: Warning: Unused local variable 'waist_desc'
+  }
+   ^
+/cmds/std/look.c line 586: Warning: Unused local variable 'chest_desc'
+  }
+   ^
+/cmds/std/look.c line 586: Warning: Unused local variable 'legs_desc'
+  }
+   ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/river_qinhuai4.c line 153: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/nanjing/npc/wengnanxi.c line 158: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/chenjing.c line 100: Undefined variable 'F_LEVEL'
+  F_LEVEL->improve_level(me);
+              ^
+/d/nanjing/npc/chenjing.c line 108: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_tianfu(me);
+                ^
+/d/nanjing/npc/chenjing.c line 117: Undefined variable 'F_LEVEL'
+  F_LEVEL->up_skills(me);
+              ^
+/d/nanjing/npc/chenjing.c line 171: Warning: Unused local variable 'i'
+  }
+   ^
+/d/nanjing/npc/chenjing.c line 136: Warning: Unused local variable 'i'
+  }
+   ^
+/cmds/std/makelove.c line 77: Undefined function is_sub
+  is_sub(me->query("id"), no_tell))
+                                       ^
+/cmds/std/makelove.c line 80: Undefined function is_sub
+  if (! is_sub(me->query("id"), can_tell))
+                                                         ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'weapon'
+  }
+   ^
+/d/nanjing/npc/zhengyu.c line 30: syntax error, unexpected ':'
+  "缠绵": (: start_ask :),
+                           ^
+/d/nanjing/npc/zhengyu.c line 78: syntax error, unexpected ';'
+  ob = this_player();
+                      ^
+/d/nanjing/npc/zhengyu.c line 89: syntax error, unexpected ';'
+  object me = this_object();
+                             ^
+/d/nanjing/npc/zhengyu.c line 91: Function pointers nested too deep.
+  if((sizeof(filter_array(all_inventory(environment()),(:  $1->is_character() :))) - sizeof(filter_array(all_inventory...
+                                                                                                                         ^
+/d/nanjing/npc/zhengyu.c line 106: syntax error, unexpected ';'
+  ob = this_object();
+                      ^
+/d/nanjing/npc/zhengyu.c line 107: syntax error, unexpected ';'
+  me = this_player();
+                      ^
+/cmds/std/makelove.c line 77: Undefined function is_sub
+  is_sub(me->query("id"), no_tell))
+                                       ^
+/cmds/std/makelove.c line 80: Undefined function is_sub
+  if (! is_sub(me->query("id"), can_tell))
+                                                         ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/makelove.c line 77: Undefined function is_sub
+  is_sub(me->query("id"), no_tell))
+                                       ^
+/cmds/std/makelove.c line 80: Undefined function is_sub
+  if (! is_sub(me->query("id"), can_tell))
+                                                         ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 348: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'armor'
+  }
+   ^
+/cmds/std/makelove.c line 553: Warning: Unused local variable 'weapon'
+  }
+   ^
+/cmds/std/makelove.c line 76: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string no_tell = target->query("env/no_tell");
+                 ^
+/cmds/std/makelove.c line 76: Illegal LHS
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 76: Warning: Expression has no side effects, and the value is unused
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 77: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string can_tell = target->query("env/can_tell");
+                  ^
+/cmds/std/makelove.c line 77: Illegal LHS
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 77: Warning: Expression has no side effects, and the value is unused
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 76: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string no_tell = target->query("env/no_tell");
+                 ^
+/cmds/std/makelove.c line 76: Illegal LHS
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 76: Warning: Expression has no side effects, and the value is unused
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 77: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string can_tell = target->query("env/can_tell");
+                  ^
+/cmds/std/makelove.c line 77: Illegal LHS
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 77: Warning: Expression has no side effects, and the value is unused
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 76: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string no_tell = target->query("env/no_tell");
+                 ^
+/cmds/std/makelove.c line 76: Illegal LHS
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 76: Warning: Expression has no side effects, and the value is unused
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 77: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string can_tell = target->query("env/can_tell");
+                  ^
+/cmds/std/makelove.c line 77: Illegal LHS
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 77: Warning: Expression has no side effects, and the value is unused
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 76: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string no_tell = target->query("env/no_tell");
+                 ^
+/cmds/std/makelove.c line 76: Illegal LHS
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 76: Warning: Expression has no side effects, and the value is unused
+  string no_tell = target->query("env/no_tell");
+                                                 ^
+/cmds/std/makelove.c line 77: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string can_tell = target->query("env/can_tell");
+                  ^
+/cmds/std/makelove.c line 77: Illegal LHS
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/cmds/std/makelove.c line 77: Warning: Expression has no side effects, and the value is unused
+  string can_tell = target->query("env/can_tell");
+                                                   ^
+/d/nanjing/obj/blade_yao.c line 33: Warning: Unused local variable 'desc'
+  }
+   ^
+/d/nanjing/lou_meixiang.c line 3: syntax error, unexpected L_IDENTIFIER, expecting L_STRING or '('
+  inherit CREATE_CHAT_ROOM;
+                          ^
+/d/nanjing/lou_meixiang.c line 5: Undefined function set
+  set("short", "媚香楼");
+                            ^
+/d/nanjing/lou_meixiang.c line 11: Undefined function set
+  );
+    ^
+/d/nanjing/lou_meixiang.c line 12: Undefined function set
+  set("no_fight", 1);
+                     ^
+/d/nanjing/lou_meixiang.c line 13: Undefined function set
+  set("valid_startroom", 1);
+                            ^
+/d/nanjing/lou_meixiang.c line 14: Undefined function set
+  set("no_sleep_room",1);
+                            ^
+/d/nanjing/lou_meixiang.c line 15: Undefined function set
+  set("chat_room",1);
+                        ^
+/d/nanjing/lou_meixiang.c line 33: Undefined function add_all_action
+  add_all_action();
+                          ^
+/cmds/std/makelove.c line 374: Undefined function do_remove
+  do_remove(target, inv[i]);
+                                     ^
+/cmds/std/makelove.c line 156: Undefined variable 'inv'
+  inv = all_inventory(target);
+                ^
+/cmds/std/makelove.c line 156: Illegal lvalue
+  inv = all_inventory(target);
+                ^
+/cmds/std/makelove.c line 157: Undefined variable 'i'
+  for (i = 0; i < sizeof(inv); i++)
+                   ^
+/cmds/std/makelove.c line 157: Illegal lvalue
+  for (i = 0; i < sizeof(inv); i++)
+                   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_qishou.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/meishan/npc/laotai.c line 30: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/meishan/npc/miaozhu.c line 56: Warning: Unused local variable 'm'
+  }
+   ^
+/d/meishan/npc/cao.c line 58: Warning: Unused local variable 'who'
+  }
+   ^
+/d/meishan/npc/cao.c line 68: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_huochong.c line 76: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/city/ansi2.h line 13: Warning: redefinition of #define BLK
+
+  #define RED ESC+"[31m"          /* Red      */
+  ^
+/d/city/ansi2.h line 14: Warning: redefinition of #define RED
+
+  #define GRN ESC+"[32m"          /* Green    */
+  ^
+/d/city/ansi2.h line 15: Warning: redefinition of #define GRN
+
+  #define YEL ESC+"[33m"          /* Yellow   */
+  ^
+/d/city/ansi2.h line 16: Warning: redefinition of #define YEL
+
+  #define BLU ESC+"[34m"          /* Blue     */
+  ^
+/d/city/ansi2.h line 17: Warning: redefinition of #define BLU
+
+  #define MAG ESC+"[35m"          /* Magenta  */
+  ^
+/d/city/ansi2.h line 18: Warning: redefinition of #define MAG
+
+  #define CYN ESC+"[36m"          /* Cyan     */
+  ^
+/d/city/ansi2.h line 19: Warning: redefinition of #define CYN
+
+  #define WHT ESC+"[37m"          /* White    */
+  ^
+/d/city/ansi2.h line 20: Warning: redefinition of #define WHT
+
+  
+  ^
+/d/city/ansi2.h line 24: Warning: redefinition of #define HIR
+
+  #define HIG ESC+"[1;32m"        /* Green    */
+  ^
+/d/city/ansi2.h line 25: Warning: redefinition of #define HIG
+
+  #define HIY ESC+"[1;33m"        /* Yellow   */
+  ^
+/d/city/ansi2.h line 26: Warning: redefinition of #define HIY
+
+  #define HIB ESC+"[1;34m"        /* Blue     */
+  ^
+/d/city/ansi2.h line 27: Warning: redefinition of #define HIB
+
+  #define HIM ESC+"[1;35m"        /* Magenta  */
+  ^
+/d/city/ansi2.h line 28: Warning: redefinition of #define HIM
+
+  #define HIC ESC+"[1;36m"        /* Cyan     */
+  ^
+/d/city/ansi2.h line 29: Warning: redefinition of #define HIC
+
+  #define HIW ESC+"[1;37m"        /* White    */
+  ^
+/d/city/ansi2.h line 30: Warning: redefinition of #define HIW
+
+  #define HBK ESC+"[1;30m"        /* GRAY    */
+  ^
+/d/city/ansi2.h line 35: Warning: redefinition of #define HBRED
+
+  #define HBGRN ESC+"[42;1m"       /* Green    */
+  ^
+/d/city/ansi2.h line 36: Warning: redefinition of #define HBGRN
+
+  #define HBYEL ESC+"[43;1m"       /* Yellow   */
+  ^
+/d/city/ansi2.h line 37: Warning: redefinition of #define HBYEL
+
+  #define HBBLU ESC+"[44;1m"       /* Blue     */
+  ^
+/d/city/ansi2.h line 38: Warning: redefinition of #define HBBLU
+
+  #define HBMAG ESC+"[45;1m"       /* Magenta  */
+  ^
+/d/city/ansi2.h line 39: Warning: redefinition of #define HBMAG
+
+  #define HBCYN ESC+"[46;1m"       /* Cyan     */
+  ^
+/d/city/ansi2.h line 40: Warning: redefinition of #define HBCYN
+
+  #define HBWHT ESC+"[47;1m"       /* White    */
+  ^
+/d/city/ansi2.h line 41: Warning: redefinition of #define HBWHT
+
+  
+  ^
+/d/city/ansi2.h line 45: Warning: redefinition of #define BBLK
+
+  #define BRED ESC+"[41m"          /* Red      */
+  ^
+/d/city/ansi2.h line 46: Warning: redefinition of #define BRED
+
+  #define BGRN ESC+"[42m"          /* Green    */
+  ^
+/d/city/ansi2.h line 47: Warning: redefinition of #define BGRN
+
+  #define BYEL ESC+"[43m"          /* Yellow   */
+  ^
+/d/city/ansi2.h line 48: Warning: redefinition of #define BYEL
+
+  #define BBLU ESC+"[44m"          /* Blue     */
+  ^
+/d/city/ansi2.h line 49: Warning: redefinition of #define BBLU
+
+  #define BMAG ESC+"[45m"          /* Magenta  */
+  ^
+/d/city/ansi2.h line 50: Warning: redefinition of #define BMAG
+
+  #define BCYN ESC+"[46m"          /* Cyan     */
+  ^
+/d/city/ansi2.h line 51: Warning: redefinition of #define BCYN
+
+  // #define BWHT ESC+"[47m"          /* White    */
+  ^
+/d/city/ansi2.h line 54: Warning: redefinition of #define NOR
+
+  
+  ^
+/d/city/ansi2.h line 60: Warning: redefinition of #define BOLD
+
+  #define CLR ESC+"[2J"           /* Clear the screen  */
+  ^
+/d/city/ansi2.h line 61: Warning: redefinition of #define CLR
+
+  #define HOME ESC+"[H"           /* Send cursor to home position */
+  ^
+/d/city/ansi2.h line 62: Warning: redefinition of #define HOME
+
+  #define REF CLR+HOME            /* Clear screen and home cursor */
+  ^
+/d/city/ansi2.h line 63: Warning: redefinition of #define REF
+
+  #define BIGTOP ESC+"#3"         /* Dbl height characters, top half */
+  ^
+/d/city/ansi2.h line 64: Warning: redefinition of #define BIGTOP
+
+  #define BIGBOT ESC+"#4"         /* Dbl height characters, bottem half */
+  ^
+/d/city/ansi2.h line 65: Warning: redefinition of #define BIGBOT
+
+  #define SAVEC ESC+"[s"           /* Save cursor position */
+  ^
+/d/city/ansi2.h line 66: Warning: redefinition of #define SAVEC
+
+  #define REST ESC+"[u"            /* Restore cursor to saved position */
+  ^
+/d/city/ansi2.h line 67: Warning: redefinition of #define REST
+
+  //#define REVINDEX ESC+"M"        /* Scroll screen in opposite direction */
+  ^
+/d/city/ansi2.h line 69: Warning: redefinition of #define SINGW
+
+  #define DBL ESC+"#6"            /* Creates double-width characters */
+  ^
+/d/city/ansi2.h line 70: Warning: redefinition of #define DBL
+
+  #define FRTOP ESC+"[2;25r"      /* Freeze top line */
+  ^
+/d/city/ansi2.h line 71: Warning: redefinition of #define FRTOP
+
+  #define FRBOT ESC+"[1;24r"      /* Freeze bottom line */
+  ^
+/d/city/ansi2.h line 72: Warning: redefinition of #define FRBOT
+
+  #define UNFR ESC+"[r"           /* Unfreeze top and bottom lines */
+  ^
+/d/city/ansi2.h line 73: Warning: redefinition of #define UNFR
+
+  #define BLINK ESC+"[5m"         /* Initialize blink mode */
+  ^
+/d/city/ansi2.h line 74: Warning: redefinition of #define BLINK
+
+  #define U ESC+"[4m"             /* Initialize underscore mode */
+  ^
+/d/city/ansi2.h line 75: Warning: redefinition of #define U
+
+  #define REV ESC+"[7m"           /* Turns reverse video mode on */
+  ^
+/d/city/ansi2.h line 76: Warning: redefinition of #define REV
+
+  #define HIREV ESC+"[1,7m"       /* Hi intensity reverse video  */
+  ^
+/d/city/ansi2.h line 77: Warning: redefinition of #define HIREV
+
+  
+  ^
+/d/city/ansi2.h line 13: Warning: redefinition of #define BLK
+
+  #define RED ESC+"[31m"          /* Red      */
+  ^
+/d/city/ansi2.h line 14: Warning: redefinition of #define RED
+
+  #define GRN ESC+"[32m"          /* Green    */
+  ^
+/d/city/ansi2.h line 15: Warning: redefinition of #define GRN
+
+  #define YEL ESC+"[33m"          /* Yellow   */
+  ^
+/d/city/ansi2.h line 16: Warning: redefinition of #define YEL
+
+  #define BLU ESC+"[34m"          /* Blue     */
+  ^
+/d/city/ansi2.h line 17: Warning: redefinition of #define BLU
+
+  #define MAG ESC+"[35m"          /* Magenta  */
+  ^
+/d/city/ansi2.h line 18: Warning: redefinition of #define MAG
+
+  #define CYN ESC+"[36m"          /* Cyan     */
+  ^
+/d/city/ansi2.h line 19: Warning: redefinition of #define CYN
+
+  #define WHT ESC+"[37m"          /* White    */
+  ^
+/d/city/ansi2.h line 20: Warning: redefinition of #define WHT
+
+  
+  ^
+/d/city/ansi2.h line 24: Warning: redefinition of #define HIR
+
+  #define HIG ESC+"[1;32m"        /* Green    */
+  ^
+/d/city/ansi2.h line 25: Warning: redefinition of #define HIG
+
+  #define HIY ESC+"[1;33m"        /* Yellow   */
+  ^
+/d/city/ansi2.h line 26: Warning: redefinition of #define HIY
+
+  #define HIB ESC+"[1;34m"        /* Blue     */
+  ^
+/d/city/ansi2.h line 27: Warning: redefinition of #define HIB
+
+  #define HIM ESC+"[1;35m"        /* Magenta  */
+  ^
+/d/city/ansi2.h line 28: Warning: redefinition of #define HIM
+
+  #define HIC ESC+"[1;36m"        /* Cyan     */
+  ^
+/d/city/ansi2.h line 29: Warning: redefinition of #define HIC
+
+  #define HIW ESC+"[1;37m"        /* White    */
+  ^
+/d/city/ansi2.h line 30: Warning: redefinition of #define HIW
+
+  #define HBK ESC+"[1;30m"        /* GRAY    */
+  ^
+/d/city/ansi2.h line 35: Warning: redefinition of #define HBRED
+
+  #define HBGRN ESC+"[42;1m"       /* Green    */
+  ^
+/d/city/ansi2.h line 36: Warning: redefinition of #define HBGRN
+
+  #define HBYEL ESC+"[43;1m"       /* Yellow   */
+  ^
+/d/city/ansi2.h line 37: Warning: redefinition of #define HBYEL
+
+  #define HBBLU ESC+"[44;1m"       /* Blue     */
+  ^
+/d/city/ansi2.h line 38: Warning: redefinition of #define HBBLU
+
+  #define HBMAG ESC+"[45;1m"       /* Magenta  */
+  ^
+/d/city/ansi2.h line 39: Warning: redefinition of #define HBMAG
+
+  #define HBCYN ESC+"[46;1m"       /* Cyan     */
+  ^
+/d/city/ansi2.h line 40: Warning: redefinition of #define HBCYN
+
+  #define HBWHT ESC+"[47;1m"       /* White    */
+  ^
+/d/city/ansi2.h line 41: Warning: redefinition of #define HBWHT
+
+  
+  ^
+/d/city/ansi2.h line 45: Warning: redefinition of #define BBLK
+
+  #define BRED ESC+"[41m"          /* Red      */
+  ^
+/d/city/ansi2.h line 46: Warning: redefinition of #define BRED
+
+  #define BGRN ESC+"[42m"          /* Green    */
+  ^
+/d/city/ansi2.h line 47: Warning: redefinition of #define BGRN
+
+  #define BYEL ESC+"[43m"          /* Yellow   */
+  ^
+/d/city/ansi2.h line 48: Warning: redefinition of #define BYEL
+
+  #define BBLU ESC+"[44m"          /* Blue     */
+  ^
+/d/city/ansi2.h line 49: Warning: redefinition of #define BBLU
+
+  #define BMAG ESC+"[45m"          /* Magenta  */
+  ^
+/d/city/ansi2.h line 50: Warning: redefinition of #define BMAG
+
+  #define BCYN ESC+"[46m"          /* Cyan     */
+  ^
+/d/city/ansi2.h line 51: Warning: redefinition of #define BCYN
+
+  // #define BWHT ESC+"[47m"          /* White    */
+  ^
+/d/city/ansi2.h line 54: Warning: redefinition of #define NOR
+
+  
+  ^
+/d/city/ansi2.h line 60: Warning: redefinition of #define BOLD
+
+  #define CLR ESC+"[2J"           /* Clear the screen  */
+  ^
+/d/city/ansi2.h line 61: Warning: redefinition of #define CLR
+
+  #define HOME ESC+"[H"           /* Send cursor to home position */
+  ^
+/d/city/ansi2.h line 62: Warning: redefinition of #define HOME
+
+  #define REF CLR+HOME            /* Clear screen and home cursor */
+  ^
+/d/city/ansi2.h line 63: Warning: redefinition of #define REF
+
+  #define BIGTOP ESC+"#3"         /* Dbl height characters, top half */
+  ^
+/d/city/ansi2.h line 64: Warning: redefinition of #define BIGTOP
+
+  #define BIGBOT ESC+"#4"         /* Dbl height characters, bottem half */
+  ^
+/d/city/ansi2.h line 65: Warning: redefinition of #define BIGBOT
+
+  #define SAVEC ESC+"[s"           /* Save cursor position */
+  ^
+/d/city/ansi2.h line 66: Warning: redefinition of #define SAVEC
+
+  #define REST ESC+"[u"            /* Restore cursor to saved position */
+  ^
+/d/city/ansi2.h line 67: Warning: redefinition of #define REST
+
+  //#define REVINDEX ESC+"M"        /* Scroll screen in opposite direction */
+  ^
+/d/city/ansi2.h line 69: Warning: redefinition of #define SINGW
+
+  #define DBL ESC+"#6"            /* Creates double-width characters */
+  ^
+/d/city/ansi2.h line 70: Warning: redefinition of #define DBL
+
+  #define FRTOP ESC+"[2;25r"      /* Freeze top line */
+  ^
+/d/city/ansi2.h line 71: Warning: redefinition of #define FRTOP
+
+  #define FRBOT ESC+"[1;24r"      /* Freeze bottom line */
+  ^
+/d/city/ansi2.h line 72: Warning: redefinition of #define FRBOT
+
+  #define UNFR ESC+"[r"           /* Unfreeze top and bottom lines */
+  ^
+/d/city/ansi2.h line 73: Warning: redefinition of #define UNFR
+
+  #define BLINK ESC+"[5m"         /* Initialize blink mode */
+  ^
+/d/city/ansi2.h line 74: Warning: redefinition of #define BLINK
+
+  #define U ESC+"[4m"             /* Initialize underscore mode */
+  ^
+/d/city/ansi2.h line 75: Warning: redefinition of #define U
+
+  #define REV ESC+"[7m"           /* Turns reverse video mode on */
+  ^
+/d/city/ansi2.h line 76: Warning: redefinition of #define REV
+
+  #define HIREV ESC+"[1,7m"       /* Hi intensity reverse video  */
+  ^
+/d/city/ansi2.h line 77: Warning: redefinition of #define HIREV
+
+  
+  ^
+/adm/daemons/emoted.c line 64: Undefined function set_emote
+  set_emote(k, v, 0);
+                            ^

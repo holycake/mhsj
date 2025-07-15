@@ -1,0 +1,99 @@
+// bigeye.c
+// 1996/12/06 by cglaem
+
+inherit NPC;
+
+string send_mail();
+string receive_mail();
+int send_dianbo();
+
+void create()
+{
+	set_name("г╖юОяш", ({"qianli yan", "bigeye", "youchai","chai" }) );
+	set("title", "сй╡Н");
+	set("gender", "дппт" );
+	set("age", 30);
+	set("str", 40);
+	set("long",
+		"г╟сЯ╩й╢С╣шгвпе║ёрРн╙м╣©╢сЯе╝ЁЖт║╤Ь╠╩╥ён╙сй╡Н║ё\nкШ╠╬ю╢йг╨мкЁ╥Г╤Зр╩фП╢Ттз╩╗╧Ши╫оий╞╢╕╣дё╛\n╨СрРос╡╩╧╩ххджеэ╣╫Ё╓╟╡ю╢ак║ё\n");
+	set("combat_exp", 8000);
+  set("daoxing", 100000);
+
+	set("attitude", "friendly");
+	set("inquiry", ([
+                        "name":"а╛нрдЦ╤╪╡╩хой╤ё©╢СцШ╤╕╤╕╣дг╖юОяш╬мйгнр║ё", 
+		"here" : "╧Мж╙╣юуБйгй╡ц╢╣ь╥╫ё║нрж╩╦╨тПйупе╥╒пе║ё",
+                        "сЯе╝" : "╨ы╨ыё╝ё╝ё╝╡╩╢М║ё╬мкЦ©Ём╥нрр╡╩╝кЦак║ё",
+                        "сЯ╩й╢С╣ш" : "дЦ╠ПлАкШё║р╩лАнр╬мспфЬё╝ё╝ё╝ж╩пМжщ╧ы╥е╩Пё╛╡╩пМ╟ыпу╣Ц╣ф║ё",
+		"╥╒пе" : (: send_mail :),
+		"йупе" : (: receive_mail :),
+		"пе╪Ч" : (: receive_mail :),
+		"пе" : (: receive_mail :),
+		//"mail" : "дЗ╫╡╣дйгмБ╧З╩╟╟иё©нрлЩ╡╩╤╝р╝~~~~~~~~",
+		"mail" : (: receive_mail :),
+		"mailbox" : (: receive_mail :),
+		"п║ю╝╟х" : (: send_dianbo :),
+	]) );
+	set_skill("literate", 70);
+	set_skill("dodge", 50);
+	set_skill("unarmed", 40);
+	set("per", 15);
+            set("max_kee", 500);
+            set("max_gin", 100);
+            set("max_sen", 300);
+            set("force", 150);
+            set("max_force", 300);
+            set("force_factor", 0);
+	setup();
+	if(clonep()) {
+	  add_money("coin", 70);
+	  carry_object("/d/ourhome/obj/linen")->wear();
+	  carry_object("/d/wiz/npc/caishen"); //note, here is a NPC.
+	}
+}
+
+int send_dianbo()
+{
+	object me=this_player();
+	if(! me->query("xiaolaba_member")) {
+
+message_vision("$NоКакр╩╩А╤Ыё╛к╣╣юё╨╤т╡╩фПё╛дЦнй╣дйбнрй╣тзц╩спс║оС║ё\n",
+this_object());
+		return 1;
+	} else {
+message_vision("$N╤тве$n╣Цак╣Цм╥║ё\n", this_object(), me);
+		me->move("/u/bula/diantai");
+tell_room(environment(me), me->name()+"ю╢ю╡ё║\n", ({me, me}));
+		return 1;
+	}
+}
+string send_mail()
+{
+	object mbox;
+
+	if( this_player()->query_temp("mbox_ob") )
+		return "дЦ╣дпеоД╩╧тз╟иё©сцпеоД╬м©ирт╪дпеак║ё\n";
+	if( !environment()
+	||	base_name(environment()) != query("startroom") )
+		return "╣хр╩об╣╫доЁг©му╩ю╢урнр╟и║ё\n";
+	seteuid(getuid());
+	mbox = new(MAILBOX_OB);
+	mbox->move(this_player());
+	return "е╤ё╝ё╝ё╝р╙╪дпейгбПё©уБйгдЦ╣дпеоДё╛╪дпе╣д╥╫╥╗пеоДиоспк╣цВ║ё\n";
+}
+
+string receive_mail()
+{
+	object mbox;
+
+	if( this_player()->query_temp("mbox_ob") )
+		return "дЦ╣дпеоД╩╧тз╟иё©дЦкЫсп╣дпе╤╪тзюОцФ║ё\n";
+	if( !environment()
+	||	base_name(environment()) != query("startroom") )
+		return "╣хр╩об╣╫доЁг©му╩ю╢урнр╟и║ё\n";
+	seteuid(getuid());
+	mbox = new(MAILBOX_OB);
+	mbox->move(this_player());
+	return "╨цё╛╢Щнрурурё╝ё╝ё╝спакё╛дЦ╣дпеоДтзуБё╛бЩбЩ©╢╟иё╛╡╩╢Р╫адЦак║ё\n";
+}
+Ъ

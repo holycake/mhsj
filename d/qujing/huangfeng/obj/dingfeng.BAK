@@ -1,0 +1,18 @@
+#include <ansi.h>
+inherit ITEM;
+void create()
+{
+		set_name(HIM"¶¨·çµ¤"NOR, ({"dingfeng dan", "dan"}) );
+		set_weight(100);
+        	if( clonep() )
+ 	 set_default_object(__FILE__);
+  	else {
+	  set("unit", "¿Å");
+  	set("material", "crystal");
+  	set("value",1);
+  	set("no_sell",1);
+  	set("no_give",1);
+  	set("no_drop",1);
+ 	}
+ 	setup();
+}

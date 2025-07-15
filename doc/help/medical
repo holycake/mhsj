@@ -1,0 +1,50 @@
+[1;44m                   …………[1;33m〖[1;36m魔幻世纪[1;33m〗[1;31m制药系统[0;1;44m…………                        [m
+
+make hugu：虎骨酒                       治疗伤寒：apply hugu jiu
+药材：虎骨、独活、防风、当归            医术需求：３０级
+
+make jinyinhua：金银花露                药效：治疗中暑 apply jinyinhua lu
+药材：金银花                            医术需求：３０级
+
+make meirandan：七宝美髯丹              药效：变年轻 apply qibaomeiran dan
+药材：生龙骨 血竭 鹿茸 蛤粉 红花        医术需求：１５０级 
+      何首乌 附子 人参
+
+make tongmai：贯气通脉丹                药效：贯气通脉丹 apply tongmai dan
+药材：川乌 陈皮 没药 当归               医术需求：１００级
+
+make huojin：活筋舒血丸                 药效：疗伤 apply huojin wan
+药材：川乌 红花 生地                    医术需求：８０级
+
+make wuchangdan：无常丹                 药效：大补 apply wuchang dan
+药材：田七 熊胆 雪莲 人参               医术需求：８０级
+
+make baoming：天王保命丹                药效：保命 apply baoming dan
+药材：何首乌 雪莲 鹿茸 人参             医术需求：１５０级
+      红花 陈皮 
+
+make liushen：六神丸                    药效：治疗发烧 apply liushen wan
+药材：牛黄 熊胆 冰片 蟾酥               医术需求：５０级
+
+make sancai：三才封髓丹                 药效：增加最大内力法力apply sancai dan
+药材：天冬 甘草 黄柏 归尾 人参          医术需求：１９０级
+
+make zaizao：人参再造丸                 药效：大补 apply zaizao wan
+药材：人参 血竭 菊花 大黄 穿山甲        医术需求：１５０级
+
+make duomei：琥珀多寐丸                 药效：让人马上就睡觉 apply duomei wan 
+药材：琥珀 干石榴 蛤粉                  医术需求：１７０级
+
+make qingxin：清心解毒丸                药效：解毒 apply qingxin wan
+药材：川乌 干石榴 山茶花                医术需求：１８０级                           
+
+make sanhua：三花九子膏                 药效：治疗风沙烟 apply sanhua gao
+药材：红花 紫花 兰花  九子              医术需求：１１０级
+
+make zhengqi：正气水                    药效：具有魔力 作战时恢复士兵数量
+                                              apply zhengqi shui
+药材：[31m火枣[m 灵芝 甘草                    医术要求：２２０级
+
+
+   
+[1;44m                   …………[1;33m〖[1;36m魔幻世纪[1;33m〗[1;31m制药系统[0;1;44m…………                        [m

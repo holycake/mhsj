@@ -1,0 +1,19 @@
+#include <weapon.h>
+
+inherit SWORD;
+
+void create()
+{
+  set_name("无头剑", ({ "huazhu jian", "jian", "sword" }) );
+  init_sword(35);
+  set("unit", "把");
+  set_weight(800);
+  if( clonep() )
+     set_default_object(__FILE__);
+  else {
+    set("value", 390);
+    set("material", "iron");
+  }
+  setup();
+}
+

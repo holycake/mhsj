@@ -1,0 +1,281 @@
+// yushu.c, ÓñÊó¾«
+// created by mes, updated 6-20-97 pickle
+// updated again by pickle on 9-2-97, to open her menpai
+
+/************************************************************/
+
+// declarations and variables
+
+#include <ansi.h>
+inherit NPC;
+inherit F_MASTER;
+
+string say_key();
+void punish_player(object me);
+int accept_object(object me, object ob);
+
+/************************************************************/
+void create()
+{
+  set_name("ÓñÊó¾«", ({"yu shu","yushu", "shu", "monster"}));
+  set("gender", "Å®ĞÔ" );
+  set("age", 23);
+  set("long", 
+"Ëı¾ÍÊÇÕâÎŞµ×¶´µÄ¶´Ö÷ÁË¡£Ëı´ÓĞŞµÀ³ÉÈËĞĞÒÔÀ´£¬³ÔÈËÎŞÊı£¬\n"
+"Ò²²»ÖªÎªÊ²Ã´Óñ»Ê»¹Î´ÔøÅÉ±øÀ´Î§½Ë¡£ÌıËµËıÔÚÌì¹¬ÓĞÇ×£¬Ò²\n"
+"²»ÖªÕæ¼Ù¡£\n");
+  set("title", "µØÓ¿·òÈË");
+  set("combat_exp", 800000);
+  set("daoxing", 1500000);
+
+  set("attitude", "heroic");
+  create_family("Ïİ¿ÕÉ½ÎŞµ×¶´", 1, "µÜ×Ó");
+  set("int", 25+random(5));
+  set("cor", 30+random(10));
+  set_skill("unarmed", 100);
+  set_skill("dodge", 150);
+  set_skill("parry", 150);
+  set_skill("spells", 150); 
+  set_skill("yaofa", 120);
+  set_skill("sword", 150);
+  set_skill("qixiu-jian", 100);
+  set_skill("blade", 150);
+  set_skill("kugu-blade", 150);
+  set_skill("lingfu-steps", 100);
+  set_skill("yinfeng-zhua", 100);
+  set_skill("force", 150);   
+  set_skill("huntian-qigong", 150);
+  set_skill("throwing", 150);
+  map_skill("force", "huntian-qigong");
+  map_skill("spells", "yaofa");
+  map_skill("unarmed", "yinfeng-zhua");
+  map_skill("sword", "qixiu-jian");
+  map_skill("parry", "kugu-blade");
+  map_skill("blade", "kugu-blade");
+  map_skill("dodge", "lingfu-steps");
+  set("per", 50);
+  set("max_kee", 850);
+  set("max_sen", 800);
+  set("force", 800);
+  set("max_force", 700);
+  set("force_factor", 50);
+  set("mana", 800);
+  set("max_mana", 800);
+  set("mana_factor", 50);
+  set("inquiry",([
+		  "key": (: say_key :),
+		  "Ô¿³×": (: say_key :),
+		  "name": "ÀÏÄï¾ÍÊÇÕâÎŞµ×¶´µÄ¿ªÉ½×æÊ¦£¡",
+		  "here": "ÕâÀï¾ÍÊÇÏİ¿ÕÉ½ÎŞµ×¶´£¡¾ÍËãÄãµ÷Ê®ÍòÌì±øÀ´Ò²ÄÎºÎÎÒ²»µÃ£¡",
+		  "rumors": "ÀÏÄï¸Õ¸Õ×¥×¡Ò»¸öºÍÉĞ¡£¿´À´ÂíÉÏ¾ÍÓĞĞÂÏÊÈËÈâ³ÔÁË¡£",
+		  "ÈËÈâ°ü×Ó": "»ìÕÊ£¡¶öÁË²»»áÈ¥ÕÒ³ø×Ó£¿",
+		  "ºÍÉĞ": "ºÙºÙ£¬ÑÛÏÂÕı¶ö×ÅËûÄØ¡£µÈËû³¦×Ó¸É¾»ÁË¾Í¿ÉÒÔÕôÊìÁË³ÔÁË¡£\n"
+			  "²»¹ıÒ²¸ÃÅÉÈËÈ¥¿´¿´ËûÁË¡£Ëµ²»¶¨ËûÒÑ¾­¶öËÀÁË¡£",
+		  "¿´¿´": "Òª¿´¿´Ò²ĞĞ£¬¾ÍÊÇ²»ÖªµÀÎÒ°ÑÔ¿³×·ÅÄÄ¶ùÁË¡£",
+		  ]));
+  set("chat_chance_combat", 60);
+  set("chat_msg_combat", ({
+                (: perform_action, "blade", "pozhan" :),
+  }) );
+
+  setup();
+  carry_object("/d/obj/weapon/blade/yanblade")->wield();
+  carry_object("/d/obj/cloth/nichang")->wear();
+  carry_object("/d/obj/cloth/yuanxiang")->wear();
+}
+/**************************************************************/
+int attempt_apprentice(object me)
+{
+  string myname=RANK_D->query_rude(me);
+  string myid=me->query("id");
+  command("look "+myid);
+  command("consider");
+  if(me->query("family/master_id") != "tian shu" && me->query("combat_exp") < 200000)
+  {
+      command("say Ê²Ã´¶«Î÷£¿¸øÎÒ¹ö£¡");
+      return 1;
+  }
+  if (me->query("wudidong/sell_reward") < me->query("combat_exp") / 20)
+  {
+    command("say "+myname+"ÒªÏëÈëÎÒÃÅÏÂ£¬ÏÈ¶àÈ¥ÅªĞ©ÈËÈâÀ´£¬ÀÏÄï¿´ÄãĞÄ³Ï£¬Õâ°İÊ¦¾ÍºÃÉÌÁ¿ÁË¡£");
+    return 1;
+  }
+  if (me->query_skill("huntian-qigong", 1) < 50 && me->query("combat_exp") < 200000)
+  {
+    command("say "+me->name()+"Äã¸ö·ÏÎï£¡¾ÍÆ¾ÄÇµã±¾ÊÂ»¹²»Åä£¡");
+    return 1;
+  }
+  command("grin");
+  command("say ÀÏÄï×î°®³ÔÈËÈâ°ü×ÓÁË¡£"+myname+"±ğÍüÁË¶à¸ø³ø·¿ÅªµãÔ­ÁÏ£¡");
+  command("recruit "+myid);
+  return 1;
+}
+int recruit_apprentice(object ob)
+{
+  if( ::recruit_apprentice(ob))
+  {
+    ob->set("class", "yaomo");
+  }
+}
+/************************************************************/
+
+// the prevent learn series... first yushu tosses the player
+// if he's saved the monk, and second she has condition of
+// learning kugu-blade.
+
+int prevent_learn(object me, string skill)
+{
+  int mykugu=me->query_skill("kugu-blade", 1);
+  if (wizardp(me) && me->query("env/immortal"))
+    return 0;
+  if (skill == "kugu-blade")
+  {
+      if (mykugu>=200)
+      {
+	if (mykugu*mykugu*mykugu/8 >= me->query("combat_exp")) {
+	  command("say ÄãĞ¡×ÓÔõÃ´ÕâÃ´±¿£¬°ëÌì¶¼Åª²»Ã÷°×£¡ÄÑµÀÊÇÀ´ÏûÇ²ÀÏÄïµÄ£¿");
+	  return 1;
+	}
+	else {
+	  command("say ºÃĞ¡×Ó£¬Ò»µã¾ÍÍ¸£¬ÓĞÁ½°ÑË¢×Ó£¡");
+	  return 0;
+	}
+      }
+      if (mykugu<200 && me->query("wudidong/given_book_3")) return 0;
+      if (mykugu<141 && me->query("wudidong/given_book_2")) return 0;
+      if (mykugu<=81 && me->query("wudidong/given_book_1")) return 0;
+      command("say ²»½Ì£¡´ËÄËÎŞµ×¶´²»´«Ö®ÃÜ£¡");
+      return 1;
+
+    }
+  if (skill == "yaofa" && me->query("obstacle/wudidong")=="done")
+  {
+      call_out("punish_player", 1, me);
+      return 1;
+  }
+  return 0;
+}
+int accept_object(object me, object ob)
+{
+    int volume;
+    if(ob->query("name_recognized") != "¿İ¹Çµ¶ÃØóÅ")
+        return notify_fail(CYN"ÓñÊóÅ­µÀ£º»ìÕÊ£¬ÎÒÓÖ²»ÊÇÊÕÆÆÀÃµÄ£¡\n"NOR);
+    volume=ob->query("²á");
+    me->set("wudidong/given_book_"+(string)volume, 1);
+    if (me->query("family/master_id") != "yu shu")
+	command("say àÅ£¬¹ûÈ»²»´í¡£ÀÏÄï×Ôµ±ÂÄĞĞÅµÑÔ£¬ÊÕÄãÎªÍ½£¡");
+    command("recruit "+me->query("id"));
+    if (me->query("family/master_id") == "yu shu")
+	command("say ºÃÍ½µÜ£¬¹ûÈ»²»Í÷ÁËÊ¦¸¸µÄÒ»·¬µ÷½Ì¡£");
+    return 1;
+}
+
+void punish_player(object me)
+{
+    object *inv, ob;
+    int i;
+    inv=all_inventory(me);
+    i=(int)sizeof(inv);
+    while(i--)
+    {
+        ob=present(inv[i],me);
+        destruct(ob);
+        continue;
+    }
+    command("say "+me->name()+"Äã¸ö»ìÕÊ£¡½ĞÄãÈ¥ºÃºÃ¿´×ÅÄÇÀÏÍºÂ¿£¬Äã¾¹¸Ò°ÑËû¸ø·ÅÅÜÁË£¡");
+    command("say ÄãºÃ´óµÄµ¨×Ó£¡»¹¸Ò»ØÀ´¸úÀÏÄïÑ§±¾ÊÂ£¡");
+    command("say ²»ºÃºÃ½ÌÑµ½ÌÑµÄã£¬±ğÈË»¹¶¼ÒÔÎªÀÏÄïÊÇºÃÆÛ¸ºµÄÁË£¡");
+    message_vision("Ö»¼ûÓñÊó×óÊÖÆşÁË¸ö¾ö£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬¶Ô$NºÈµÀ£ºµ¹£¡\n", me);
+    me->unconcious();
+    message_vision("ÓñÊó¾«ÏóÌáĞ¡¼¦°ãÌáÆğ$N£¬ÍùºóÒ»ÈÓ¡£$N²»¼ûÁË£¡\n", me);
+    me->move("/d/qujing/wudidong/punish");
+    message("vision", "Ö»Ìı¡°ßË¡±µÄÒ»Éù£¬$NÂäÁËÏÂÀ´£¡\n", me);
+    return;
+}
+/*********************************************************************/
+string say_key()
+{
+  object me=this_player(), ob, npc=this_object();
+  int mykar=me->query_kar();
+  int real_key_condition;
+
+  if(npc->is_fighting() || me->is_fighting())
+    return ("Ã»ÃÅ£¡µÈ×Åµã£¡");
+  if (member_array("tian shu",me->parse_command_id_list())==-1 )
+    {
+      call_out("killplayer", 1, me);
+      return ("ÄÄ¶ùÀ´µÄ"+RANK_D->query_rude(me)+"£¿ÕÒËÀ£¡");
+    }
+  message_vision(CYN"ÓñÊó¶Ô$NËµ£º¡°ºÃ°É£¬ÄÃÈ¥¡£¡±\n"NOR, me);
+  if (npc->query_temp("gave_out_key"))
+      real_key_condition=0;
+  else real_key_condition=1;
+  if (!real_key_condition)
+    {
+      ob=new("/d/qujing/wudidong/obj/key-fake");
+    }
+  else if (random(mykar)>8)
+    {
+      ob=new("/d/qujing/wudidong/obj/key-real");
+      npc->set_temp("gave_out_key", 1);
+    }
+  else ob=new("/d/qujing/wudidong/obj/key-fake");
+  ob->move(me);
+  me->set_temp("mark/wudidong_yushu_gave_me_key", 1);
+  return ("ºÃºÃ¿´ÊØÄÇÍºÂ¿£¡\n");
+}
+void killplayer(object me)
+{
+  this_object()->kill_ob(me);
+}
+/**************************************************************/
+void init()
+{
+  object me;
+
+  ::init();
+  if( interactive(me = this_player()) &&
+	  living(me)
+	  && !is_fighting() ) {
+    call_out("greeting", 1, me);
+  }
+}
+void greeting(object me)
+{
+  int myspells=me->query_skill("spells");
+  int mykar=me->query_kar();
+  string npcname=this_object()->query("name");
+  string npcrude=RANK_D->query_self_rude(this_object());
+  string myrude=RANK_D->query_rude(me);
+
+  if( !me || environment(me) != environment() ) return;
+  if( me->query("family/family_name") == "Ïİ¿ÕÉ½ÎŞµ×¶´")
+    return;
+  if( member_array("yu shu", me->parse_command_id_list())!=-1)
+    {
+      command("say ÄÄ¸ö»ìÕË£¿¾¹¸Ò±ä³É"+npcrude+"Ñù×ÓÕĞÒ¡×²Æ­£¿£¡ÕÒËÀ£¡");
+      kill_ob(me);
+      return;
+    }
+  if( member_array("tian shu",me->parse_command_id_list())==-1 )
+    {
+      command("say ÄÄÀïÀ´µÄ"+myrude+"£¿ÎŞµ×¶´²»ÊÇÄãÈöÒ°µÄµØ·½£¡ÄÃÃüÀ´£¡");
+      command("kill " + me->query("id"));
+      return;
+    }
+  if( random(mykar) > 8) return;
+  else
+    {
+      message_vision(CYN ""+npcname+"¶Ô$N´óºÈµÀ£ºß¾£¡Ê²Ã´¶«Î÷£¡£¿ĞİÏë´Ó"+RANK_D->query_self_rude(this_object())+"ÑÛÏÂÁï¹ıÈ¥£¡\n"NOR, me);
+      message_vision(npcname+"´óº°Ò»Éù£ºÏÖ£¡$N¶ÙÊ±ÏÖ³öÔ­ĞÎ£¬Ô­À´ÊÇ"+me->query("name")+"£¡\n", me);
+      me->delete_temp("spellslevel");
+      me->delete_temp("d_mana");
+      me->delete_temp("apply/name");
+      me->delete_temp("apply/id");
+      me->delete_temp("apply/short");
+      me->delete_temp("apply/long"); 
+      kill_ob(me);
+      return;
+    }
+}
+ÿ

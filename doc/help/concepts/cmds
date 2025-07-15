@@ -1,0 +1,30 @@
+
+　　　　　　　　　　第十二节：[1;33m各类命令[2;37;0m
+
+[1;36m[探险用指令][2;37;0m
+  buy  close  drop  fly  get  give  go  hp  id  inventory 
+  look  open   put  skills  score  team  follow  steal mount
+  dismount obstacles quests  [1;31mwhereis[2;37;0m
+ 
+[1;36m[战斗用指令][2;37;0m
+  cast  fight  kill  remove  surrender  unwield  wear  wield
+  wimpy  exert ji [1;31mqiangjian[2;37;0m
+ 
+[1;36m[沟通用指令][2;37;0m
+  ask  finger  reply  say  semote  shout  tell  tune  whisper
+  who emote story  [1;31mwhistle party[2;37;0m
+ 
+[1;36m[武功][2;37;0m
+  enable  enchant  enforce  exercise  learn  meditate  practice
+  study   perform abandon 
+ 
+[1;36m[门派][2;37;0m
+  apprentice  expell  nick  recruit
+ 
+[1;36m[其他][2;67;0m
+  alias  help  passwd  quit  save  suicide  time  set unset
+  to wizlist  uptime  version  scribe  title  quests obstacles
+[1;31m  bjtime  top  topten  makelove  jiebai  recall[2;37;0m 
+□ 如果你是巫师的话，请用 help wizcmds 查询巫师专用指令。
+
+

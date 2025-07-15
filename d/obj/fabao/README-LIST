@@ -1,0 +1,16 @@
+//created 9-27-97 pickle
+this is a list of all current fabao,
+
+if you add in any please be sure to use the "ji" command
+look in EXAMPLE.c for details.
+
+if you add new fabao, add them here. make sure you check
+that it is unique if necessary. we do not want everybody
+in the game to be holding a 捆仙索...
+
+
+法宝		在用？	NPC		地点	UNIQUE?
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+捆仙索		yes	恶龙(dragon)	无底洞	yes
+青玉葫芦	no				yes
+铁八卦		no				no

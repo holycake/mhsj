@@ -1,0 +1,92 @@
+//Jiz
+#include <ansi.h>
+
+inherit SSERVER;
+
+int perform(object me, object target)
+{
+	object *inv, obj;
+	int i, mypot,tapot;
+
+        if( !target ) target = offensive_target(me);
+
+        if( !target
+        ||      !target->is_character()
+        ||      target->is_corpse()
+        ||      target==me)
+                return notify_fail("你要对谁施展这一招「混元一破」？\n");
+
+        if(!me->is_fighting())
+                return notify_fail("「混元一破」只能在战斗中使用！\n");
+
+        if((int)me->query("max_force") < 200 )
+                return notify_fail("你的内力不够！\n");
+
+	if((int)me->query("force") < 200 )
+		return notify_fail("你的内力不足！\n");
+
+        if((int)me->query("sen") < 200 )
+                return notify_fail("你的精神不足，没法子施用外功！\n");
+
+        if((int)me->query_skill("huntian-hammer", 1) < 30)
+                return notify_fail("你的混天锤级别还不够，使用这一招会有困难！\n");
+
+message_vision(HIC"\n$N运足精神，大喝一声，对着$n发出了全力一击！\n"NOR, me, target);
+
+	mypot=(int)me->query_skill("hammer");
+	mypot=mypot*mypot*mypot/10 + (int)me->query("combat_exp");
+
+	tapot=(int)target->query_skill("parry");
+	tapot=tapot*tapot*tapot/10 + (int)target->query("combat_exp");
+
+//	write("mypot " + mypot + ", tapot " +tapot+ "\n");
+
+	if( random( mypot+tapot ) > tapot ) {
+
+		inv = all_inventory(target);
+		i = sizeof(inv);
+
+		if ( i < 1 ) {
+	message_vision(HIR"$N躲闪不及，被打个正着！\n"NOR, target);
+			target->receive_damage("kee", random(300));
+			COMBAT_D->report_status(target);
+		} else {
+			for (i=1; i < sizeof(inv); i++ ) {
+				obj = inv[i];
+				if( obj->query("equipped") != "worn" ) continue;
+				obj->delete("equipped");
+				obj->set("value", 0);
+				obj->set("No_Wear", 1);
+	message_vision(HIY"$N身上的$n被打的粉碎！\n"NOR, target,obj);
+				obj->set("name", "破碎的"+obj->query("name"));
+	call_out("remove_broken_cloth",random(300)+60,obj);
+				obj->move(environment(target));
+			}
+			target->delete_temp("armor");
+
+		}
+	} else {
+	message_vision(HIC"却被$N躲开了！\n"NOR, target);
+	}
+
+        me->add("force", -100);
+
+        if( !target->is_fighting(me) ) {
+                if( living(target) ) {
+                        if( userp(target) ) target->fight_ob(me);
+                        else target->kill_ob(me);
+                }
+        }
+
+        me->start_busy(3+random(3));
+        return 1+random(5);
+}
+
+void remove_broken_cloth(object obj)
+{
+  if(obj && environment(obj)) {
+    tell_object(environment(obj),
+      "一阵微风吹过，"+obj->name()+"化为片片尘土，消失不见了。\n");
+    destruct(obj);
+  }
+}

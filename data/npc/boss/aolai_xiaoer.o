@@ -1,0 +1,7 @@
+#/d/dntg/hgs/npc/xiaoer.c
+dbase (["per":14,"eff_sen":528,"max_kee":484,"shop_title":"店小二","kee":484,"str":17,"force":0,"max_gin":376,"gin":376,"kar":11,"cor":18,"shen_type":1,"startroom":"/d/dntg/hgs/cuixiang","eff_kee":484,"con":28,"unit":"位","eff_gin":376,"vendor_goods":(["huasheng":"/d/ourhome/obj/huasheng","jiudai":"/d/moon/obj/jiudai","jitui":"/d/ourhome/obj/jitui","gourou":"/d/ourhome/obj/gourou",]),"int":26,"shop_id":({"waiter","xiaoer","xiao","er",}),"mana":0,"can_speak":1,"race":"人类","name":"店小二","spi":23,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"xiao er","cps":20,"atman":0,"gender":"男性","combat_exp":1000,"attitude":"friendly","bodytype":"normal","max_sen":528,"sen":528,"age":26,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "aolai_xiaoer"
+price_ratio 10
+close_time 1752120195

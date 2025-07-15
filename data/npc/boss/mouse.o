@@ -1,0 +1,7 @@
+#/d/city/npc/menmouse.c
+dbase (["per":104,"max_kee":110308,"eff_sen":528,"kee":110308,"str":10000,"max_gin":448,"force":0,"title":"[1;37m所长[2;37;0m","kar":10,"gin":448,"cor":25,"startroom":"/d/city/menwc","shen_type":1,"eff_kee":110308,"con":28,"unit":"位","eff_gin":448,"int":20,"can_speak":1,"mana":0,"race":"人类","name":"[1;32m水老鼠[2;37;0m","spi":29,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"suozhang mouse","cps":13,"gender":"女性","atman":0,"combat_exp":100000,"attitude":"friendly","bodytype":"normal","max_sen":528,"sen":528,"age":26,])
+skills (["unarmed":1000,])
+learned (["unarmed":0,])
+SAVE_NAME "mouse"
+price_ratio 10
+close_time 1752649164

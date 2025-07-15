@@ -1,0 +1,27 @@
+
+□ [1;32m巫师指令
+ 
+[1;33m[档案处理][2;37;0m
+ 
+cd  more  ls  rm  cat  edit  mv  rmdir  cp  mkdir  tail
+ 
+[1;33m[物件处理][2;37;0m
+ 
+call  dest  localcmds  update  clone ilist
+ 
+[1;33m[查询用指令][2;37;0m
+ 
+config  mudlist  cost  whoami  ff  info  qload  mem  status  where
+pwd  ulist  [1;31look2[2;37;0m 
+ 
+[1;33m[系统管理][2;37;0m
+ 
+dump  profile  purge  shutdown  callouts  chinese  cleanup  possess
+rehash  reclaim  reboot  promote  wizlock  edemote  snoop  [1;31mkickout
+setskill  chuij  block  tban  qiangpo  alarm  transferuser[2;37;0m
+ 
+[1;33m[其他][2;37;0m
+ 
+goto  halt  summon  smash  [1;31mhunmi  zhufu[2;37;0m
+ 
+□ 巫师指令依权限不同而有所不同。

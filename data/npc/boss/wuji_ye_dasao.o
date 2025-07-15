@@ -1,0 +1,7 @@
+#/d/qujing/wuji/npc/vender.c
+dbase (["per":20,"max_kee":528,"eff_sen":374,"shop_title":"[1;32m水果店大嫂[2;37;0m","str":21,"kee":528,"max_gin":328,"force":0,"kar":22,"gin":328,"cor":10,"startroom":"/d/qujing/wuji/fruit","shen_type":1,"eff_kee":528,"con":28,"unit":"位","eff_gin":328,"vendor_goods":(["5":"/d/obj/food/mellon","4":"/d/obj/food/apple","3":"/d/obj/food/strawberry","2":"/d/obj/food/xueli","1":"/d/obj/food/grape",]),"int":15,"shop_id":({"dasao",}),"can_speak":1,"mana":0,"race":"人类","name":"叶大嫂","spi":19,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"ye dasao","cps":27,"gender":"女性","atman":0,"combat_exp":1000,"attitude":"friendly","bodytype":"normal","max_sen":374,"sen":374,"age":26,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "wuji_ye_dasao"
+price_ratio 10
+close_time 1752535011

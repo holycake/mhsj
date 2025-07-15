@@ -1,0 +1,7 @@
+#/d/qujing/zhuzi/npc/mi.c
+dbase (["per":34,"eff_sen":574,"max_kee":494,"kee":494,"str":24,"force":0,"max_gin":500,"gin":500,"kar":27,"cor":12,"shen_type":1,"startroom":"/d/qujing/zhuzi/mipu","eff_kee":494,"con":15,"unit":"位","eff_gin":500,"vendor_goods":(["mijiu":"/d/obj/food/mijiu","fan":"/d/obj/food/rice","youhulu":"/d/obj/food/youhulu","niangao":"/d/obj/food/niangao","yan":"/d/obj/food/salt","zongzi":"/d/obj/food/zongzi",]),"int":24,"shop_id":({"laoban",}),"mana":0,"can_speak":1,"race":"人类","name":"米老板","spi":25,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"mi laoban","cps":22,"atman":0,"gender":"男性","combat_exp":5000,"bodytype":"normal","attitude":"friendly","max_sen":574,"sen":574,"age":50,])
+skills (["unarmed":50,])
+learned (["unarmed":0,])
+SAVE_NAME "zhuzi_mi_laoban"
+price_ratio 10
+close_time 1752535020
