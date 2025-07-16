@@ -25,11 +25,11 @@ void create()
         set_temp("apply/attack", 100);
         set_temp("apply/defense", 100);
         set_temp("apply/damage", 40);
-		set("vendor_goods", ({
-		   "/d/nanjing/obj/arrow0",
-		   "/d/nanjing/obj/arrow1",
-		   "/d/nanjing/obj/arrow2",
-        }));
+		set("vendor_goods", ([
+		   "1":"/d/nanjing/obj/arrow0",
+		   "2":"/d/nanjing/obj/arrow1",
+		   "3":"/d/nanjing/obj/arrow2",
+        ]));
         setup();
 		carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
 		carry_object("/d/nanjing/obj/cloth_min"+random(7))->wear();
@@ -44,7 +44,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

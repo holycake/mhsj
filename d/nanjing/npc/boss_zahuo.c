@@ -10,22 +10,22 @@ void create()
 	set("age", 42);
 	set("long", "他是這家杂货店的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-			"/clone/misc/sleepbag",
-			"/d/city/obj/mabudai",
-			"/d/city/npc/obj/baoguo",
-			"/d/city/npc/obj/shield",
-			"/d/xingxiu/obj/fire",
-			"/d/item/obj/chanhs",
-			"/clone/misc/wood",
-			"/clone/misc/shoeshine",
-			"/clone/misc/brush",
-			"/d/item/obj/jingtie",
-			"/d/nanjing/obj/waist0",
-			"/d/nanjing/obj/waist1",
-			"/d/nanjing/obj/waist2",
-			"/d/nanjing/obj/waist3",
-        }));
+        set("vendor_goods", ([
+			"1":"/clone/misc/sleepbag",
+			"2":"/d/city/obj/mabudai",
+			"3":"/d/city/npc/obj/baoguo",
+			"4":"/d/city/npc/obj/shield",
+			"5":"/d/xingxiu/obj/fire",
+			"6":"/d/item/obj/chanhs",
+			"7":"/clone/misc/wood",
+			"8":"/clone/misc/shoeshine",
+			"9":"/clone/misc/brush",
+			"10":"/d/item/obj/jingtie",
+			"11":"/d/nanjing/obj/waist0",
+			"12":"/d/nanjing/obj/waist1",
+			"13":"/d/nanjing/obj/waist2",
+			"14":"/d/nanjing/obj/waist3",
+        ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -35,7 +35,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

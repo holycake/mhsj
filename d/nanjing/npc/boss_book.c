@@ -35,9 +35,9 @@ void create()
             "书"   : "唉！书到用时方恨少。",
             "借书" : "借？你不还我到哪里找你？哼！",
         ]));
-        set("vendor_goods", ({
-                "/d/room/obj/paper"
-        }));
+        set("vendor_goods", ([
+                "1":"/d/room/obj/paper"
+        ]));
         setup();
 
         set("chat_chance", 1);
@@ -53,7 +53,7 @@ void create()
 void init()
 {
         add_action("do_copy", "copy");
-        add_action("do_list", "list");
+        add_action("do_vendor_list", "list");
         add_action("do_buy", "buy");
 }
 
@@ -104,10 +104,10 @@ string ask_job()
         if (me->query("combat_exp") > 30000)
                 return "大侠你也来抄书？真是屈就您了，慢走啊！";
 
-        if (me->query("qi") < 20)
+        if (me->query("kee") < 20)
                 return "我看你脸色不行啊，先歇会儿吧，我可不想抄书抄出人命来。";
 
-        if (me->query("jing") < 10)
+        if (me->query("sen") < 10)
                 return "我看你精神不行啊，能抄得了书么？";
 
         if (me->query_int() < 25 && me->query_skill("literate", 1) < 20)
@@ -169,8 +169,8 @@ int working(object me)
         }
 
         finish = 0;
-        me->receive_damage("jing", 1);
-        me->receive_damage("qi", 2);
+        me->receive_damage("sen", 1);
+        me->receive_damage("kee", 2);
         switch (me->query_temp("job/step"))
         {
         case 1:

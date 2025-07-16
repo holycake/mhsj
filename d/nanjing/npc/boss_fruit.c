@@ -10,23 +10,23 @@ void create()
 	set("age", 42);
 	set("long", "她是這家果蔬店的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-			"/d/city/npc/obj/peanut",
-			"/d/city/obj/rrose",
-			"/d/city/obj/yrose",
-			"/clone/game/fruit",
-			"/clone/herb/haitang",
-			"/d/beijing/obj/luobo",
-			"/d/beijing/obj/huluobo",
-			"/d/beijing/obj/baicai",
-			"/d/beijing/obj/dacong",
-			"/d/beijing/obj/tudou",
-	        	"/d/changan/npc/obj/pingguo",
-	        	"/d/changan/npc/obj/hamigua",
-	        	"/d/changan/npc/obj/juzi",
-                	"/d/wudang/obj/mitao",
-                	"/d/xiakedao/obj/mangguo",
-        }));
+        set("vendor_goods", ([
+		"1":"/d/city/npc/obj/peanut",
+		"2":"/d/city/obj/rrose",
+		"3":"/d/city/obj/yrose",
+		"4":"/clone/game/fruit",
+		"5":"/clone/herb/haitang",
+		"6":"/d/beijing/obj/luobo",
+		"7":"/d/beijing/obj/huluobo",
+		"8":"/d/beijing/obj/baicai",
+		"9":"/d/beijing/obj/dacong",
+		"10":"/d/beijing/obj/tudou",
+		"11":"/d/changan/npc/obj/pingguo",
+		"12":"/d/changan/npc/obj/hamigua",
+		"13":"/d/changan/npc/obj/juzi",
+		"14":"/d/wudang/obj/mitao",
+		"15":"/d/xiakedao/obj/mangguo",
+        ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_nv"+random(11))->wear();
@@ -37,7 +37,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

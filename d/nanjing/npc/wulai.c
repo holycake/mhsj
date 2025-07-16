@@ -58,7 +58,7 @@ void die()
 	move(dest);
 	my = query_entire_dbase();
 	my->remove_all_enemy(1);
-	my["qi"] = my["eff_qi"] = my["max_qi"];
-	my["jing"] = my["eff_jing"] = my["max_jing"];
+	my["kee"] = my["eff_kee"] = my["max_kee"];
+	my["sen"] = my["eff_sen"] = my["max_sen"];
 	my["neili"] = my["max_neili"];
 }

@@ -10,12 +10,12 @@ void create()
 	set("age", 42);
 	set("long", "他是这家弓作坊的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-               "/d/nanjing/obj/bow0",
-               "/d/nanjing/obj/bow1",
-               "/d/nanjing/obj/bow2",
-               "/d/nanjing/obj/crossbow",
-        }));
+        set("vendor_goods", ([
+               "1":"/d/nanjing/obj/bow0",
+               "2":"/d/nanjing/obj/bow1",
+               "3":"/d/nanjing/obj/bow2",
+               "4":"/d/nanjing/obj/crossbow",
+        ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -25,7 +25,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

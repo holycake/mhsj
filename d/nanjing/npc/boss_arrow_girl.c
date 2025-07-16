@@ -74,7 +74,7 @@ string ask_job()
         me = this_player();
 //        if (me->query_temp("job/arrow"))
 //                return "让你干的活你干完了么？";
-        if (me->query("qi") < 5)
+        if (me->query("kee") < 5)
                 return "你还是先歇歇吧，万一累出人命来我可负担不起。";
 
         if (! interactive(me))
@@ -133,7 +133,7 @@ int working(object me)
         }
 
         finish = 0;
-        me->receive_damage("qi", 1);
+        me->receive_damage("kee", 1);
         switch (me->query_temp("job/step"))
         {
         case 1:

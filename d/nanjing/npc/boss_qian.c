@@ -38,15 +38,3 @@ void create()
         }));
 	seteuid(getuid());
 }
-
-void init()
-{
-        add_action("do_check", "check");
-        add_action("do_check", "chazhang");
-        add_action("do_convert", "convert");
-        add_action("do_convert", "duihuan");
-        add_action("do_deposit", "deposit");
-        add_action("do_deposit", "cun");
-        add_action("do_withdraw", "withdraw");
-        add_action("do_withdraw", "qu");
-}

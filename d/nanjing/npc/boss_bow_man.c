@@ -78,7 +78,7 @@ string ask_job()
         if (me->query("combat_exp") < 150)
                 return "就这点经验，连一百五都没有，我看你来弓片都劈不整齐！";
 
-        if (me->query("qi") < 5)
+        if (me->query("kee") < 5)
                 return "你还是先歇歇吧，万一累出人命来我可负担不起。";
 
         if (! interactive(me))
@@ -137,7 +137,7 @@ int working(object me)
         }
 
         finish = 0;
-//        me->receive_damage("qi", 1);
+//        me->receive_damage("kee", 1);
         switch (me->query_temp("job/step"))
         {
         case 1:

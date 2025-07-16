@@ -10,16 +10,16 @@ void create()
 	set("age", 42);
 	set("long", "他是马市的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-               "/d/nanjing/obj/horse_benxiao",
-               "/d/nanjing/obj/horse_chaoguang",
-               "/d/nanjing/obj/horse_chaoying",
-               "/d/nanjing/obj/horse_fanyu",
-               "/d/nanjing/obj/horse_juedi",
-               "/d/nanjing/obj/horse_shengwu",
-               "/d/nanjing/obj/horse_xiayi",
-               "/d/nanjing/obj/horse_yuhui",
-        }));
+        set("vendor_goods", ([
+               "1":"/d/nanjing/obj/horse_benxiao",
+               "2":"/d/nanjing/obj/horse_chaoguang",
+               "3":"/d/nanjing/obj/horse_chaoying",
+               "4":"/d/nanjing/obj/horse_fanyu",
+               "5":"/d/nanjing/obj/horse_juedi",
+               "6":"/d/nanjing/obj/horse_shengwu",
+               "7":"/d/nanjing/obj/horse_xiayi",
+               "8":"/d/nanjing/obj/horse_yuhui",
+        ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -29,7 +29,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

@@ -114,7 +114,7 @@ int do_heal(string arg)
         if (me->query("neili") < 80)
                 return notify_fail("你的内力不足，无法使用针灸术为人疗伤！\n");
 
-        if (me->query("jing") < 50)
+        if (me->query("sen") < 50)
                 return notify_fail("你的精不足，无法集中精力！\n");
 
         if (time() - ob->query_temp("last/zhenjiu") < 60)
@@ -123,7 +123,7 @@ int do_heal(string arg)
         ob->set_temp("last/zhenjiu", time());
 
         me->add("neili", -50);
-        me->add("jing", -30);
+        me->add("sen", -30);
         me->start_busy(1 + random(1));
         me->improve_skill("zhenjiu-shu", 5 + random(30));
         tell_object(me, HIC "在实践过程中你的「针灸术」提高了！\n" NOR);
@@ -151,7 +151,7 @@ int do_heal(string arg)
                                 + s + RED "「哇」的喷出了一口鲜血！" NOR;
                 }
 
-                ob->receive_wound("qi", damage);                
+                ob->receive_wound("kee", damage);                
                 damage = i;
         } else
         {
@@ -175,12 +175,12 @@ int do_heal(string arg)
                                 "点经验和" + chinese_number(pot) + "点潜能。\n" NOR);
                 }
 
-                heals = me->query_skill("zhenjiu-shu", 1) + random(me->query_skill("zhenjiu-shu", 1));
+                heals = 5;//me->query_skill("zhenjiu-shu", 1) + random(me->query_skill("zhenjiu-shu", 1));
 
-                if ((ob->query("eff_qi") + heals) > ob->query("max_qi"))
-                        ob->set("eff_qi", ob->query("max_qi"));
+                if ((ob->query("eff_kee") + heals) > ob->query("max_kee"))
+                        ob->set("eff_kee", ob->query("max_kee"));
                 else
-                        ob->add("eff_qi", heals / 3);
+                        ob->add("eff_kee", heals / 3);
         }
 
         msg += "\n";
@@ -192,10 +192,10 @@ int do_heal(string arg)
 
         if (damage > 0)
         {
-                if (ob->query("qi") < 0)
+                if (ob->query("kee") < 0)
                 {
-                        ob->set("eff_qi", 1);
-                        ob->set("qi", 1);
+                        ob->set("eff_kee", 1);
+                        ob->set("kee", 1);
 
                         if (playerp(ob))
                         {

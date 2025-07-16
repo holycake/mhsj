@@ -10,16 +10,16 @@ void create()
 	set("age", 42);
 	set("long", "他是靴鞋老店的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-               "/d/nanjing/obj/shoes0",
-                "/d/nanjing/obj/shoes1",
-                "/d/nanjing/obj/shoes2",
-                "/d/nanjing/obj/shoes3",
-                "/d/nanjing/obj/shoes4",
-                "/d/nanjing/obj/shoes5",
-                "/d/nanjing/obj/shoes6",
-                "/d/nanjing/obj/shoes7",
-        }));
+        set("vendor_goods", ([
+		"1":"/d/nanjing/obj/shoes0",
+		"2":"/d/nanjing/obj/shoes1",
+		"3":"/d/nanjing/obj/shoes2",
+		"4":"/d/nanjing/obj/shoes3",
+		"5":"/d/nanjing/obj/shoes4",
+		"6":"/d/nanjing/obj/shoes5",
+		"7":"/d/nanjing/obj/shoes6",
+		"8":"/d/nanjing/obj/shoes7",
+        ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -29,7 +29,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

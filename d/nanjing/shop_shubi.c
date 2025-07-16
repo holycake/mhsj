@@ -12,7 +12,7 @@ LONG );
 		"west" : __DIR__"road_laifeng2",
 	]));
 	set("objects", ([
-		__DIR__"npc/boss_shu" : 1,
+		__DIR__"npc/boss_su" : 1,
 	]));
 	setup();
 	replace_program(ROOM);

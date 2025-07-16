@@ -25,19 +25,10 @@ void create()
 	set("attitude", "friendly");
 
     set("shen_type", 1);
-    set("vendor_goods", ({
-	"/clone/book/basic-sword",
-    	"/clone/book/basic-blade",
-    	"/clone/book/basic-dagger",
-    	"/clone/book/basic-unarmed",
-    	"/clone/book/basic-dodge",
-    	"/clone/book/basic-parry",
-    	"/clone/book/basic-force",
-    	"/clone/book/basic-spear",
-    	"/clone/book/basic-whip",
-   	"/clone/book/basic-club",
-    	"/clone/book/basic-throwing",
-    }));
+    set("vendor_goods", ([
+	"1":"/d/obj/book/basic-unarmed",
+	"2":"/d/obj/book/basic-blade",
+    ]));
 
 	setup();
 	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -47,7 +38,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 }
 

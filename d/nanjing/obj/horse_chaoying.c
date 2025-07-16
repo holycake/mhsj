@@ -13,10 +13,10 @@ void create()
 		"玩家可以骑上(ride)它去指定的地方。\n");
 	set("ridable", 1);
 	set("int", 30);
-	set("qi", 300);
-	set("max_qi", 300);
-	set("jing", 100);
-	set("max_jing", 100);
+	set("kee", 300);
+	set("max_kee", 300);
+	set("sen", 100);
+	set("max_sen", 100);
 	set("shen_type", 0);
 	set("level",10);
 	set("attitude", "peaceful");

@@ -126,8 +126,8 @@ int working(object me)
         }
 
         finish = 0;
-        me->receive_damage("jing", 1);
-        me->receive_damage("qi", 2);
+        me->receive_damage("sen", 1);
+        me->receive_damage("kee", 2);
         switch (me->query_temp("job/step"))
         {
         case 1:

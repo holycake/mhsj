@@ -53,7 +53,7 @@ int do_shot(string arg)
         if (me->is_busy())
                 return notify_fail("你现在手忙脚乱着呢。\n");
 
-        if (me->query("jing") < 80)
+        if (me->query("sen") < 80)
                 return notify_fail("你现在神志不清，无法使用" + name() + "瞄准对手。\n");
 
 		inv = all_inventory(me);
@@ -154,7 +154,7 @@ int do_shot(string arg)
         me->add_temp("shot_times", -1);
         ob->add_amount(-1);
 //        me->start_busy(2);
-//        me->receive_damage("jing", 10);
+//        me->receive_damage("sen", 10);
 
         victim->kill_ob(me);
         return 1;

@@ -1,7 +1,7 @@
 // Room: /city/dangpu.c
 // YZC 1995/12/04 
-
-inherit ROOM;
+#include <room.h>
+inherit HOCKSHOP;
 
 void create()
 {
@@ -15,14 +15,20 @@ LONG
 	set("no_fight", 1);
 	set("no_steal", 1);
 	set("no_beg",1);
-	set("item_desc", ([
-		"paizi" : "公平交易\n
-sell        卖 
-buy         买
-redeem      赎
-value       估价
-",
-	]));
+	set("item_desc", ([ /* sizeof() == 1 */
+	  "paizi" : "
+	本当铺财力雄厚，童叟无欺，欢迎惠顾，绝对保密。
+	客官可以在这里：
+	    ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+	    ＊	典当(pawn)		＊
+	    ＊	卖断(sell)		＊
+	    ＊	估价(value)		＊
+	    ＊	赎回(retrieve stamp)	＊
+	    ＊	清单(list)	        ＊
+	    ＊	购买(buy id)            ＊
+	    ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+	各种货物，铜钱、银两、黄金、银票一概通用。
+	"]));
 	set("objects", ([
 		__DIR__"npc/boss_tang" : 1,
 	]));

@@ -2,7 +2,7 @@
 
 #include <ansi.h>
 
-inherit "/inherit/char/smith.c";
+inherit "/feature/smith";
 
 void create()
 {
@@ -11,18 +11,19 @@ void create()
 	set("age", 52);
 	set("long", "他是这家打铁铺的老板。\n");
 	set("attitude", "friendly");
-        set("vendor_goods", ({
-			"/d/nanjing/obj/bullet",
-			"/clone/weapon/changjian",
-			"/clone/weapon/changqiang",
-			"/d/nanjing/obj/blade_yao",
-			"/clone/weapon/hammer",
-			"/clone/weapon/tudao",
-			"/clone/weapon/dagger",
-			"/clone/weapon/tiegun",
-			"/clone/weapon/gangdao",
-			"/clone/cloth/tiejia",
-        }));
+        set("vendor_goods", ([
+		"1":"/clone/armor/fenghuang",
+		"2":"/clone/armor/fork",
+		"3":"/clone/armor/whip",
+		"4":"/clone/armor/hammer",
+		"5":"/clone/armor/bang",
+		"6":"/clone/armor/blade",
+		"7":"/clone/armor/sword",
+		"8":"/clone/armor/staff",
+		"9":"/clone/armor/spear",
+		"10":"/clone/armor/mace",
+		"11":"/d/nanjing/obj/blade_yao",
+        ]));
 
 	setup();
 //	carry_object("/d/nanjing/obj/mao_min"+random(11))->wear();
@@ -32,7 +33,7 @@ void create()
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 	add_action("do_repair", "repair");
 }

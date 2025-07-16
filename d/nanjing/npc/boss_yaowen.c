@@ -28,23 +28,17 @@ void create()
         set("max_neili", 20000);
 
         set("score", 300000);
-         set("skill_yaowen", 1);
         set_skill("medical", 300);
-        set_skill("zhenjiu-shu", 300);
-        set_skill("liandan-shu", 300);
         set_skill("literate", 300);
         set("skill_public",1);
 
-        //map_skill("medical", "bencao-shuli");
-        map_skill("medical", "zhenjiu-shu");
 
         set("inquiry", ([
                 "炼丹"    : (:do_liandan:),
                 "job"     :  "在我这里可以帮着我「" HIR "炼丹" NOR + CYN
                              "」，如果愿意可以向我询问。\n",
                 "药材"    :  "去药房，会人帮你处理的。\n",
-                "医术"    : (: ask_me :),
-                "针灸"    : (: ask_yinzhen :),
+                "医术"    : (: ask_me :)
         ]) );
 
         setup();
@@ -60,7 +54,7 @@ void init()
 
 string do_liandan()
 {
-        int exp, pot;
+        int exp;
         object me = this_player();
 
         if (me->query_temp("liandan"))
@@ -145,7 +139,7 @@ int recognize_apprentice(object me, string skill)
 */
         return 1;
 }
-
+/*
 string ask_yinzhen()
 {
         mapping fam; 
@@ -168,3 +162,4 @@ string ask_yinzhen()
                 return "这针可是用来救命的，好好的利用它为人治病吧。";
 }
 
+*/

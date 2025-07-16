@@ -1,5 +1,5 @@
 #include <ansi.h>;
-
+inherit F_VENDOR;
 inherit NPC;
 
 varargs protected void create_food(string nmstr, string* idlist, string longstr)
@@ -57,22 +57,22 @@ void create()
 	carry_object("/d/nanjing/obj/cloth_nv"+random(7))->wear();
 	//carry_object("/d/nanjing/obj/skirt_nv"+random(24))->wear();
 	carry_object("/d/nanjing/obj/shoes"+random(8))->wear();
-	        set("vendor_goods", ({
-               "/d/nanjing/obj/food_doufu",
-                "/d/nanjing/obj/food_meiren",
-                "/d/nanjing/obj/food_shaomai",
-                "/d/nanjing/obj/food_songshu",
-                "/d/nanjing/obj/food_xia",
-                "/d/nanjing/obj/food_yuanxiao",
-                "/d/nanjing/obj/food_yumiao",
-                "/d/city/obj/jiudai",
-        }));
+	        set("vendor_goods", ([
+                "1":"/d/nanjing/obj/food_doufu",
+                "2":"/d/nanjing/obj/food_meiren",
+                "3":"/d/nanjing/obj/food_shaomai",
+                "4":"/d/nanjing/obj/food_songshu",
+                "5":"/d/nanjing/obj/food_xia",
+                "6":"/d/nanjing/obj/food_yuanxiao",
+                "7":"/d/nanjing/obj/food_yumiao",
+                "8":"/d/city/obj/jiudai",
+        ]));
 	seteuid(getuid());
 }
 
 void init()
 {
-	add_action("do_list", "list");
+	add_action("do_vendor_list", "list");
 	add_action("do_buy", "buy");
 	add_action("do_reset", "yao");
 }

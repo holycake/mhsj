@@ -127,7 +127,7 @@ string ask_job()
 	if (me->query_temp("step/wulai") < 10 && me->query_temp("job/wulai") == 1){
 		return "三山门一带的泼皮无赖可是教训过了？";
 	}
-	if (me->query("qi") < 5)
+	if (me->query("kee") < 5)
 		return "你还是先歇歇吧，万一累出人命来我可负担不起。";
 
 	if (! interactive(me))
