@@ -161,3 +161,8 @@
 庚初(verno) call 无心(wjf)->query_temp("look") on Tue Jul 15 08:41:21 2025
 庚初(verno) call 无心(wjf)->enable_player() on Tue Jul 15 08:49:16 2025
 庚初(verno) call 薇儿(vivi)->enable_player() on Tue Jul 15 14:17:11 2025
+庚初(verno) call 无心(wjf)->query_action() on Thu Jul 17 09:43:02 2025
+庚初(verno) call 无心(wjf)->query_action("SS_perform") on Thu Jul 17 09:43:27 2025
+庚初(verno) call 无心(wjf)->is_character() on Thu Jul 17 10:09:02 2025
+庚初(verno) call 无心(wjf)->query_skill_mapped() on Thu Jul 17 10:15:48 2025
+庚初(verno) call 无心(wjf)->query_skill_mapped("whip") on Thu Jul 17 10:15:52 2025

@@ -14,7 +14,6 @@ void create()
 	set("gender", "男性");
 	set("age", 50);
 	set("per", 28);
-	set("level", 8);
 	set("attitude", "friendly");
 	set("shen_type", 1);
 

@@ -19,8 +19,8 @@ void create()
   set_skill("force", 40);
 
   setup();
-  carry_object("/clone/weapon/gangjian")->wield();
-  carry_object("/clone/cloth/cloth")->wear();
+  carry_object("/d/obj/cloth/pink_cloth")->wield();
+  carry_object("/d/obj/cloth/bingfu")->wear();
 }
 
 void init()

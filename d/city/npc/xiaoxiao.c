@@ -17,16 +17,16 @@ set("long", "老英雄萧振远的小女儿，兵器铺女老板。\n由于凶�
        set_skill("unarmed", 10);
        set("max_price",20);
         set("vendor_goods", ([
-  "1":"/clone/armor/fenghuang",
-          "2":"/clone/armor/fork",
-            "3":"/clone/armor/whip",
-       "4":"/clone/armor/hammer",
-            "5":"/clone/armor/bang",
-    "6":"/clone/armor/blade",
-     "7":"/clone/armor/sword",
- "8":"/clone/armor/staff",
-     "9":"/clone/armor/spear",
-      "10":"/clone/armor/mace",
+		"1":"/clone/armor/fenghuang",
+		"2":"/clone/armor/fork",
+		"3":"/clone/armor/whip",
+		"4":"/clone/armor/hammer",
+		"5":"/clone/armor/bang",
+		"6":"/clone/armor/blade",
+		"7":"/clone/armor/sword",
+		"8":"/clone/armor/staff",
+		"9":"/clone/armor/spear",
+		"10":"/clone/armor/mace",
 ]) );
         
               setup();

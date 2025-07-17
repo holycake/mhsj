@@ -161,12 +161,11 @@ int working(object me)
                        "这是给你的报酬！\n";
                 me->delete_temp("job/step");
 
-                b = (int)me->query("level")*10 + random(10);
-                me->improve_exp(me,b);
-                me->improve_potential(b);
+                me->add("combat_exp", random(100));
+                me->add("potential", random(20));
 
                 ob = new("/obj/money/coin");
-                ob->set_amount(70);
+                ob->set_amount(random(15));
                 ob->move(me, 1);
         }
         msg = replace_string(msg, "$N", "你");
@@ -199,6 +198,7 @@ int working(object me)
         me->add_temp("job/step", 1);
         return 1;
 }
+
 int halt_working(object me)
 {
         message_vision("$N把手中的活一甩，嚷嚷道：不干了，不干了！\n", me);

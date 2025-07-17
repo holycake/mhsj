@@ -12,9 +12,8 @@ set("exits", ([
        "south" : __DIR__"road4",
 ]));
 set("objects", ([
-  "/clone/weapon/needle1" : 2,
+  "/d/obj/weapon/throwing/needle" : 2,
 ]) );
 setup();
 
 }
-

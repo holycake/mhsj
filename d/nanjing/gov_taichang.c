@@ -12,6 +12,7 @@ LONG );
 	set("exits", ([
 		"east" : __DIR__"gate_hongwu",
 	]));
+	set("outdoors", "nanjing");
 	setup();
 	replace_program(ROOM);
 }

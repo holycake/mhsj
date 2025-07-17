@@ -12,6 +12,7 @@ LONG );
 	set("exits", ([
 		"west" : __DIR__"di_taiping3",
 	]));
+	set("outdoors", "nanjing");
 	setup();
 	replace_program(ROOM);
 }

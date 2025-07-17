@@ -3928,3 +3928,324 @@
 /adm/daemons/emoted.c line 64: Undefined function set_emote
   set_emote(k, v, 0);
                             ^
+/cmds/std/dahan.c line 65: Warning: Unused local variable 'lite'
+  }
+   ^
+/adm/daemons/emoted.c line 263: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  mixed *data = val[1..];
+                     ^
+/adm/daemons/emoted.c line 263: Illegal LHS
+  mixed *data = val[1..];
+                                     ^
+/adm/daemons/emoted.c line 263: Warning: Expression has no side effects, and the value is unused
+  mixed *data = val[1..];
+                                     ^
+/adm/daemons/emoted.c line 264: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  mapping fixed_emote = ([]);
+                                 ^
+/adm/daemons/emoted.c line 264: Illegal LHS
+  mapping fixed_emote = ([]);
+                                         ^
+/adm/daemons/emoted.c line 264: Warning: Expression has no side effects, and the value is unused
+  mapping fixed_emote = ([]);
+                                         ^
+/adm/daemons/emoted.c line 267: Undefined variable 'data'
+  if (j >= sizeof(data)) break;
+                                       ^
+/adm/daemons/emoted.c line 269: Undefined variable 'fixed_emote'
+  fixed_emote[fields[j]] = data[j];
+                                  ^
+/adm/daemons/emoted.c line 248: Undefined variable 'd'
+  fixed = d = 0;
+                 ^
+/adm/daemons/emoted.c line 248: Illegal lvalue
+  fixed = d = 0;
+                 ^
+/adm/daemons/emoted.c line 267: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  mixed *data = val[1..];
+                     ^
+/adm/daemons/emoted.c line 267: Illegal LHS
+  mixed *data = val[1..];
+                                     ^
+/adm/daemons/emoted.c line 267: Warning: Expression has no side effects, and the value is unused
+  mixed *data = val[1..];
+                                     ^
+/adm/daemons/emoted.c line 268: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  mapping fixed_emote = ([]);
+                                 ^
+/adm/daemons/emoted.c line 268: Illegal LHS
+  mapping fixed_emote = ([]);
+                                         ^
+/adm/daemons/emoted.c line 268: Warning: Expression has no side effects, and the value is unused
+  mapping fixed_emote = ([]);
+                                         ^
+/adm/daemons/emoted.c line 242: Illegal to declare local variable of type void.
+  void normalize_emotes() {
+                       ^
+/adm/daemons/emoted.c line 242: syntax error, unexpected '(', expecting L_ASSIGN or ';' or ','
+  void normalize_emotes() {
+                        ^
+/adm/daemons/emoted.c line 243: Illegal LHS
+  string *verbs = keys(emote);
+                                  ^
+/adm/daemons/emoted.c line 243: Warning: Expression has no side effects, and the value is unused
+  string *verbs = keys(emote);
+                                  ^
+/adm/daemons/emoted.c line 244: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  string *fields = ({
+              ^
+/adm/daemons/emoted.c line 247: Illegal LHS
+  });
+         ^
+/adm/daemons/emoted.c line 247: Warning: Expression has no side effects, and the value is unused
+  });
+         ^
+/adm/daemons/emoted.c line 249: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  int i, j, fixed = 0, skipped = 0;
+           ^
+/adm/daemons/emoted.c line 249: Warning: Expression has no side effects, and the value is unused
+  int i, j, fixed = 0, skipped = 0;
+                                       ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'busy'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'interrupt'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'alias'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'history'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'last_input'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'last_cmd'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'repeat_cnt'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'last_time'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'cmd_cnt'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'cmd_cnt1'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'cmd_cnt2'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'enemy'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'netdead_enemy'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'killer'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'path'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'conditions'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'ghost'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'dbase'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'tmp_dbase'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'default_ob'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'msg_buffer'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'weight'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'encumb'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'max_encumb'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'max_items'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'my_id'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'skills'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'learned'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'skill_map'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'leader'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'team'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Warning: Redeclaration of global variable 'tick'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'is_busy'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'query_busy'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'set_path'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'disable_player'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'enable_player'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_shu.c line 3: Illegal to redefine 'nomask' function 'command_hook'.
+  // city/npc/angelus"/std/char/npc""/feature/vendor_sale.c";
+                                                             ^
+/d/nanjing/npc/boss_su.c line 12: syntax error, unexpected ','
+  "/d/nanjing/obj/waist0",
+                             ^
+/d/nanjing/npc/boss_su.c line 12: syntax error, unexpected ','
+  "/d/nanjing/obj/waist0",
+                             ^
+/d/nanjing/npc/boss_yaowen.c line 95: Warning: Unused local variable 'pot'
+  }
+   ^
+/d/nanjing/npc/boss_yaowen.c line 169: Warning: Unused local variable 'fam'
+  }
+   ^
+/d/nanjing/npc/boss_yaowen.c line 89: Warning: Unused local variable 'pot'
+  }
+   ^
+/d/nanjing/shop_yaopu.c line 117: Warning: Unused local variable 'a'
+  }
+   ^
+/feature/smith.c line 164: Undefined function improve_exp
+  improve_exp(me, exp_add);
+                            ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'user'
+  }
+   ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'total'
+  }
+   ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'total_count'
+  }
+   ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'user'
+  }
+   ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'total'
+  }
+   ^
+/adm/daemons/logind.c line 79: Warning: Unused local variable 'total_count'
+  }
+   ^
+/adm/daemons/logind.c line 69: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                 ^
+/adm/daemons/logind.c line 69: Illegal LHS
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: Warning: Expression has no side effects, and the value is unused
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                 ^
+/adm/daemons/logind.c line 69: Illegal LHS
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: Warning: Expression has no side effects, and the value is unused
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                 ^
+/adm/daemons/logind.c line 69: Illegal LHS
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: Warning: Expression has no side effects, and the value is unused
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                 ^
+/adm/daemons/logind.c line 69: Illegal LHS
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/adm/daemons/logind.c line 69: Warning: Expression has no side effects, and the value is unused
+  remove_call_out("logind_user_log");int user=sizeof(users());
+                                                                  ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'ob'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'corpse'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'head'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'wield2'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'weapon_prop'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'killer'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'callname'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'count'
+  }
+   ^
+/cmds/std/cut.c line 97: Warning: Unused local variable 'value2'
+  }
+   ^
+/daemon/class/moon/jueqing-bian/qingwang.c line 94: Warning: Unused local variable 'msg'
+  }
+   ^
+/daemon/class/moon/jueqing-bian/qingwang.c line 94: Warning: Unused local variable 'ap4'
+  }
+   ^
+/daemon/class/moon/jueqing-bian/qingwang.c line 94: Warning: Unused local variable 'dp4'
+  }
+   ^
+/d/obj/fabao/qingwang.c line 53: Warning: Unused local variable 'me'
+  }
+   ^
+/daemon/class/moon/jueqingbian/qingwang.c line 91: Warning: Unused local variable 'msg'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/bing_yulin.c line 73: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/wangchengen.c line 60: Warning: Unused local variable 'ob'
+  }
+   ^
+/d/nanjing/npc/guan_wangyangming.c line 64: Warning: Unused local variable 'ob'
+  }
+   ^

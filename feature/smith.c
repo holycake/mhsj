@@ -150,7 +150,7 @@ void reward(object me)
         me->delete_temp("smith/gu");
         me->delete_temp("smith/dapi");
         me->delete_temp("smith/cuihuo");
-        coin = new("/clone/money/coin");
+        coin = new("/obj/money/coin");
         coin->set_amount(15 + random(35));
         coin->move(this_object());
         me->add("score",1);

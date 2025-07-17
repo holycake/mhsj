@@ -41,7 +41,6 @@ void init() {
 
 
 int do_cast() {
-    object me=this_player();
     object who=query("owner");
     object weapon=query("weapon");
 

@@ -66,15 +66,16 @@ void create()
 
 void logind_user_log()
 {
-    int user=sizeof(users());
-    int total,total_count;
-
     remove_call_out("logind_user_log");
-    write_file("user_count",""+
+    /*int total,total_count;
+    int user=sizeof(users());
+
+    
+    只记载当前总在线用户数，没什么意义。write_file("user_count",""+
             ((total=total_count)?total:user)+"\n"+
             user+"\n"+
             UPTIME_CMD->report_str()+"\n"+
-            "魔幻世纪总站" +"\n");
+            "魔幻世纪总站" +"\n");*/
     call_out("logind_user_log",600);
 }
 

@@ -18,7 +18,6 @@ void create()
 	set("sen", 100);
 	set("max_sen", 100);
 	set("shen_type", 0);
-	set("level",10);
 	set("attitude", "peaceful");
        
 	set("limbs", ({ "头部", "腹部", "尾巴","后腿","前腿" }) );

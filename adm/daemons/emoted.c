@@ -234,3 +234,44 @@ int import_emotes_from_file(string path) {
     save_object("/data/emoted1.o");
     return 1;
 }
+
+int test_save_to(string path) {
+    return save_object(path);
+}
+void fix_invalid_emotes() {
+    string *verbs = keys(emote);
+    string *fields = ({
+        "others_target", "target", "others_self",
+        "myself_self", "myself_target", "others", "myself", "updated"
+    });
+
+    int i, j, fixed = 0, skipped = 0;
+
+    for (i = 0; i < sizeof(verbs); i++) {
+        string verb = verbs[i];
+        mixed val = emote[verb];
+
+        // 仅处理 array 类型（非法 emote）
+        if (arrayp(val)) {
+            if (sizeof(val) < 9) {
+                write("跳过格式不完整的 emote: " + verb + "\n");
+                skipped++;
+                continue;
+            }
+
+            val = val[1..];  // 从第1位开始取值（跳过 val[0] 数字）
+            emote[verb] = ([]);
+
+            for (j = 0; j < sizeof(fields); j++) {
+                if (j >= sizeof(val)) break;
+                if (stringp(val[j])) {
+                    emote[verb][fields[j]] = val[j];
+                }
+            }
+
+            fixed++;
+        }
+    }
+
+    write("emote 修复完成：已转换 " + fixed + " 个非法表情为 mapping，跳过 " + skipped + " 个格式异常。\n");
+}

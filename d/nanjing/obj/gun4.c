@@ -178,10 +178,9 @@ int reloading(object me)
         if (time() - (int)me->query_temp("last_shot") >= 25)
         {
                 me->set_temp("shot_times", 5);
-	            message_vision("$N的" + name() + "装填" + ob->name() + "完毕！！！\n", me);
-                b = (int)me->query("level")*random(1000);
-                me->improve_exp(me,b);
-                me->improve_potential(b);
+	         message_vision("$N的" + name() + "装填" + ob->name() + "完毕！！！\n", me);
+                me->add("combat_exp", random(100));
+                me->add("potential", random(20));
                 return 0;
         }
         return 1;

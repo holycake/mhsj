@@ -52,9 +52,9 @@ void create()
 
 void init()
 {
+        ::init();
         add_action("do_copy", "copy");
         add_action("do_vendor_list", "list");
-        add_action("do_buy", "buy");
 }
 
 int recognize_apprentice(object ob)

@@ -38,8 +38,8 @@ void create()
 
 void init()
 {
-	add_action("do_vendor_list", "list");
-	add_action("do_buy", "buy");
+        ::init();
+        add_action("do_vendor_list", "list");
 }
 
 int accept_object(object who, object ob)

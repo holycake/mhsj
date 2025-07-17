@@ -52,7 +52,7 @@ int main(object me, string arg)
         if( result ) {
             if( random(120) < me->query_skill(mapped_skill) )
                 me->improve_skill(martial, random( (int)me->query_skill("force", 1)*10), 1);
-                me->improve_skill(mapped_skill, random( (int)me->query_skill("force", 1)*10), 1);
+            me->improve_skill(mapped_skill, random( (int)me->query_skill("force", 1)*10), 1);
             return 1;
         }
 
@@ -64,7 +64,7 @@ int main(object me, string arg)
                 if (result) {
                     if (random(120) < me->query_skill(arm_skill))
                         me->improve_skill("unarmed", random( (int)me->query_skill("force", 1)*10), 1);
-                        me->improve_skill(arm_skill, random( (int)me->query_skill("force", 1)*10), 1);
+                    me->improve_skill(arm_skill, random( (int)me->query_skill("force", 1)*10), 1);
                     return 1;
                 }
             }

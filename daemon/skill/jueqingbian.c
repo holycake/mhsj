@@ -4,6 +4,7 @@
 /*绝情鞭法为痴梦所创，鞭法缠绵如丝，如情爱挥之不去，躲之不得，直叫生死相许。
 */
 inherit SKILL;
+#include <ansi.h>;
 mapping *action =
 ({
 ([
@@ -340,7 +341,7 @@ int practice_skill(object me) {
     return 1;
 }
 
-string perform_action_file(string action) {
-    return __DIR__"jueqing-bian/"+action;
+string perform_action_file(string func) {
+    return CLASS_D("moon") + "/jueqingbian/" + func;
 }
 

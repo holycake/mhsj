@@ -24,4 +24,3 @@ varargs void init_needle(int damage, int flag)
      set("verbs", ({ "thrust", "pierce" }) );
    }
 }
-

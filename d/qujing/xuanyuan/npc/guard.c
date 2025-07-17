@@ -49,7 +49,7 @@ create_family("轩辕墓", 3, "弟子");
 setup();
 
         carry_object("/d/moon/obj/luoyi")->wear();
-       carry_object("/clone/weapon/needle1")->wield();
+       carry_object("/d/obj/weapon/throwing/needle")->wield();
 }
 void init()
 {

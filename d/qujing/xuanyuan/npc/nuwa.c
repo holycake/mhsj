@@ -51,7 +51,7 @@ create_family("轩辕古墓", 2, "弟子");
 setup();
 
         carry_object("/d/moon/obj/luoyi")->wear();
-        carry_object("/clone/weapon/needle")->wield();
+        carry_object("/d/obj/weapon/throwing/needle")->wield();
 }
 void init()
 {

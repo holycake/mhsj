@@ -24,12 +24,12 @@ void create()
 	set("max_kee", 150);
 
         set("vendor_goods", ([
-                "yinzhen": "/d/obj/weapon/throwing/yinzhen",
-                "jiudou": "/d/xueshan/obj/jiudou",
-                "peijian": "/d/obj/weapon/sword/peijian",
-                      "xueshan-map": "/clone/mohuan/xueshan-map",
-                            "sengxie": "/clone/mohuan/sengxie",
-                                    "pillow": "/d/obj/misc/pillow",
+		"yinzhen": "/d/obj/weapon/throwing/yinzhen",
+		"jiudou": "/d/xueshan/obj/jiudou",
+		"peijian": "/d/obj/weapon/sword/peijian",
+		"xueshan-map": "/d/obj/misc/xueshan-map",
+		"sengxie": "/d/obj/cloth/sengxie",
+		"pillow": "/d/obj/misc/pillow",
 ]) );
 
 

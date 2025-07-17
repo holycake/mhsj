@@ -10,14 +10,11 @@ int decayed;
 
 int main(object me, string arg)
 {
-        object obj,*ob,toulu,corpse,head;
-        object wield1,wield2;
+        object obj, toulu;
+        object wield1;
         object *inv;
-        mapping weapon_prop;
 
-        string *killer, callname;
-        int i,count;
-        int value2;
+        int i;
         if( environment(me)->query("no_fight") )
                 return notify_fail("这里不准露出兵器。\n");
 

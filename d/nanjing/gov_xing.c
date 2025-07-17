@@ -13,6 +13,7 @@ LONG );
 		"west" : __DIR__"di_taiping2",
 		"north" : __DIR__"tianlao",
 	]));
+	set("outdoors", "nanjing");
 	setup();
 	replace_program(ROOM);
 }

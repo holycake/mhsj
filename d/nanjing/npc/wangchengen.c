@@ -48,8 +48,6 @@ void create()
 
 void init()
 {
-	object ob;
-
 	::init();
 /*
 	if( interactive(ob = this_player()) && !is_fighting() ) 

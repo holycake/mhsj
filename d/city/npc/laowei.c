@@ -23,7 +23,7 @@ void create()
 		 "box":   "/d/city/obj/depositbox",
 		"bag": "/d/obj/misc/bag",
 		"seal": "/obj/paper_seal",
-		"needle":"/clone/weapon/needle",
+		"needle":"/d/obj/weapon/throwing/xiuzhen",
         ]) );
         setup();
 

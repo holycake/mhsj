@@ -43,7 +43,7 @@ int do_eat(string arg)
         } else
         {
                 tell_object(me, HIM "霎时间你觉得腿骨欲裂，一时疼痛难忍，晕了过去。\n" NOR);
-me->add("intelligence", 1);
+                me->add("intelligence", 1);
                 me->unconcious();
         }
 

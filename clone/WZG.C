@@ -44,7 +44,7 @@ int do_eat(string arg)
                             me->set_skill("literate",120);
                             me->set_skill("parry",120);
                             me->set_skill("sanqing-jian",120);
-                            me->set_skill("spells",120);                            
+                            me->set_skill("spells",120);
                             me->set_skill("staff",120); 
                             me->set_skill("sword",120);
                             me->set_skill("taiyi",120);
