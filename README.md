@@ -1,3 +1,6 @@
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](./README_EN.md)
+[![zh](https://img.shields.io/badge/lang-zh-green.svg)](./README.md)
+
 # 魔幻世纪（MHSJ）
 
 基于 FluffOS 2019 驱动的类西游记题材 文字MUD 游戏服务端 （UTF-8 编码版本）。
