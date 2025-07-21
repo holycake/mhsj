@@ -42,8 +42,7 @@ void init()
 int do_apply(string arg)
 {
 	object me,spouse,officer,room;
-	string str, partner, *householder,laotou;
-	int i,j;
+	string str, partner, laotou;
 	me = this_player();
 	officer = present("officer", environment(me)); 
 	laotou = officer->query("name");
@@ -108,7 +107,7 @@ RANK_D->query_respect(me)
 //"在这儿稍待片刻，可别走啊！\n",officer);
 //        officer->move(filename);
         return 1;
-        }
+}
 
 int accept_object(object who, object ob)
 {

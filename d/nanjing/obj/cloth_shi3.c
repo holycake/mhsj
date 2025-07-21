@@ -20,7 +20,7 @@ void create()
         	set("value", 2000);
         	set("armor_prop/armor", 15);
         	set("armor_prop/warm", 5);
-        	set("armor_prop/per", 1+random(2));
+        	set("armor_prop/personality", 1+random(2));
 	}
 
         setup();

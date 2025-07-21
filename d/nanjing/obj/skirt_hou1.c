@@ -19,7 +19,7 @@ void create()
         	set("unit", "件");
         	set("value", 50000);
         	set("armor_prop/armor", 14);
-        	set("armor_prop/per", 3+random(5));
+        	set("armor_prop/personality", 3+random(5));
 	}
 
         setup();

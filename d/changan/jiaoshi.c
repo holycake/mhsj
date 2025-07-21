@@ -115,8 +115,6 @@ void close_passage()
 
 int do_yell(string arg)
 {
-    string dir;
-
     if( !arg || arg=="" ) return notify_fail("你要吆喝什么？\n");
 
     if( arg=="boat" ) arg = "船家";

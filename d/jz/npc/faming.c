@@ -58,9 +58,7 @@ void create()
 string ask_hanshan()
 {
         object ob=this_player();
-        object me=this_object();
         object xueshu,hanshan;
-       
 
         if (query("count") < 1)
                 return "我这已经没有了。";
@@ -86,6 +84,4 @@ string ask_hanshan()
         }  
       add("count",-1);
       return("这是当年从玄奘身上发现的，你拿去吧。");
-}        
-        
-        
+}

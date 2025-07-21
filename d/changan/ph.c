@@ -95,7 +95,7 @@ int show_name(string arg)
 
   int enter_home(string arg)
 {     
-      string name,*files;
+      string *files;
       object env,*inv,room,me=this_player();
       string roomid;
       int i;

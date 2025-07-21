@@ -12,12 +12,15 @@ int look_living(object me, object obj);
 int look_room_item(object me, string arg);
 string status_color(int current, int max);
 string do_query(object obj);
+string body_part_description(object obj);
+string per_status_msg(object obj);
+
 // mon 6/6/98
 string *peep_msg = ({
 	"好像有人探头探脑地向这边张望了几眼。\n",
 	"$N探头探脑地向这边张望了几眼。\n",
 	"你忽然觉得似乎有双眼睛在背后盯着你看。\n",
-	});
+});
 
 // 新的容貌描述系统，基于性别、体型和容貌等级 (0-10)
 mapping look_level_descriptions = ([
@@ -26,7 +29,7 @@ mapping look_level_descriptions = ([
             BLU "骨瘦嶙峋面色枯，双眸呆滞似昏途。腰身如竹风中摆，步履蹒跚影独孤。\n" NOR,
             BLU "瘦骨崚嶒肤泛灰，凹眸黯淡少神回。唇焦面刻愁千缕，行步飘然似叶摧。\n" NOR,
             NOR "颧高面瘦皱纹生，目带寒光骨峭棱。腰似枯藤身若纸，微风一动力难承。\n" NOR,
-            NOR "单薄如杉瘦影长，双眸藏晦少华光。步趋微弱风吹乱，唯有身姿尚不狂。\n" NOR,
+            NOR "单薄如杉瘦影长，双眸藏晦少华光。步趋微弱风吹乱，唯余身姿尚不狂。\n" NOR,
             YEL "体态清癯骨节明，眉疏唇淡目微萤。虽无艳色添英气，冷影寒光似玉生。\n" NOR,
             YEL "瘦削如松立雪峰，剑眉星目藏青锋。身形虽薄精神劲，步履生风骨气融。\n" NOR,
             RED "修眉远黛目生辉，清瘦身姿玉骨微。纵是单薄难掩俊，长身玉立自风飞。\n" NOR,
@@ -40,7 +43,7 @@ mapping look_level_descriptions = ([
             BLU "清癯而立影依斜，眼带沉忧少气华。唇薄无神肌若雪，风来步缓似枯槎。\n" NOR,
             NOR "瘦骨微盈神色平，双眸寡淡少光明。腰身单薄藏风影，未是英姿却正形。\n" NOR,
             NOR "削肩瘦体映疏光，眉眼虽端不显扬。骨瘦难添风雅态，唯余清冷落空堂。\n" NOR,
-            YEL "肤白虽瘦略含神，身影修长骨略均。虽无艳色风流显，温雅清如远岫云。\n" NOR,
+            YEL "肤白虽瘦略含神，身影修长骨略均。虽无华贵添娇态，自有温雅清如远岫云。\n" NOR,
             YEL "剑眉微展玉肌轻，目若寒星不染尘。虽是削肩难掩俊，风流潇洒自精神。\n" NOR,
             RED "秀眉入鬓目生霞，骨瘦难藏俊逸华。温润清风摇竹影，青衫玉立映晨花。\n" NOR,
             RED "寒星入目点山川，身似修竹倚碧泉。俊雅风姿藏骨节，清瘦不掩玉姿全。\n" NOR,
@@ -69,7 +72,7 @@ mapping look_level_descriptions = ([
             YEL "身形虽胖气尚平，神态沉凝意不轻。目色温和藏善相，虽无俊秀亦安宁。\n" NOR,
             YEL "丰腴不笨气和长，目色平和带暖光。虽无潇洒凌云志，自有宽仁雅士藏。\n" NOR,
             RED "身厚不笨步亦轻，温文尔雅带聪明。眉间含笑藏风度，举止投足见德行。\n" NOR,
-            RED "丰盈宽厚带和风，朗目温颜笑意融。自有沉稳藏英气，潇洒儒雅自相同。\n" NOR,
+            RED "杀人，丰盈宽厚带和风，朗目温颜笑意融。自有沉稳藏英气，潇洒儒雅自相同。\n" NOR,
             HIY "丰姿隽朗气轩昂，双目含辉映晨光。虽是体宽难藏俊，风流才气自翱翔。\n" NOR,
             HIY "面若满月带华光，丰盈不腻有锋芒。举手投足皆俊秀，英姿豪迈贯苍茫。\n" NOR,
             HIR "宽肩广背气凌霄，朗目星辉映碧霄。身丰不损英雄气，风姿潇洒自逍遥。\n" NOR,
@@ -79,12 +82,12 @@ mapping look_level_descriptions = ([
             BLU "腰圆体厚脚沉沉，步履维艰意不新。气短声粗神色怯，难遮浊气度凡尘。\n" NOR,
             NOR "腹阔腰宽行缓慢，目光呆滞少精神。虽藏憨厚温和相，难掩庸常落世尘。\n" NOR,
             NOR "身似团山步履沉，神情和缓目光浑。虽无英俊藏厚重，温润常存亦善人。\n" NOR,
-            YEL "丰腴宽厚态安然，目色温柔气自闲。虽无俊逸惊人貌，心宽气正世间安。\n" NOR,
-            YEL "圆面丰躯气平和，眉目温润笑无波。虽非英俊藏厚德，自有宽怀可寄托。\n" NOR,
-            RED "体丰不累气温存，目色澄澈显和尊。举止端庄藏稳重，宽仁大度识乾坤。\n" NOR,
-            RED "丰姿温雅目如星，宽厚谦和藏俊灵。步稳言温神气足，自有风流与慧明。\n" NOR,
-            HIY "宽肩厚体带神光，朗目藏威稳且扬。虽非削骨风华样，自有英姿傲苍茫。\n" NOR,
-            HIY "宽肩广背气冲天，朗目沉光透浩然。丰腴不损英豪气，风采超然世上巅。\n" NOR,
+            YEL "肌凝玉润藏丰盈，举止温存少妩媚。虽非窈窕惊世色，温厚端庄亦可谓。\n" NOR,
+            YEL "粉腮微润藏春意，目若盈波自带情。虽不纤纤娇柳态，丰华自是有仪容。\n" NOR,
+            RED "圆润丰盈藏丽姿，双眸朗朗带羞思。温婉和顺多端雅，雍容华贵自成诗。\n" NOR,
+            RED "肌凝香泽透华光，眉目盈盈笑靥藏。丰腴不掩千般媚，步履轻盈韵味长。\n" NOR,
+            HIY "玉润珠圆貌自端，丰姿绰约韵悠长。轻盈步步随云去，宛若宫娥下画廊。\n" NOR,
+            HIY "粉面桃腮肌似雪，丰姿摇曳韵婵娟。笑靥轻扬藏万种，步移生韵胜群妍。\n" NOR,
             HIR "玉面星眸带帝王，丰姿伟岸气轩昂。身形虽阔风华驻，傲骨风流尽在行。\n" NOR,
         }),
     ]),
@@ -150,7 +153,7 @@ mapping look_level_descriptions = ([
             YEL "粉腮微润藏春意，目若盈波自带情。虽不纤纤娇柳态，丰华自是有仪容。\n" NOR,
             RED "圆润丰盈藏丽姿，双眸朗朗带羞思。温婉和顺多端雅，雍容华贵自成诗。\n" NOR,
             RED "肌凝香泽透华光，眉目盈盈笑靥藏。丰腴不掩千般媚，步履轻盈韵味长。\n" NOR,
-            HIY "玉润珠圆貌自端，丰姿绰约映朱栏。温存含笑多风韵，举止雍容更可观。\n" NOR,
+            HIY "玉润珠圆貌自端，丰姿绰约韵悠长。轻盈步步随云去，宛若宫娥下画廊。\n" NOR,
             HIY "粉面桃腮肌似雪，丰姿摇曳韵婵娟。笑靥轻扬藏万种，步移生韵胜群妍。\n" NOR,
             HIM "雍容玉貌尽天成，笑靥盈盈绝代名。步步生莲风韵妙，丰华温婉压群英。\n" NOR,
         }),
@@ -209,7 +212,7 @@ string ride_suffix (object me)
 
   ridee = me->ride();
   if (ridee)
-    ridemsg = ridee->query("ride/msg")+NOR+WHT"在"+ridee->name()+NOR+WHT"上"NOR;
+    ridemsg = ridee->query("ride/msg")+NOR+WHT" 在"+ridee->name()+NOR+WHT"上"NOR;
   return ridemsg;
 }
 
@@ -271,7 +274,6 @@ int look_room(object me, object env)
 			str += " \n";
 		} 
 	}
-//	str += env->door_description();
 
 	inv = all_inventory(env);
 	i=sizeof(inv);
@@ -291,7 +293,7 @@ int look_room(object me, object env)
 			}
 		}
 		if (ridemsg = ride_suffix(inv[i]))
-			str1 += "  " + inv[i]->short() +NOR+WHT " <"+ridemsg +
+			str1 += "  "+inv[i]->short() +NOR+WHT " <"+ridemsg +
 			  NOR+WHT">"NOR;
 		else	
 			str1 += "  " + inv[i]->short();
@@ -328,8 +330,6 @@ int look_item(object me, object obj)
 	int max_damage,damage;
 	int protect;
 
-
-//	write(obj->long());
 	me->start_more(obj->long());
 	if(obj->query("armor_type") && obj->query("armor_type")!="cloth"
 		&& obj->query("armor_type")!="neck")
@@ -349,12 +349,13 @@ int look_item(object me, object obj)
 	
 	inv = all_inventory(obj);
 	if( sizeof(inv) ) {
-		inv = map_array(inv, "inventory_look", this_object() );
+		inv = map_array(inv, "inventory_look", this_object(), obj);
 		message("vision", sprintf("里面有：\n  %s\n",
 			implode(inv, "\n  ") ), me);
 	}
 	return 1;
 }
+
 string per_status_msg(object me)
 {
     int age, per, level;
@@ -394,18 +395,11 @@ string per_status_msg(object me)
             return CYN"一个相貌平常的小孩。\n"NOR;
     }
 
-    // 🧑 成年人类使用基于性别、体型、容貌等级的新描述系统
+    // 容貌最低14，最高34
+    level = (per - 10) / 2.4;
+    if (level > 10) level = 10;
+    else if (!level || level < 0) level = 0;
 
-    // 将 per (10-30+) 转换为 容貌等级 (0-10)
-    // per 10,11 -> level 0
-    // per 12,13 -> level 1
-    // ...
-    // per 30,31 -> level 10
-    level = (per - 10) / 2.5;
-    if (level > 10) level = 10; // 设置上限，防止 per 过高导致数组越界
-    else if (!level || level < 0) level = 0; // 设置下限
-
-    // 检查 bodytype 是否有效，如果无效，则默认为 "normal"。"slim", "light", "normal", "heavy", "fat"
     if (!look_level_descriptions[gender]) {
         gender = "男性";
     }
@@ -413,226 +407,62 @@ string per_status_msg(object me)
         bodytype = "normal";
     }
 
-    // 检查 gender 和 bodytype 对应的描述是否存在
     if (mapp(look_level_descriptions[gender]) && sizeof(look_level_descriptions[gender][bodytype]) > level) {
         return look_level_descriptions[gender][bodytype][level];
     }
 
-    // 最终 fallback，如果出现意外情况
     return "长得怎样你没什么概念。\n";
 }
+
 string body_status_msg(object obj)
 {
-	string str, body_type, ogender, skin;
-	int per, oage;
+    string str, body_type, ogender, skin;
+    int per;
 
-	body_type = obj->query("bodytype");
-	per = obj->query("per");
-	ogender = obj->query("gender");
-	oage = obj->query("age");
+    body_type = obj->query("bodytype") ? obj->query("bodytype") : "normal";
+    per = obj->query("per") ? obj->query("per") : 20;
+    ogender = obj->query("gender") ? obj->query("gender") : "男性";
 
-	// 根据 per 值设置皮肤状态
-	if (per < 15) skin = "肌肤粗劣";
-	else if (per <= 24) skin = "肌肤光滑";
-	else skin = "肌肤莹润如玉";
+    if (per < 15) skin = "肌肤粗劣";
+    else if (per <= 24) skin = "肌肤光滑";
+    else skin = "肌肤莹润如玉";
 
-	// 根据年龄分情况描述
-	if (oage <= 12) {
-	    // 年龄 <= 12 岁，仅描述体型、手脚形状和皮肤状态
-	    if (ogender == "女性") {
-	        if (body_type == "slim") {
-	            str = "体态枯瘦，骨架嶙峋，腰肢细若柴枝，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚瘦削，骨节凸显，触感粗糙，步伐轻飘而乏力。";
-	            } else if (per < 24) {
-	                str += "\n手脚纤细，骨形隐现，皮肤略干，步履轻盈而稍显拘谨。";
-	            } else { // per >= 24
-	                str += "\n手脚纤弱，线条柔韧，皮肤薄透莹光，步伐轻盈，带几分清瘦之美。";
-	            }
-	        } else if (body_type == "light") {
-	            str = "身形袅娜，骨秀神清，腰肢柔若垂柳，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚瘦削，线条平直，皮肤稍暗，步伐略显单薄。";
-	            } else if (per < 24) {
-	                str += "\n手脚纤细，线条流畅，皮肤白皙，步履轻盈如燕。";
-	            } else { // per >= 24
-	                str += "\n手脚纤细如玉，线条优雅，皮肤莹润如脂，行步如微风拂柳。";
-	            }
-	        } else if (body_type == "normal") {
-	            str = "体态匀称，骨肉适中，腰肢柔美，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚匀称，略显粗短，皮肤平实，步伐稳健而平凡。";
-	            } else if (per < 24) {
-	                str += "\n手脚柔美，线条柔和，皮肤润泽，举步轻盈。";
-	            } else { // per >= 24
-	                str += "\n手脚圆润，线条流畅，皮肤白皙如玉，步伐优雅自如。";
-	            }
-	        } else if (body_type == "heavy") {
-	            str = "体态丰腴，曲线犹存，腰肢圆润，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚丰满，略显松软，皮肤稍暗，步伐沉稳而迟缓。";
-	            } else if (per < 24) {
-	                str += "\n手脚圆润，线条柔和，皮肤白皙，行走间略显韵味。";
-	            } else { // per >= 24
-	                str += "\n手脚丰润，线条柔美，皮肤莹白如脂，步伐稳健而雍容。";
-	            }
-	        } else if (body_type == "fat") {
-	            str = "体态臃肿，肥肉堆积，腰腹圆如大鼓，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚肥厚，行动迟缓，皮肤暗沉，步履沉重如龟。";
-	            } else if (per < 24) {
-	                str += "\n手脚肥硕，触感柔软，皮肤稍显光泽，步伐沉重而稳健。";
-	            } else { // per >= 24
-	                str += "\n手脚肥润，线条柔和，皮肤白皙透柔光，行动虽缓却带雍容气度。";
-	            }
-	        }
-	    } else {
-	        if (body_type == "slim") {
-	            str = "身形枯瘦，肋骨凸显，腰腹窄如柴棍，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚瘦削，骨节凸显，皮肤粗糙，步伐轻飘而乏力。";
-	            } else if (per < 24) {
-	                str += "\n手脚纤瘦，骨形隐现，皮肤稍干，步履略显拘谨。";
-	            } else { // per >= 24
-	                str += "\n手脚瘦削而韧，线条柔韧，皮肤薄透淡光，步伐轻盈而清瘦。";
-	            }
-	        } else if (body_type == "light") {
-	            str = "身形削瘦，腰腹微现线条，身体颀长，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚瘦长，骨节微露，皮肤稍暗，步伐轻快而单薄。";
-	            } else if (per < 24) {
-	                str += "\n手脚修长，线条流畅，皮肤白皙，行走轻盈如风。";
-	            } else { // per >= 24
-	                str += "\n手脚颀长如竹，线条优雅，皮肤莹白如玉，步伐稳健如清风。";
-	            }
-	        } else if (body_type == "normal") {
-	            str = "身形适中，腰腹平实，胸脯宽阔，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚匀称，略显粗短，皮肤平实，步伐稳健而平凡。";
-	            } else if (per < 24) {
-	                str += "\n手脚结实，线条柔和，皮肤润泽，行走沉稳有力。";
-	            } else { // per >= 24
-	                str += "\n手脚健美，线条流畅，皮肤白皙如玉，步伐稳健而沉稳。";
-	            }
-	        } else if (body_type == "heavy") {
-	            str = "身形壮硕，腰腹宽厚，胸脯厚实，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚粗壮，触感粗糙，皮肤稍暗，步伐沉稳而迟缓。";
-	            } else if (per < 24) {
-	                str += "\n手脚壮硕，线条分明，皮肤白皙，行走沉稳有力。";
-	            } else { // per >= 24
-	                str += "\n手脚雄健，线条有力，皮肤莹白如脂，步伐稳健而雄浑。";
-	            }
-	        } else if (body_type == "fat") {
-	            str = "身形肥硕，腰腹圆如巨鼓，四肢粗短，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n手脚肥厚，行动迟缓，皮肤暗沉，步履沉重如龟。";
-	            } else if (per < 24) {
-	                str += "\n手脚肥硕，触感柔软，皮肤稍显光泽，步伐沉重而稳健。";
-	            } else { // per >= 24
-	                str += "\n手脚肥润，线条柔和，皮肤白皙透柔光，行动虽缓却带雍容气度。";
-	            }
-	        }
-	    }
-	} else {
-	    // 年龄 > 12 岁，描述体型、胸部、腰部、四肢、手指、皮肤状态
-	    if (ogender == "女性") {
-	        if (body_type == "slim") {
-	            str = "体态枯瘦，骨架嶙峋。\n腰肢细若柴枝，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸前平坦，瘦骨嶙峋，毫无起伏。\n四肢瘦削如枯枝，手指嶙峋，皮肤粗糙，青筋毕露。\n步伐轻飘，骨感分明，略显乏力。";
-	            } else if (per < 24) {
-	                str += "\n胸前微有起伏，瘦骨相衬，更显单薄。\n四肢纤细，骨节微露，手指细瘦，皮肤略干，尚存些许光泽。\n步伐轻盈，线条僵硬，略带拘谨。";
-	            } else { // per >= 24
-	                str += "\n胸前虽有起伏，然被瘦骨所衬，透出病态之美。\n四肢纤弱，骨形隐现，手指修长，皮肤虽薄却透淡淡莹光。\n步伐轻盈，线条柔韧，宛若秋柳摇曳。";
-	            }
-	        } else if (body_type == "light") {
-	            str = "身形袅娜，骨秀神清。\n腰肢柔若垂柳，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸部平坦，曲线未显，略显青涩。\n四肢瘦削，手指细长，皮肤稍暗，触感略粗。\n步伐单薄，线条平直，略显稚嫩。";
-	            } else if (per < 24) {
-	                str += "\n胸部曲线初显，柔美而含蓄。\n四肢纤细，手指柔美，皮肤白皙，隐现柔润光泽。\n步伐轻盈，线条流畅，宛若凌波仙子。";
-	            } else { // per >= 24
-	                str += "\n胸部曲线柔美，起伏有致，尽显温婉。\n四肢纤细如玉，手指若葱，皮肤莹润如脂，仿若凝脂。\n步伐优雅，线条流畅，如微风拂柳，飘然若仙。";
-	            }
-	        } else if (body_type == "normal") {
-	            str = "体态曼妙，骨肉匀停。\n腰肢柔美，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸部平实，尚未成熟，略显平凡。\n四肢匀称，手指略粗，皮肤平实，略显粗糙。\n步伐稳健，线条柔和，略显平凡。";
-	            } else if (per < 24) {
-	                str += "\n胸部饱满，曲线柔和，散发初熟之美。\n四肢柔美，手指修长，皮肤润泽，触之滑腻。\n步伐轻盈，线条柔和，如燕般轻快。";
-	            } else { // per >= 24
-	                str += "\n胸部圆润饱满，曲线柔和，散发成熟之美。\n四肢圆润如玉，手指削葱，皮肤白皙，柔光流转，仿若温润美玉。\n步伐优雅，线条流畅，如清风拂面。";
-	            }
-	        } else if (body_type == "heavy") {
-	            str = "体态丰腴，曲线犹存。\n腰肢圆润，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸乳略显松软，曲线稍显粗重。\n四肢丰满，手掌略软，皮肤稍暗，触感厚实。\n步伐沉稳，肉感十足，略显迟缓。";
-	            } else if (per < 24) {
-	                str += "\n胸乳丰满，曲线饱满，略带成熟韵味。\n四肢圆润，手掌柔软，皮肤白皙，隐现光泽。\n步伐稳健，线条柔和，散发成熟风情。";
-	            } else { // per >= 24
-	                str += "\n胸乳丰满挺拔，曲线饱满，尽显柔媚。\n四肢丰润如玉，手指柔美，皮肤莹白，润泽如脂，触之温软。\n步伐稳健，线条柔美，雍容大气。";
-	            }
-	        } else if (body_type == "fat") {
-	            str = "体态臃肿，肥肉堆积。\n腰腹圆如大鼓，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸乳肥硕，形如巨囊，略显粗重。\n四肢肥厚，手指粗短，皮肤暗沉，触感粗糙。\n步伐笨拙，足部臃肿，行动迟缓。";
-	            } else if (per < 24) {
-	                str += "\n胸乳肥硕，沉甸甸地彰显丰满。\n四肢肥硕，手掌厚实，皮肤稍显光泽，触感柔软。\n步伐沉重，线条模糊，却不失稳健。";
-	            } else { // per >= 24
-	                str += "\n胸乳肥硕，沉甸甸地充满丰满之态。\n四肢肥润，手指圆润，皮肤白皙，隐现柔光，触之温软。\n步伐虽缓，线条柔和，带雍容气度。";
-	            }
-	        }
-	    } else {
-	        if (body_type == "slim") {
-	            str = "身形枯瘦，肋骨凸显。\n腰腹窄如柴棍，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸脯平坦，骨架嶙峋，毫无起伏。\n四肢瘦削，手指嶙峋，皮肤粗糙，青筋毕露。\n步伐轻飘，骨感分明，略显乏力。";
-	            } else if (per < 24) {
-	                str += "\n胸脯瘦削，骨形凸显，略显单薄。\n四肢纤瘦，手指细瘦，皮肤略干，尚存些许光泽。\n步伐轻盈，线条僵硬，略带拘谨。";
-	            } else { // per >= 24
-	                str += "\n胸脯清瘦，骨形隐现，透出清瘦之美。\n四肢纤弱，手指修长，皮肤虽薄却透淡光。\n步伐轻盈，线条柔韧，宛若秋柳。";
-	            }
-	        } else if (body_type == "light") {
-	            str = "身形削瘦，腰腹微现线条。\n手脚颀长，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸脯平坦，尚未成熟，略显青涩。\n四肢瘦长，手指细长，皮肤稍暗，触感略粗。\n步伐单薄，线条平直，略显稚嫩。";
-	            } else if (per < 24) {
-	                str += "\n胸脯微宽，线条初显，略带硬朗。\n四肢修长，手指细腻，皮肤白皙，隐现柔光。\n步伐轻盈，线条流畅，如风般轻快。";
-	            } else { // per >= 24
-	                str += "\n胸脯宽阔，线条硬朗，尽显清瘦之姿。\n四肢颀长，手指若葱，皮肤莹润如玉，仿若凝脂。\n步伐优雅，线条流畅，如清风过林。";
-	            }
-	        } else if (body_type == "normal") {
-	            str = "身形适中，腰腹平实。\n胸脯宽阔，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸脯平实，尚未成熟，略显平凡。\n四肢匀称，手指略粗，皮肤平实，略显粗糙。\n步伐稳健，线条柔和，略显平凡。";
-	            } else if (per < 24) {
-	                str += "\n胸脯宽阔，线条硬朗，散发初熟之气。\n四肢结实，手指修长，皮肤润泽，触之滑腻。\n步伐沉稳，线条柔和，略带力量。";
-	            } else { // per >= 24
-	                str += "\n胸脯宽阔，线条分明，尽显沉稳之姿。\n四肢健美，手指修长有力，皮肤白皙，莹光流转，仿若美玉。\n步伐优雅，线条流畅，沉稳大气。";
-	            }
-	        } else if (body_type == "heavy") {
-	            str = "身形壮硕，腰腹宽厚。\n胸脯厚实，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸脯宽厚，略显粗重，尚未成熟。\n四肢粗壮，手掌厚实，皮肤稍暗，触感粗糙。\n步伐沉稳，线条沉重，略显迟缓。";
-	            } else if (per < 24) {
-	                str += "\n胸脯宽阔，线条分明，略带雄浑。\n四肢壮硕，手指有力，皮肤白皙，隐现光泽。\n步伐沉稳，线条分明，散发力量。";
-	            } else { // per >= 24
-	                str += "\n胸脯宽阔，线条雄浑，尽显壮硕之美。\n四肢雄健，手指遒劲，皮肤莹白，润泽如脂，触之厚实。\n步伐稳健，线条有力，雄浑大气。";
-	            }
-	        } else if (body_type == "fat") {
-	            str = "身形肥硕，腰腹圆如巨鼓。\n四肢粗短，" + skin + "。";
-	            if (per < 15) {
-	                str += "\n胸脯肥厚，形如巨囊，略显粗重。\n四肢肥厚，手指粗短，皮肤暗沉，触感粗糙。\n步伐笨拙，行动迟缓如龟。";
-	            } else if (per < 24) {
-	                str += "\n胸脯肥硕，沉甸甸地彰显厚重。\n四肢肥硕，手掌厚实，皮肤稍显光泽，触感柔软。\n步伐沉重，线条模糊，却不失稳健。";
-	            } else { // per >= 24
-	                str += "\n胸脯肥硕，沉甸甸地充满厚重之态。\n四肢肥润，手指圆润，皮肤白皙，隐现柔光，触之温软。\n步伐虽缓，线条柔和，带雍容气度。";
-	            }
-	        }
-	    }
-	}
-	return str+"\n";
+    if (ogender == "女性") {
+        if (body_type == "slim") {
+            str = per > 19 ? "轮廓清秀，身形纤细修长，骨架轻巧，四肢比例匀称，" + skin + "。" :
+                             "轮廓瘦削，身形枯瘦，骨架嶙峋，四肢稍显僵硬，" + skin + "。";
+        } else if (body_type == "light") {
+            str = per > 19 ? "轮廓清秀，身形纤细修长，骨架轻巧，四肢比例匀称，" + skin + "。" :
+                             "轮廓尚清，身形瘦弱，骨架轻盈，四肢略显单薄，" + skin + "。";
+        } else if (body_type == "normal") {
+            str = per > 19 ? "轮廓柔美，身形匀称修长，骨肉适中，四肢比例匀称，" + skin + "。" :
+                             "轮廓平凡，身形适中，骨肉匀停，四肢稍显平实，" + skin + "。";
+        } else if (body_type == "heavy") {
+            str = per > 19 ? "轮廓丰腴，身形圆润饱满，骨肉匀称，四肢柔和，" + skin + "。" :
+                             "轮廓稍重，身形丰满，骨肉厚实，四肢略显粗重，" + skin + "。";
+        } else if (body_type == "fat") {
+            str = per > 19 ? "轮廓圆润，身形肥硕，骨肉堆积，四肢柔软，" + skin + "。" :
+                             "轮廓臃肿，身形肥胖，骨肉堆积，四肢粗短，" + skin + "。";
+        }
+    } else {
+        if (body_type == "slim") {
+            str = per > 19 ? "轮廓清瘦，身形颀长，骨架轻盈，四肢比例匀称，" + skin + "。" :
+                             "轮廓瘦削，身形枯瘦，骨架嶙峋，四肢稍显僵硬，" + skin + "。";
+        } else if (body_type == "light") {
+            str = per > 19 ? "轮廓清秀，身形修长，骨架轻巧，四肢比例匀称，" + skin + "。" :
+                             "轮廓尚清，身形瘦弱，骨架轻盈，四肢略显单薄，" + skin + "。";
+        } else if (body_type == "normal") {
+            str = per > 19 ? "轮廓俊朗，身形适中，骨肉匀称，四肢比例匀称，" + skin + "。" :
+                             "轮廓平凡，身形适中，骨肉匀停，四肢稍显平实，" + skin + "。";
+        } else if (body_type == "heavy") {
+            str = per > 19 ? "轮廓壮硕，身形宽厚，骨肉厚实，四肢有力，" + skin + "。" :
+                             "轮廓稍重，身形壮硕，骨肉厚实，四肢略显粗重，" + skin + "。";
+        } else if (body_type == "fat") {
+            str = per > 19 ? "轮廓圆润，身形肥硕，骨肉堆积，四肢柔软，" + skin + "。" :
+                             "轮廓臃肿，身形肥胖，骨肉堆积，四肢粗短，" + skin + "。";
+        }
+    }
+    return str + "\n";
 }
 
 int look_living(object me, object obj)
@@ -640,237 +470,167 @@ int look_living(object me, object obj)
 	string str, ridemsg, pro;
 	mixed *inv;
 	mapping my_fam, fam;
-// added for bian by mon.
 	mapping ofamily;
-	string ogender,orace;
+	string ogender, orace;
 	int oage;
- 
-	if(obj->query_temp("d_mana")>0) 
-	{
-		ofamily=obj->query_temp("family");
-		ogender=obj->query_temp("gender");
-		orace=obj->query_temp("race");
-		oage=obj->query_temp("age");
-	} 
-	else 
-	{
-		ofamily=obj->query("family");
-		ogender=obj->query("gender");
-		orace=obj->query("race");
-		oage=obj->query("age");
-//fake_age is set as the age when player 不堕轮回。
-//so later on, he/she always looks like the age of that time:)
-//but need a "look" to activate all the relatived settings...weiqi
-//only when one is not in the status of "bian", check his/her
-//fake_age. mon 9/4/97
-//feature/damage.c中增加了当道行、人参果等原因达到不堕轮回，则在设置永生时会设置fake_age值。
-/*
-		if(obj->query("life/live_forever") ) 
-		{ 
-			//set the fake_age if not set...
-			if( obj->query("fake_age") ) obj->set("fake_age", oage);
 
-			if( oage>obj->query("fake_age") ) 
-			{
-			//if "age" is less than fake_age, reset fake_age.
-			//mon 9/4/97
-				oage=obj->query("fake_age");
-			}
-			else if( oage<obj->query("fake_age") ) 
-			{
-				obj->set("fake_age", oage);
-			}
+	if (obj->query_temp("d_mana") > 0) {
+		ofamily = obj->query_temp("family");
+		ogender = obj->query_temp("gender");
+		orace = obj->query_temp("race");
+		oage = obj->query_temp("age");
+	} else {
+		ofamily = obj->query("family");
+		ogender = obj->query("gender");
+		orace = obj->query("race");
+		oage = obj->query("age");
+		if (obj->query("life/live_forever")) {
+			if (!obj->query("fake_age")) obj->set("fake_age", oage);
+			if (oage > obj->query("fake_age")) oage = obj->query("fake_age");
 		}
 	}
-*/
-     if(obj->query("life/live_forever") )
-       {
-          if (!obj->query("fake_age")) obj->set("fake_age",oage);
-         if (oage > obj->query("fake_age")) oage=obj->query("fake_age");       }
-//done with fake_age
-     }
-	if( me!=obj && obj->visible(me) && environment(me) &&
-	    !environment(me)->query("no_look") )
+
+	if (me != obj && obj->visible(me) && environment(me) && !environment(me)->query("no_look"))
 		message("vision", me->name() + "正盯着你看，不知道打些什么主意。\n", obj);
 
 	str = obj->long();
-
 	str = replace_string(str, "$n", me->name());
 	str = replace_string(str, "$N", obj->name());
-    str = replace_string(str, "$C", RANK_D->query_respect(obj));
-    str = replace_string(str, "$c", RANK_D->query_rude(obj));
+	str = replace_string(str, "$C", RANK_D->query_respect(obj));
+	str = replace_string(str, "$c", RANK_D->query_rude(obj));
 	str = replace_string(str, "$R", RANK_D->query_respect(me));
 	str = replace_string(str, "$r", RANK_D->query_rude(me));
 
+	pro = (obj == me) ? gender_self(ogender) : gender_pronoun(ogender);
 
-	pro = (obj==me) ? gender_self(ogender) : gender_pronoun(ogender);
+	if (obj->query_temp("d_mana") == 0 || obj->query_temp("is_character")) {
+		if (orace == "人类" && intp(oage)) {
+			if (ogender == "女性") {
+				if (oage < 4) str += sprintf("%s看起来处于襁褓之中。\n", pro);
+				else if (oage < 7) str += sprintf("%s看起来正处髫年之始。\n", pro);
+				else if (oage < 10) str += sprintf("%s看起来正是垂髫之龄。\n", pro);
+				else if (oage < 13) str += sprintf("%s看起来正是含英咀华之龄。\n", pro);
+				else if (oage < 15) str += sprintf("%s看起来正处豆蔻年华，娇龄初绽。\n", pro);
+				else if (oage < 16) str += sprintf("%s看起来正当及笄之年，容色初盛。\n", pro);
+				else if (oage < 17) str += sprintf("%s看起来正当破瓜之年，韶颜稚齿。\n", pro);
+				else if (oage < 19) str += sprintf("%s看起来正值碧玉年华。\n", pro);
+				else if (oage < 23) str += sprintf("%s看起来正值桃李年华。\n", pro);
+				else if (oage < 26) str += sprintf("%s看起来正值花信年华。\n", pro);
+				else if (oage < 30) str += sprintf("%s看起来正值芳龄。\n", pro);
+				else if (oage < 40) str += sprintf("%s看起来韶华渐逝。\n", pro);
+				else if (oage < 50) str += sprintf("%s看起来风华渐敛。\n", pro);
+				else str += sprintf("%s鬓染霜华，眉宇亦藏温婉。\n", pro);
+			} else {
+				if (oage < 7) str += sprintf("%s看起来正处孩提之年。\n", pro);
+				else if (oage < 10) str += sprintf("%s看起来是个黄口孩童。\n", pro);
+				else if (oage < 13) str += sprintf("%s看起来只是垂髫之龄。\n", pro);
+				else if (oage < 15) str += sprintf("%s看起来方入舞勺之年。\n", pro);
+				else if (oage < 20) str += sprintf("%s看起来正值舞象之年。\n", pro);
+				else if (oage < 25) str += sprintf("%s看起来正值弱冠之年。\n", pro);
+				else if (oage < 31) str += sprintf("%s看起来而立初成。\n", pro);
+				else if (oage < 41) str += sprintf("%s看起来已处而立之年。\n", pro);
+				else if (oage < 51) str += sprintf("%s看起来已处不惑之年。\n", pro);
+				else if (oage < 61) str += sprintf("%s看起来已处知非之年。\n", pro);
+				else str += sprintf("%s年华已远，神采犹存。\n", pro);
+			}
+		}
 
-        if(obj->query_temp("d_mana")==0 || obj->query_temp("is_character")) {
+		if ((obj->parse_command_id_list())[0] == me->query("couple/id")) {
+			if ((string)me->query("gender") == "女性") {
+				str += sprintf("%s是你的丈夫。\n", pro);
+			} else {
+				str += sprintf("%s是你的妻子。\n", pro);
+			}
+		}
 
-	if( orace=="人类" && intp(oage) ) {
-		if (ogender == "女性") {
-		    if (oage < 4)
-		        str += sprintf("%s看起来处于襁褓之中。\n", pro);
-		    else if (oage < 7)
-		        str += sprintf("%s看起来正处髫年之始。\n", pro);
-		    else if (oage < 10)
-		        str += sprintf("%s看起来正是垂髫之龄。\n", pro);
-		    else if (oage < 13)
-		        str += sprintf("%s看起来正是含英咀华之龄。\n", pro);
-		    else if (oage < 15)
-		        str += sprintf("%s看起来正处豆蔻年华，娇龄初绽。\n", pro);
-		    else if (oage < 16)
-		        str += sprintf("%s看起来正当及笄之年，容色初盛。\n", pro);
-		    else if (oage < 17)
-		        str += sprintf("%s看起来正当破瓜之年，韶颜稚齿。\n", pro);
-		    else if (oage < 19)
-		        str += sprintf("%s看起来正值碧玉年华。\n", pro);
-		    else if (oage < 23)
-		        str += sprintf("%s看起来正值桃李年华。\n", pro);
-		    else if (oage < 26)
-		        str += sprintf("%s看起来正处于花信年华。\n", pro);
-		    else if (oage < 30)
-		        str += sprintf("%s看起来正值芳龄。\n", pro);
-		    else if (oage < 40)
-		        str += sprintf("%s看起来韶华渐逝。\n", pro);
-		    else if (oage < 50)
-		        str += sprintf("%s看起来风华渐敛。\n", pro);
-		    else
-		        str += sprintf("%s鬓染霜华，眉宇亦藏温婉。\n", pro);
-		} else {
-		    if (oage < 7)
-		        str += sprintf("%s看起来正处孩提之年。\n", pro);
-		    else if (oage < 10)
-		        str += sprintf("%s看起来是个黄口孩童。\n", pro);
-		    else if (oage < 13)
-		        str += sprintf("%s看起来只是垂髫之龄。\n", pro);
-		    else if (oage < 15)
-		        str += sprintf("%s看起来方入舞勺之年。\n", pro);
-		    else if (oage < 20)
-		        str += sprintf("%s看起来正值舞象之年。\n", pro);
-		    else if (oage < 25)
-		        str += sprintf("%s看起来正值弱冠之年。\n", pro);
-		    else if (oage < 31)
-		        str += sprintf("%s看起来而立初成。\n", pro);
-		    else if (oage < 41)
-		        str += sprintf("%s看起来已处而立之年。\n", pro);
-		    else if (oage < 51)
-		        str += sprintf("%s看起来已处不惑之年。\n", pro);
-		    else if (oage < 61)
-		        str += sprintf("%s看起来已处知非之年。\n", pro);
-		    else
-		        str += sprintf("%s年华已远，神采犹存。\n", pro);
+		if (obj != me && mapp(fam = ofamily) && mapp(my_fam = me->query("family")) &&
+			fam["family_name"] == my_fam["family_name"]) {
+			if (fam["generation"] == my_fam["generation"]) {
+				if (ogender == "男性")
+					str += sprintf(pro + "是你的%s%s。\n",
+						my_fam["master_id"] == fam["master_id"] ? "" : "同门",
+						my_fam["enter_time"] > fam["enter_time"] ? "师兄" : "师弟");
+				else
+					str += sprintf(pro + "是你的%s%s。\n",
+						my_fam["master_id"] == fam["master_id"] ? "" : "同门",
+						my_fam["enter_time"] > fam["enter_time"] ? "师姐" : "师妹");
+			} else if (fam["generation"] < my_fam["generation"]) {
+				if (member_array(my_fam["master_id"], obj->parse_command_id_list()) > -1)
+					str += pro + "是你的师父。\n";
+				else if (my_fam["generation"] - fam["generation"] > 1)
+					str += pro + "是你的同门长辈。\n";
+				else if (fam["enter_time"] < my_fam["enter_time"])
+					str += pro + "是你的师伯。\n";
+				else
+					str += pro + "是你的师叔。\n";
+			} else {
+				if (fam["generation"] - my_fam["generation"] > 1)
+					str += pro + "是你的同门晚辈。\n";
+				else if (fam["master_id"] == me->query("id"))
+					str += pro + "是你的弟子。\n";
+				else
+					str += pro + "是你的师侄。\n";
+			}
 		}
-		}
-	//check about wife and husband
-	if((obj->parse_command_id_list())[0]==me->query("couple/id") ) {
-		if( (string)me->query("gender")=="女性" ){
-		str += sprintf("%s是你的丈夫。\n", pro);
-		}
-		else{
-			str += sprintf("%s是你的妻子。\n", pro);
-		}
-	}
-	// If we both has family, check if we have any relations.
-	if( obj!=me
-	&&	mapp(fam = ofamily)
-	&&	mapp(my_fam = me->query("family")) 
-	&&	fam["family_name"] == my_fam["family_name"] ) {
-		if( fam["generation"]==my_fam["generation"] ) {
-			if( ogender == "男性" )
-				str += sprintf( pro + "是你的%s%s。\n",
-					my_fam["master_id"] == fam["master_id"] ? "": "同门",
-					my_fam["enter_time"] > fam["enter_time"] ? "师兄": "师弟");
-			else
-				str += sprintf( pro + "是你的%s%s。\n",
-					my_fam["master_id"] == fam["master_id"] ? "": "同门",
-					my_fam["enter_time"] > fam["enter_time"] ? "师姐": "师妹");
-		} else if( fam["generation"] < my_fam["generation"] ) {
-			if( member_array(my_fam["master_id"],
-			    obj->parse_command_id_list())>-1  )
-				str += pro + "是你的师父。\n";
-			else if( my_fam["generation"] - fam["generation"] > 1 )
-				str += pro + "是你的同门长辈。\n";
-			else if( fam["enter_time"] < my_fam["enter_time"] )
-				str += pro + "是你的师伯。\n";
-			else
-				str += pro + "是你的师叔。\n";
-		} else {
-			if( fam["generation"] - my_fam["generation"] > 1 )
-				str += pro + "是你的同门晚辈。\n";
-			else if( fam["master_id"] == me->query("id") )
-				str += pro + "是你的弟子。\n";
-			else
-				str += pro + "是你的师侄。\n";
+
+		if (!obj->is_corpse()) {
+			str += pro + body_status_msg(obj);
+			str += "只见" + pro + "：\n";
+			str += body_part_description(obj);
+			inv = all_inventory(obj);
+			if (sizeof(inv)) {
+				inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse() ? 0 : 1, obj);
+				inv -= ({ 0 });
+				if (sizeof(inv))
+					str += implode(inv, "\n") + "\n";
+			}
+			if (obj->query("looking")) {
+				str += pro + (string)obj->query("looking") + "\n";
+			} else {
+				string looking = per_status_msg(obj);
+				if (strwidth(looking) > 1 && obj->query("per") < 100)
+					str += "端的是：" + looking;
+			}
+			ridemsg = ride_suffix(obj);
+			if (ridemsg)
+				str += pro + "正" + ridemsg + "。\n";
+
 		}
 	}
 
-/*	if( obj->query("max_kee") )
-		str += pro + COMBAT_D->eff_status_msg((int)obj->query("eff_kee") * 100 / (int)obj->query("max_kee")) + "\n";
-*/
+	me->start_more(str);
 
-//here, if per>=100, no rong-mao description, it'll be necessary sometimes.
-//return special looking first if he/she has one.
-
-	if ( ! obj->is_corpse()){
-		str += pro + body_status_msg(obj);
-		if( obj->query("looking") ){
-			str += pro + (string)obj->query("looking") + "\n";
-		} else {
-		  string looking= per_status_msg(obj);
-	              if( strwidth(looking)>1 && obj->query("per") < 100 )
-	        	         str += "端的是：" + looking;
-		}
-		
-		ridemsg = ride_suffix(obj);
-		if (ridemsg)
-			str += pro + "正" + ridemsg + "。\n";
-	}
-	inv = all_inventory(obj);
-	if( sizeof(inv) ) {
-		inv = map_array(inv, "inventory_look", this_object(), obj->is_corpse()? 0 : 1 );
-		inv -= ({ 0 });
-		if( sizeof(inv) )
-			str += sprintf( obj->is_corpse() ? "%s的遗物有：\n%s\n" : "只见%s：\n%s\n",
-				pro, implode(inv, "\n") );
-	}
-	}
-
-        me->start_more(str);
-
-	if( obj!=me 
-	&&	living(obj)
-	&&	random((int)obj->query("bellicosity")/10) > (int)me->query_per() ) {
-		write( obj->name() + "突然转过头来瞪你一眼。\n");
+	if (obj != me && living(obj) && random((int)obj->query("bellicosity") / 10) > (int)me->query_per()) {
+		write(obj->name() + "突然转过头来瞪你一眼。\n");
 		COMBAT_D->auto_fight(obj, me, "berserk");
 		return 1;
 	}
 
-//this part is  taken from attack.c
-//mon 1/22/98
-/*
-	if( obj!=me 
-	&& living(obj)
-	&& userp(obj)
-        && random((int)obj->query("bellicosity")/40) > (int)obj->query("cps") ) 
-	  COMBAT_D->auto_fight(obj, me, "berserk");
-*/
-
 	return 1;
 }
 
-string inventory_look(object obj, int flag)
+string inventory_look(object obj, int flag, object ob)
 {
-	string str;
+	string str, armor_type;
+	int age;
+
+	// 如果是指定的装备部位，则跳过
+	age = ob->query("age") ? ob->query("age") : 20;
+	armor_type = obj->query("armor_type");
+	if (age >= 13 && age <= 50 && armor_type && member_array(armor_type, ({
+	    "wrists", "finger", "neck", "cloth", "waist", "skirt", "pants", "boots"
+	})) != -1)
+		return 0;
+
 	str = obj->short();
-	if( obj->query("equipped") )
-		str = HIC "  √" NOR + do_query(obj);
-	else if( !flag )
+	if (obj->query("equipped"))
+		str = "    " + do_query(obj);
+	else if (!flag)
 		str = "    " + str;
-	else return 0;
+	else
+		return 0;
 	return str;
 }
-
 
 int look_room_item(object me, string arg)
 {
@@ -907,55 +667,1017 @@ int look_room_item(object me, string arg)
 	}
 	return notify_fail("你要看什么？\n");
 }
+
 string do_query(object obj)
 {
-        string str,units;
+	string str, units;
 
-        units =obj->query("unit");
-        str = obj->short();
-        if (obj->query("armor_type"))
-        switch( obj->query("armor_type") ) {
-                case "cloth":
-                case "armor":
-                        str = "身穿一"+ units + str;
-                        break;
-                case "boots":
-                        str = "脚上穿着一" + units + str;
-                        break;
-                case "skirt":
-                        str = "下身穿着一" + units + str;
-                        break;
-                case "head":
-                case "neck":
-                case "wrists":
-                case "finger":
-                case "hands":
-                        str ="戴着一"+ units + str;
-                        break;
-                case "waist":
-                        str = "腰间绑得有一"+units+str;
-                        break;
-                case "flower":
-                        str = "头上戴着一"+units+str;
-                        break;
-                default:
-                        str = "装备着"+str; 
-                        }
-        else
-        	if( obj->wield() )
-                if (obj->query("skill_type")=="throwing")
-                str ="身上带着"+str;
-                else
-                str ="手持一" + units + str;
-        return str;
+	units = obj->query("unit") ? obj->query("unit") : "件";
+	str = obj->short();
+	if (obj->query("armor_type")) {
+		switch (obj->query("armor_type")) {
+			case "cloth":
+			case "armor":
+				str = "身穿一" + units + str;
+				break;
+			case "boots":
+				str = "脚上穿着一" + units + str;
+				break;
+			case "skirt":
+				str = "下身穿着一" + units + str;
+				break;
+			case "head":
+			case "neck":
+			case "wrists":
+			case "finger":
+			case "hands":
+				str = "戴着一" + units + str;
+				break;
+			case "waist":
+				str = "腰间绑得有一" + units + str;
+				break;
+			case "flower":
+				str = "手持一" + units + str;
+				break;
+			default:
+				str = "装备着" + str;
+				break;
+		}
+	} else {
+		if (obj->wield()) {
+			if (obj->query("skill_type") == "throwing")
+				str = "身上带着" + str;
+			else
+				str = "手持一" + units + str;
+		}
+	}
+	return str;
 }
+
+string body_part_description(object obj)
+{
+	string str = "", gender, bodytype, skin;
+	int per, age;
+	mapping equipped = ([]);
+	object *inv;
+
+	gender = obj->query("gender") ? obj->query("gender") : "男性";
+	bodytype = obj->query("bodytype") ? obj->query("bodytype") : "normal";
+	per = obj->query("per") ? obj->query("per") : 20;
+	age = obj->query("age") ? obj->query("age") : 20;
+
+	// 收集所有装备，按 armor_type 分类
+	inv = all_inventory(obj);
+	foreach (object item in inv) {
+		if (item->query("equipped")) {
+			if (item->query("armor_type")) {
+				equipped[item->query("armor_type")] = item;
+			} else if (item->wield()) {
+				equipped["weapon"] = item;
+			}
+		}
+	}
+
+	// 确定皮肤状态
+	if (per < 15) skin = "粗糙暗沉";
+	else if (per <= 19) skin = "略显粗糙";
+	else if (per <= 25) skin = "光滑细腻";
+	else if (per <= 30) skin = "莹润如玉";
+	else skin = "晶莹剔透";
+
+	// 未到性发育（<13岁）或老年（>50岁）时，使用简化描述
+	if (age < 13 || age > 50) {
+		if (per < 15) {
+			str += sprintf("    体态略显%s，皮肤%s，举止稍显稚嫩或迟缓。\n",bodytype == "slim" || bodytype == "fat" ? "不均" : "匀称", skin);
+		} else if (per <= 25) {
+			str += sprintf("    体态%s，皮肤%s，举止间透出自然气息。\n",
+				bodytype == "light" || bodytype == "normal" ? "匀称协调" : "稍显笨拙", skin);
+		} else {
+			str += sprintf("    体态%s，皮肤%s，举止间隐含优雅风姿。\n",
+				bodytype == "light" ? "纤秀轻盈" : bodytype == "normal" ? "匀称端正" : "略显沉重", skin);
+		}
+		return str;
+	}
+
+	// 手腕和手指合并描述
+	if (equipped["wrists"] || equipped["finger"]) {
+		string wrist_desc = equipped["wrists"] ? "腕间"+equipped["wrists"]->short()+"衬得手腕" : "手腕";
+		string finger_desc = equipped["finger"] ? "指间"+equipped["finger"]->short()+"显得十指" : "十指";
+		if (gender == "女性") {
+			if (per < 15) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s骨瘦嶙峋，干枯无肉，%s干瘪粗硬，形如枯枝，皮肤%s，举止稍显僵硬。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s臃肿粗肥，肉堆无形，%s粗短肥大，形同肿块，皮肤%s，举止稍显僵硬。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大无形，肉感厚重，%s粗短僵硬，骨节突出，皮肤%s，举止稍显僵硬。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s纤细瘦弱，骨感突出，%s细长粗硬，骨节分明，皮肤%s，举止稍显僵硬。\n", wrist_desc, finger_desc, skin);
+				}
+			} else if (per <= 25) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s瘦削干枯，骨感分明，%s细长干瘪，形如枯枝，皮肤%s，举止自然。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s臃肿粗大，肉感松软，%s粗短肥大，形同肿块，皮肤%s，举止自然。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大厚实，肉感明显，%s粗短有力，骨节清晰，皮肤%s，举止自然。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s纤细匀称，线条柔和，%s细长匀称，骨节柔美，皮肤%s，举止自然。\n", wrist_desc, finger_desc, skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s瘦削纤细，骨感稍显，%s细长匀称，形如细枝，皮肤%s，举止间透出清雅。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s粗大臃肿，肉感厚重，%s粗短匀称，形同圆柱，皮肤%s，举止间透出清雅。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大圆润，肉感柔和，%s粗短匀称，骨节柔美，皮肤%s，举止间透出清雅。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s圆润纤细，线条柔美，%s细长柔美，骨节优雅，皮肤%s，举止间透出清雅。\n", wrist_desc, finger_desc, skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    %s圆润纤细，柔若无骨，%s修长柔美，垂落如兰，皮肤%s，仿若可吹弹生香。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    %s圆润纤细，线条柔美，%s细长柔美，骨节优雅，皮肤%s，举止间透出优雅。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大圆润，肉感柔和，%s粗短匀称，骨节柔美，皮肤%s，举止间透出优雅。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "slim") {
+					str += sprintf("    %s瘦削纤细，骨感稍显，%s细长匀称，形如细枝，皮肤%s，举止间透出优雅。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s粗大臃肿，肉感厚重，%s粗短匀称，形同圆柱，皮肤%s，举止间透出优雅。\n", wrist_desc, finger_desc, skin);
+				}
+			}
+		} else {
+			if (per < 15) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s骨瘦嶙峋，干枯无肉，%s干瘪粗硬，形如枯枝，皮肤%s，举止略显笨拙。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s臃肿粗肥，肉堆无形，%s粗短肥大，形同肿块，皮肤%s，举止略显笨拙。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大无形，肉感厚重，%s粗短僵硬，骨节突出，皮肤%s，举止略显笨拙。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s骨感突出，线条僵硬，%s粗大僵硬，骨节分明，皮肤%s，举止略显笨拙。\n", wrist_desc, finger_desc, skin);
+				}
+			} else if (per <= 25) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s瘦削干枯，骨感分明，%s细长干瘪，形如枯枝，皮肤%s，举止稳健。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s臃肿粗大，肉感松软，%s粗短肥大，形同肿块，皮肤%s，举止稳健。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大厚实，肉感明显，%s粗短有力，骨节清晰，皮肤%s，举止稳健。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s线条分明，骨感适中，%s细长有力，骨节清晰，皮肤%s，举止稳健。\n", wrist_desc, finger_desc, skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "slim") {
+					str += sprintf("    %s瘦削有力，骨感稍显，%s细长匀称，形如细枝，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    %s粗大臃肿，肉感厚重，%s粗短匀称，形同圆柱，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大有力，肉感柔和，%s粗短匀称，骨节分明，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s刚健有力，线条分明，%s细长匀称，骨节优雅，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    %s刚健有力，柔韧有度，%s修长匀称，指节优雅，皮肤%s。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    %s刚健有力，线条分明，%s细长匀称，骨节优雅，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    %s粗大有力，肉感柔和，%s粗短匀称，骨节分明，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else if (bodytype == "slim") {
+					str += sprintf("    %s瘦削有力，骨感稍显，%s细长匀称，形如细枝，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				} else {
+					str += sprintf("    %s粗大臃肿，肉感厚重，%s粗短匀称，形同圆柱，皮肤%s，举止间透出英气。\n", wrist_desc, finger_desc, skin);
+				}
+			}
+		}
+	} else {
+		if (gender == "女性") {
+			if (per < 15) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕骨瘦嶙峋，干枯无肉，十指干瘪粗硬，形如枯枝，皮肤%s，举止间略显单薄。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕臃肿粗肥，肉堆无形，十指粗短肥大，形同肿块，皮肤%s，举止间略显单薄。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大无形，肉感厚重，十指粗短僵硬，骨节突出，皮肤%s，举止间略显单薄。\n", skin);
+				} else {
+					str += sprintf("    手腕纤细瘦弱，骨感突出，十指细长粗硬，骨节分明，皮肤%s，举止间略显单薄。\n", skin);
+				}
+			} else if (per <= 25) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削干枯，骨感分明，十指细长干瘪，形如枯枝，皮肤%s，举止间透出柔美。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕臃肿粗大，肉感松软，十指粗短肥大，形同肿块，皮肤%s，举止间透出柔美。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大厚实，肉感明显，十指粗短有力，骨节清晰，皮肤%s，举止间透出柔美。\n", skin);
+				} else {
+					str += sprintf("    手腕纤细匀称，线条柔和，十指细长匀称，骨节柔美，皮肤%s，举止间透出柔美。\n", skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削纤细，骨感稍显，十指细长匀称，形如细枝，皮肤%s，举止间透出清雅。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕粗大臃肿，肉感厚重，十指粗短匀称，形同圆柱，皮肤%s，举止间透出清雅。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大圆润，肉感柔和，十指粗短匀称，骨节柔美，皮肤%s，举止间透出清雅。\n", skin);
+				} else {
+					str += sprintf("    手腕圆润纤细，线条柔美，十指细长柔美，骨节优雅，皮肤%s，举止间透出清雅。\n", skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    手腕圆润纤细，柔若无骨，十指修长柔美，垂落如兰，皮肤%s，仿若可吹弹生香。\n", skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    手腕圆润纤细，线条柔美，十指细长柔美，骨节优雅，皮肤%s，举止间透出优雅。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大圆润，肉感柔和，十指粗短匀称，骨节柔美，皮肤%s，举止间透出优雅。\n", skin);
+				} else if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削纤细，骨感稍显，十指细长匀称，形如细枝，皮肤%s，举止间透出优雅。\n", skin);
+				} else {
+					str += sprintf("    手腕粗大臃肿，肉感厚重，十指粗短匀称，形同圆柱，皮肤%s，举止间透出优雅。\n", skin);
+				}
+			}
+		} else {
+			if (per < 15) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕骨瘦嶙峋，干枯无肉，十指干瘪粗硬，形如枯枝，皮肤%s，举止略显笨拙。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕臃肿粗肥，肉堆无形，十指粗短肥大，形同肿块，皮肤%s，举止略显笨拙。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大无形，肉感厚重，十指粗短僵硬，骨节突出，皮肤%s，举止略显笨拙。\n", skin);
+				} else {
+					str += sprintf("    手腕骨感突出，线条僵硬，十指粗大僵硬，骨节分明，皮肤%s，举止略显笨拙。\n", skin);
+				}
+			} else if (per <= 25) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削干枯，骨感分明，十指细长干瘪，形如枯枝，皮肤%s，举止间透出沉稳。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕臃肿粗大，肉感松软，十指粗短肥大，形同肿块，皮肤%s，举止间透出沉稳。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大厚实，肉感明显，十指粗短有力，骨节清晰，皮肤%s，举止间透出沉稳。\n", skin);
+				} else {
+					str += sprintf("    手腕线条分明，骨感适中，十指细长有力，骨节清晰，皮肤%s，举止间透出沉稳。\n", skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削有力，骨感稍显，十指细长匀称，形如细枝，皮肤%s，举止间透出英气。\n", skin);
+				} else if (bodytype == "fat") {
+					str += sprintf("    手腕粗大臃肿，肉感厚重，十指粗短匀称，形同圆柱，皮肤%s，举止间透出英气。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大有力，肉感柔和，十指粗短匀称，骨节分明，皮肤%s，举止间透出英气。\n", skin);
+				} else {
+					str += sprintf("    手腕刚健有力，线条分明，十指细长匀称，骨节优雅，皮肤%s，举止间透出英气。\n", skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    手腕刚健有力，柔韧有度，十指修长匀称，指节优雅，皮肤%s。\n", skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    手腕刚健有力，线条分明，十指细长匀称，骨节优雅，皮肤%s，举止间透出英气。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    手腕粗大有力，肉感柔和，十指粗短匀称，骨节分明，皮肤%s，举止间透出英气。\n", skin);
+				} else if (bodytype == "slim") {
+					str += sprintf("    手腕瘦削有力，骨感稍显，十指细长匀称，形如细枝，皮肤%s，举止间透出英气。\n", skin);
+				} else {
+					str += sprintf("    手腕粗大臃肿，肉感厚重，十指粗短匀称，形同圆柱，皮肤%s，举止间透出英气。\n", skin);
+				}
+			}
+		}
+	}
+
+	// 脖颈描述
+	if (equipped["neck"]) {
+	    if (gender == "女性") {
+	        if (per < 15) {
+	            str += sprintf("    戴着%s轻覆脖颈，颈部线条僵硬，皮肤%s，姿态拘谨。\n", equipped["neck"]->short(), skin);
+	        } else if (per <= 19 || bodytype == "slim" || bodytype == "fat") {
+	            if (bodytype == "slim") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部瘦弱，线条单薄，皮肤%s，姿态拘谨。\n", equipped["neck"]->short(), skin);
+	            } else if (bodytype == "fat") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部臃肿，线条模糊，皮肤%s，姿态笨拙。\n", equipped["neck"]->short(), skin);
+	            } else {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部线条柔和，皮肤%s，姿态自然。\n", equipped["neck"]->short(), skin);
+	            }
+	        } else if (per <= 25 || bodytype == "heavy") {
+	            if (bodytype == "heavy") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部略粗，线条柔和，皮肤%s，姿态稳重。\n", equipped["neck"]->short(), skin);
+	            } else {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部线条柔和，皮肤%s，姿态自然。\n", equipped["neck"]->short(), skin);
+	            }
+	        } else if (per <= 30 || bodytype == "normal") {
+	            str += sprintf("    戴着%s显得脖颈修长，线条柔和，皮肤%s，锁骨微现，姿态优雅。\n", equipped["neck"]->short(), skin);
+	        } else {
+	            str += sprintf("    戴着%s显得脖颈修长挺直，线条温润平和，肤色%s，映出一抹柔光；锁骨清浅，轻隐于肌肤之下，似静水微波，自成静美。\n", equipped["neck"]->short(), skin);
+	        }
+	    } else {
+	        if (per < 15) {
+	            str += sprintf("    戴着%s轻覆脖颈，颈部线条粗硬，皮肤%s，姿态僵直。\n", equipped["neck"]->short(), skin);
+	        } else if (per <= 19 || bodytype == "slim" || bodytype == "fat") {
+	            if (bodytype == "slim") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部瘦弱，线条单薄，皮肤%s，姿态拘谨。\n", equipped["neck"]->short(), skin);
+	            } else if (bodytype == "fat") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部臃肿，线条模糊，皮肤%s，姿态笨拙。\n", equipped["neck"]->short(), skin);
+	            } else {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部线条分明，皮肤%s，姿态沉稳。\n", equipped["neck"]->short(), skin);
+	            }
+	        } else if (per <= 25 || bodytype == "heavy") {
+	            if (bodytype == "heavy") {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部略粗，线条分明，皮肤%s，姿态稳重。\n", equipped["neck"]->short(), skin);
+	            } else {
+	                str += sprintf("    戴着%s轻覆脖颈，颈部线条分明，皮肤%s，姿态沉稳。\n", equipped["neck"]->short(), skin);
+	            }
+	        } else if (per <= 30 || bodytype == "normal") {
+	            str += sprintf("    戴着%s显得脖颈修长，线条流畅，皮肤%s，姿态有力。\n", equipped["neck"]->short(), skin);
+	        } else {
+	            str += sprintf("    戴着%s显得脖颈刚健有力，线条流畅，皮肤%s，姿态英气。\n", equipped["neck"]->short(), skin);
+	        }
+	    }
+	} else {
+	    if (gender == "女性") {
+	        if (per < 15) {
+	            str += sprintf("    脖颈瘦弱，线条僵硬，皮肤%s，姿态拘谨。\n", skin);
+	        } else if (per <= 19 || bodytype == "slim" || bodytype == "fat") {
+	            if (bodytype == "slim") {
+	                str += sprintf("    脖颈瘦弱，线条单薄，皮肤%s，姿态拘谨。\n", skin);
+	            } else if (bodytype == "fat") {
+	                str += sprintf("    脖颈臃肿，线条模糊，皮肤%s，姿态笨拙。\n", skin);
+	            } else {
+	                str += sprintf("    脖颈线条柔和，皮肤%s，姿态自然。\n", skin);
+	            }
+	        } else if (per <= 25 || bodytype == "heavy") {
+	            if (bodytype == "heavy") {
+	                str += sprintf("    脖颈略粗，线条柔和，皮肤%s，姿态稳重。\n", skin);
+	            } else {
+	                str += sprintf("    脖颈线条柔和，皮肤%s，姿态自然。\n", skin);
+	            }
+	        } else if (per <= 30 || bodytype == "normal") {
+	            str += sprintf("    脖颈修长，线条柔和，皮肤%s，锁骨微现，姿态优雅。\n", skin);
+	        } else {
+	            str += sprintf("    脖颈修长挺直，线条温润平和，肤色%s，映出一抹柔光；锁骨清浅，轻隐于肌肤之下，似静水微波，自成静美。\n", skin);
+	        }
+	    } else {
+	        if (per < 15) {
+	            str += sprintf("    脖颈瘦硬，线条粗僵，皮肤%s，姿态拘谨。\n", skin);
+	        } else if (per <= 19 || bodytype == "slim" || bodytype == "fat") {
+	            if (bodytype == "slim") {
+	                str += sprintf("    脖颈瘦弱，线条单薄，皮肤%s，姿态拘谨。\n", skin);
+	            } else if (bodytype == "fat") {
+	                str += sprintf("    脖颈臃肿，线条模糊，皮肤%s，姿态笨拙。\n", skin);
+	            } else {
+	                str += sprintf("    脖颈线条分明，皮肤%s，姿态沉稳。\n", skin);
+	            }
+	        } else if (per <= 25 || bodytype == "heavy") {
+	            if (bodytype == "heavy") {
+	                str += sprintf("    脖颈略粗，线条分明，皮肤%s，姿态稳重。\n", skin);
+	            } else {
+	                str += sprintf("    脖颈线条分明，皮肤%s，姿态沉稳。\n", skin);
+	            }
+	        } else if (per <= 30 || bodytype == "normal") {
+	            str += sprintf("    脖颈修长，线条流畅，皮肤%s，姿态有力。\n", skin);
+	        } else {
+	            str += sprintf("    脖颈刚健有力，线条流畅，皮肤%s，姿态英气。\n", skin);
+	        }
+	    }
+	}
+
+	// 上身（胸部、肩膀、臂部）
+	if (equipped["cloth"] || equipped["armor"] || equipped["surcoat"]) {
+		object upper = equipped["cloth"] ? equipped["cloth"] : (equipped["armor"] ? equipped["armor"] : equipped["surcoat"]);
+		if (gender == "女性") {
+			if (per < 15) {
+				str += sprintf("    上身%s贴合身体，肩部瘦削，胸部扁平，双臂单薄，皮肤%s。\n", upper->short(), skin);
+			} else if (per <= 19) {
+				str += sprintf("    上身%s贴合身体，肩部瘦削，胸部平坦，双臂单薄，皮肤%s。\n", upper->short(), skin);
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    上身%s贴合身体，肩部纤细，胸部微隆，双臂修长，皮肤%s。\n", upper->short(), skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部圆润，胸部饱满，双臂柔和，皮肤%s。\n", upper->short(), skin);
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸部扁平，双臂僵硬，皮肤%s。\n", upper->short(), skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    上身%s贴合身体，香肩微削，胸部轻隆，双臂修长，肌肤%s。\n", upper->short(), skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部圆润，胸部饱满，双臂柔和，肌肤%s。\n", upper->short(), skin);
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸部平坦，双臂僵硬，肌肤%s。\n", upper->short(), skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    上身%s贴合身体，衬得香肩微敛若削，胸部轻隆，玉臂纤直柔润，肌肤%s。\n", upper->short(), skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    上身%s贴合身体，衬得香肩微削，胸部轻隆，玉臂修长，肌肤%s。\n", upper->short(), skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部圆润，胸部饱满，双臂柔和，肌肤%s。\n", upper->short(), skin);
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸部平坦，双臂僵硬，肌肤%s。\n", upper->short(), skin);
+				}
+			}
+		} else {
+			if (per < 15) {
+				str += sprintf("    上身%s贴合身体，肩部瘦削，胸廓扁平，双臂单薄，皮肤%s。\n", upper->short(), skin);
+			} else if (per <= 19) {
+				str += sprintf("    上身%s贴合身体，肩部瘦削，胸廓平坦，双臂单薄，皮肤%s。\n", upper->short(), skin);
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    上身%s贴合身体，肩部匀称，胸廓结实，双臂修长，皮肤%s。\n", upper->short(), skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部宽厚，胸廓饱满，双臂有力，皮肤%s。\n", upper->short(), skin);
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸廓扁平，双臂僵硬，皮肤%s。\n", upper->short(), skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light") {
+					str += sprintf("    上身%s贴合身体，肩部修长，胸廓挺拔，双臂流畅，肌理细腻。\n", upper->short());
+				} else if (bodytype == "normal" || bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部宽阔，胸廓雄健，双臂有力，肌理细腻。\n", upper->short());
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸廓平坦，双臂僵硬，皮肤%s。\n", upper->short(), skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    上身%s贴合身体，肩部修长，胸廓挺拔，双臂流畅，肌理细腻。\n", upper->short());
+				} else if (bodytype == "normal") {
+					str += sprintf("    上身%s贴合身体，肩部宽阔，胸廓雄健，双臂有力，肌理细腻。\n", upper->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    上身%s贴合身体，肩部宽厚，胸廓饱满，双臂有力，肌理细腻。\n", upper->short());
+				} else {
+					str += sprintf("    上身%s贴合身体，肩部单薄，胸廓平坦，双臂僵硬，皮肤%s。\n", upper->short(), skin);
+				}
+			}
+		}
+	} else {
+		if (gender == "女性") {
+			if (per < 15) {
+				str += sprintf("    肩部瘦削，胸部扁平，臂部单薄，皮肤%s。\n", skin);
+			} else if (per <= 19) {
+				str += sprintf("    肩部瘦削，胸部平坦，臂部单薄，皮肤%s。\n", skin);
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    肩部纤细，胸部微隆，臂部修长，皮肤%s。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    肩部圆润，胸部饱满，臂部柔和，皮肤%s。\n", skin);
+				} else {
+					str += sprintf("    肩部单薄，胸部扁平，臂部僵硬，皮肤%s。\n", skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    肩部微削，胸部微隆，臂部修长，肌肤%s。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    肩部圆润，胸部饱满，臂部柔和，肌肤%s。\n", skin);
+				} else {
+					str += sprintf("    肩部单薄，胸部平坦，臂部僵硬，肌肤%s。\n", skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    香肩微削，柔滑如玉。胸前初月轻隆，乳尖娇嫩若花蕾。玉臂纤长，肌肤%s。\n", skin);
+				} else if (bodytype == "normal") {
+					str += sprintf("    肩头纤弱，圆润细腻。胸前隆起若含苞，乳尖粉嫩。玉臂纤长，肌肤%s。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    肩部圆润，胸部饱满，臂部柔和，肌肤%s。\n", skin);
+				} else {
+					str += sprintf("    肩部单薄，胸部平坦，臂部僵硬，肌肤%s。\n", skin);
+				}
+			}
+		} else {
+			if (per < 15) {
+				str += sprintf("    肩部瘦削，胸廓扁平，臂部单薄，皮肤%s。\n", skin);
+			} else if (per <= 19) {
+				str += sprintf("    肩部瘦削，胸廓平坦，臂部单薄，皮肤%s。\n", skin);
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    肩部匀称，胸廓结实，臂部修长，皮肤%s。\n", skin);
+				} else if (bodytype == "heavy") {
+					str += sprintf("    肩部宽厚，胸廓饱满，臂部有力，皮肤%s。\n", skin);
+				} else {
+					str += sprintf("    肩部单薄，胸廓扁平，臂部僵硬，皮肤%s。\n", skin);
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light") {
+					str += sprintf("    肩部修长，胸廓挺拔，臂部流畅，肌理细腻。\n");
+				} else if (bodytype == "normal" || bodytype == "heavy") {
+					str += sprintf("    肩部宽阔，胸廓雄健，臂部有力，肌理细腻。\n");
+				} else {
+					str += sprintf("    肩部单薄，胸廓平坦，臂部僵硬，皮肤%s。\n", skin);
+				}
+			} else {
+				if (bodytype == "light") {
+					str += sprintf("    肩部修长，胸廓挺拔，臂部流畅，肌理细腻。\n");
+				} else if (bodytype == "normal") {
+					str += sprintf("    肩部宽阔，胸廓雄健，臂部有力，肌理细腻。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    肩部宽厚，胸廓饱满，臂部有力，肌理细腻。\n");
+				} else {
+					str += sprintf("    肩部单薄，胸廓平坦，臂部僵硬，皮肤%s。\n", skin);
+				}
+			}
+		}
+	}
+
+	// 腰部描述
+	if (equipped["waist"]) {
+	    if (gender == "女性") {
+	        if (per >= 15 && per <= 19) { // 丑
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，毫无曲线。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢僵直，缺乏柔美。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
+	            }
+	        } else if (per >= 20 && per <= 25) { // 普通
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢柔和，线条流畅。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢流畅，线条柔和。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段圆润，腰肢宽厚，线条平顺。\n", equipped["waist"]->short());
+	            }
+	        } else if (per >= 26 && per <= 30) { // 美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢稍显流畅，线条柔和。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤柔，腰肢柔美，线条曼妙。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢柔美，线条流畅。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段圆润，腰肢柔和，线条优雅。\n", equipped["waist"]->short());
+	            }
+	        } else if (per > 30) { // 完美极美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段稍显粗硬，腰肢流畅，线条柔美。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤柔，腰肢盈盈一握，仿佛风中细柳，顾盼生姿。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢柔美，宛如清泉流转，风姿绰约。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段圆润，腰肢柔美，宛若玉环轻舞，仪态万方。\n", equipped["waist"]->short());
+	            }
+	        }
+	    } else { // 男性
+	        if (per >= 15 && per <= 19) { // 丑
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，毫无线条。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢僵直，缺乏力度。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
+	            }
+	        } else if (per >= 20 && per <= 25) { // 普通
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢流畅，线条分明。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢流畅，线条有力。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实，线条平顺。\n", equipped["waist"]->short());
+	            }
+	        } else if (per >= 26 && per <= 30) { // 美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段粗硬，腰肢稍显流畅，线条平顺。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢挺拔，线条俊朗。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢挺拔，线条英俊。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实，线条有力。\n", equipped["waist"]->short());
+	            }
+	        } else if (per > 30) { // 完美极美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    腰系%s显得身段稍显粗硬，腰肢流畅，线条平顺。\n", equipped["waist"]->short());
+	            } else if (bodytype == "light") {
+	                str += sprintf("    腰系%s显得身段纤细，腰肢挺拔如松，宛若玉树临风，英姿勃发。\n", equipped["waist"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    腰系%s显得身段匀称，腰肢挺拔有力，宛如山岳屹立，气势不凡。\n", equipped["waist"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实有力，宛若磐石稳重，威仪堂堂。\n", equipped["waist"]->short());
+	            }
+	        }
+	    }
+	} else {
+	    if (gender == "女性") {
+	        if (per >= 15 && per <= 19) { // 丑
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢松垮，毫无曲线。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢僵直，缺乏柔美。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢平直，略显呆板。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段宽厚，腰肢粗壮，毫无精致。\n");
+	            }
+	        } else if (per >= 20 && per <= 25) { // 普通
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢松垮，线条呆板。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢柔和，线条流畅。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢流畅，线条柔和。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段圆润，腰肢宽厚，线条平顺。\n");
+	            }
+	        } else if (per >= 26 && per <= 30) { // 美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢稍显流畅，线条柔和。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤柔，腰肢柔美，线条曼妙。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢柔美，线条流畅。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段圆润，腰肢柔和，线条优雅。\n");
+	            }
+	        } else if (per > 30) { // 完美极美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段稍显粗硬，腰肢流畅，线条柔美。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤柔，腰肢盈盈一握，仿佛风中细柳，顾盼生姿。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢柔美，宛如清泉流转，风姿绰约。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段圆润，腰肢柔美，宛若玉环轻舞，仪态万方。\n");
+	            }
+	        }
+	    } else { // 男性
+	        if (per >= 15 && per <= 19) { // 丑
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢松垮，毫无线条。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢僵直，缺乏力度。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢平直，略显呆板。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段宽厚，腰肢粗壮，毫无精致。\n");
+	            }
+	        } else if (per >= 20 && per <= 25) { // 普通
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢松垮，线条呆板。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢流畅，线条分明。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢流畅，线条有力。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段宽厚，腰肢厚实，线条平顺。\n");
+	            }
+	        } else if (per >= 26 && per <= 30) { // 美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段粗硬，腰肢稍显流畅，线条平顺。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢挺拔，线条俊朗。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢挺拔，线条英俊。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段宽厚，腰肢厚实，线条有力。\n");
+	            }
+	        } else if (per > 30) { // 完美极美
+	            if (bodytype == "slim" || bodytype == "fat") {
+	                str += sprintf("    身段稍显粗硬，腰肢流畅，线条平顺。\n");
+	            } else if (bodytype == "light") {
+	                str += sprintf("    身段纤细，腰肢挺拔如松，宛若玉树临风，英姿勃发。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    身段匀称，腰肢挺拔有力，宛如山岳屹立，气势不凡。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    身段宽厚，腰肢厚实有力，宛若磐石稳重，威仪堂堂。\n");
+	            }
+	        }
+	    }
+	}
+
+	// 下身（腿部）
+	if (equipped["skirt"] || equipped["pants"]) {
+		object lower = equipped["skirt"] ? equipped["skirt"] : equipped["pants"];
+		if (gender == "女性") {
+			if (per < 15) {
+				str += sprintf("    下身%s自腰披垂，勾勒出瘦弱的身姿，双腿干瘦，隐现于裙褶之间。\n", lower->short());
+			} else if (per <= 19) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出平凡的身姿，双腿细长，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出厚实的身姿，双腿粗壮，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裙褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裙褶之间。\n", lower->short());
+				}
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出匀称的身姿，双腿修长，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出厚实的身姿，双腿粗壮，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裙褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裙褶之间。\n", lower->short());
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出优美的身姿，双腿修长，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出端庄的身姿，双腿圆润，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裙褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裙褶之间。\n", lower->short());
+				}
+			} else { // per > 30
+				if (bodytype == "light") {
+					str += sprintf("    下身%s自腰披垂，勾勒出身姿的纤妙，双腿修长，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出匀称的身姿，双腿修长，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出端庄的身姿，双腿圆润，隐现于裙褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裙褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裙褶之间。\n", lower->short());
+				}
+			}
+		} else { // 男性
+			if (per < 15) {
+				str += sprintf("    下身%s自腰披垂，勾勒出瘦弱的身姿，双腿干瘦，隐现于裤褶之间。\n", lower->short());
+			} else if (per <= 19) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出平凡的身姿，双腿细长，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出厚实的身姿，双腿粗壮，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裤褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裤褶之间。\n", lower->short());
+				}
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出匀称的身姿，双腿修长，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出厚实的身姿，双腿粗壮，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裤褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裤褶之间。\n", lower->short());
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出挺拔的身姿，双腿修长，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出雄壮的身姿，双腿粗壮，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裤褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裤褶之间。\n", lower->short());
+				}
+			} else { // per > 30
+				if (bodytype == "light") {
+					str += sprintf("    下身%s自腰披垂，勾勒出英挺的身姿，双腿修长，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "normal") {
+					str += sprintf("    下身%s自腰披垂，勾勒出匀称的身姿，双腿修长，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身%s自腰披垂，勾勒出雄壮的身姿，双腿粗壮，隐现于裤褶之间。\n", lower->short());
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身%s自腰披垂，勾勒出干瘦的身姿，双腿细弱，隐现于裤褶之间。\n", lower->short());
+				} else { // fat
+					str += sprintf("    下身%s自腰披垂，勾勒出臃肿的身姿，双腿肥大，隐现于裤褶之间。\n", lower->short());
+				}
+			}
+		}
+	} else {
+		if (gender == "女性") {
+			if (per < 15) {
+				str += sprintf("    下身一丝不挂，双腿干瘦，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+			} else if (per <= 19) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿细长，间隙明显。膝盖平直，小腿细长。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长，间隙适中。膝盖平直，小腿匀称。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长，间隙较小。膝盖平滑，小腿匀称。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿圆润，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else { // per > 30
+				if (bodytype == "light") {
+					str += sprintf("    下身一丝不挂，双腿纤细修长，间隙几不可见。膝盖柔滑，小腿柔美紧致。光洁的阴户宛若白璧无瑕。\n");
+				} else if (bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长匀称，间隙较小。膝盖平滑，小腿匀称。光洁的阴户白璧无瑕。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿圆润，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			}
+		} else { // 男性
+			if (per < 15) {
+				str += sprintf("    下身一丝不挂，双腿干瘦，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+			} else if (per <= 19) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿细长，间隙明显。膝盖平直，小腿细长。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else if (per <= 25) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长，间隙适中。膝盖平直，小腿匀称。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else if (per <= 30) {
+				if (bodytype == "light" || bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长，间隙较小。膝盖平滑，小腿匀称。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			} else { // per > 30
+				if (bodytype == "light") {
+					str += sprintf("    下身一丝不挂，双腿修长挺拔，间隙较小。膝盖平滑，小腿紧实有力。\n");
+				} else if (bodytype == "normal") {
+					str += sprintf("    下身一丝不挂，双腿修长匀称，间隙适中。膝盖平滑，小腿匀称。\n");
+				} else if (bodytype == "heavy") {
+					str += sprintf("    下身一丝不挂，双腿粗壮有力，间隙较宽。膝盖平直，小腿粗大。\n");
+				} else if (bodytype == "slim") {
+					str += sprintf("    下身一丝不挂，双腿细弱，间隙明显。膝盖僵硬，小腿瘦弱。\n");
+				} else { // fat
+					str += sprintf("    下身一丝不挂，双腿肥大，间隙较宽。膝盖平直，小腿肥厚。\n");
+				}
+			}
+		}
+	}
+
+	// 足部描述
+	if (equipped["boots"]) {
+	    if (gender == "女性") {
+	        if (per < 15) {
+	            str += sprintf("    脚穿%s，足踝干瘦，脚背单薄，足尖僵硬。\n", equipped["boots"]->short());
+	        } else if (per <= 25) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝细长，脚背平整，足尖平直。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝稍粗，脚背宽厚，足尖平直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗硬，脚背扁平，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        } else if (per <= 30) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面平整，贴合足踝弧形，足尖轻合。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝圆润，脚背饱满，足尖平直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗壮，脚背厚重，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        } else {
+	            if (bodytype == "light") {
+	                str += sprintf("    脚穿%s，鞋面平整洁净，贴合足踝弧形，足尖轻合如花瓣初阖，虽藏于履中，亦可想其纤弱玲珑。\n", equipped["boots"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面平整，贴合足踝圆润，足尖轻合，柔美匀称。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝圆润，脚背饱满，足尖平直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗大，脚背厚重，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        }
+	    } else {
+	        if (per < 15) {
+	            str += sprintf("    脚穿%s，足踝干瘦，脚背单薄，足尖僵硬。\n", equipped["boots"]->short());
+	        } else if (per <= 25) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝修长，脚背匀称，足尖平直。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗壮，脚背宽厚，足尖平直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗硬，脚背扁平，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        } else if (per <= 30) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面平整，贴合足踝修长，脚背匀称，足尖轻合。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝雄健，脚背宽阔，足尖平直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗大，脚背厚重，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        } else {
+	            if (bodytype == "light") {
+	                str += sprintf("    脚穿%s，鞋面平整洁净，贴合足踝修长，足尖轻合，英气挺拔。\n", equipped["boots"]->short());
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    脚穿%s，鞋面平整，贴合足踝匀称，足尖轻合，英武有力。\n", equipped["boots"]->short());
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝雄健，脚背宽阔，足尖平 notification直。\n", equipped["boots"]->short());
+	            } else {
+	                str += sprintf("    脚穿%s，鞋面贴合足踝粗大，脚背厚重，足尖僵硬。\n", equipped["boots"]->short());
+	            }
+	        }
+	    }
+	} else {
+	    if (gender == "女性") {
+	        if (per < 15) {
+	            str += sprintf("    双脚赤裸，足踝干瘦，脚背单薄，脚趾僵硬。\n");
+	        } else if (per <= 25) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    双脚赤裸，足踝细长，脚背平整，脚趾匀称。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    双脚赤裸，足踝稍粗，脚背宽厚，脚趾柔和。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗硬，脚背扁平，脚趾僵硬。\n");
+	            }
+	        } else if (per <= 30) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    双脚赤裸，足踝弧形柔美，脚背平滑，脚趾匀称。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    双脚赤裸，足踝圆润，脚背饱满，脚趾柔和。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗壮，脚背厚重，脚趾僵硬。\n");
+	            }
+	        } else {
+	            if (bodytype == "light") {
+	                str += sprintf("    玉足纤长，脚踝莹润，足背柔滑如脂，隐见青筋。足心丝滑如缎，脚趾匀称如葱，趾甲粉润如玉。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    玉足纤巧，脚踝红润，足背细腻半透，隐见青筋。足心软如锦缎，脚趾整齐匀称，趾甲晶莹如珠。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    玉足赤裸，足踝圆润，脚背饱满，脚弓柔和，脚趾匀称。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗壮，脚背厚重，脚趾僵硬。\n");
+	            }
+	        }
+	    } else {
+	        if (per < 15) {
+	            str += sprintf("    双脚赤裸，足踝干瘦，脚背单薄，脚趾粗硬。\n");
+	        } else if (per <= 25) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    双脚赤裸，足踝修长，脚背匀称，脚趾清晰。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    双脚赤裸，足踝粗壮，脚背宽厚，脚趾匀称。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗硬，脚背扁平，脚趾僵硬。\n");
+	            }
+	        } else if (per <= 30) {
+	            if (bodytype == "light" || bodytype == "normal") {
+	                str += sprintf("    双脚赤裸，足踝修长，脚背平滑，脚趾整齐。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    双脚赤裸，足踝雄健，脚背宽阔，脚趾匀称。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗大，脚背厚重，脚趾僵硬。\n");
+	            }
+	        } else {
+	            if (bodytype == "light") {
+	                str += sprintf("    双脚赤裸，脚踝修长挺拔，足背平滑，足弓高隆，脚趾匀称，趾甲光洁。\n");
+	            } else if (bodytype == "normal") {
+	                str += sprintf("    双脚赤裸，足踝匀称，脚背宽阔，脚弓平滑，脚趾整齐。\n");
+	            } else if (bodytype == "heavy") {
+	                str += sprintf("    双脚赤裸，足踝雄健，脚背宽厚，脚弓有力，脚趾匀称。\n");
+	            } else {
+	                str += sprintf("    双脚赤裸，足踝粗大，脚背厚重，脚趾僵硬。\n");
+	            }
+	        }
+	    }
+	}
+	return str;
+}
+
 int help (object me)
 {
 	write(@HELP
 指令格式: look [<物品>|<生物>|<方向>]
- 
+
 这个指令让你查看你所在的环境、某件物品、生物、或是方向。
- 
+
 HELP
 );
 	return 1;

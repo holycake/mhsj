@@ -18,7 +18,7 @@ void create()
 	set("armor_prop/str", 5);
 	set("armor_prop/con", 5);
 	set("armor_prop/dex", 2);
-	set("armor_prop/per", 7);
+	set("armor_prop/personality", 7);
 	set("armor_prop/kar", 7);
 
 	setup();

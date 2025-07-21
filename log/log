@@ -4249,3 +4249,684 @@
 /d/nanjing/npc/guan_wangyangming.c line 64: Warning: Unused local variable 'ob'
   }
    ^
+/cmds/std/look.c line 218: Warning: Redeclaration of global variable 'body_desc_equipped'.
+  mapping body_desc_equipped = ([]);
+                                    ^
+/cmds/std/look.c line 816: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string ridemsg = ride_suffix(obj);
+                     ^
+/cmds/std/look.c line 816: Illegal LHS
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 816: Warning: Expression has no side effects, and the value is unused
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 850: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 850: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 850: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 851: Undefined variable 'inv'
+  if (!arrayp(inv) || !sizeof(inv)) return "";
+                      ^
+/cmds/std/look.c line 856: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string slot = item->query("armor_type");
+                     ^
+/cmds/std/look.c line 856: Warning: Expression has no side effects, and the value is unused
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 859: Warning: Expression has no side effects, and the value is unused
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 862: Warning: Expression has no side effects, and the value is unused
+  string desc = call_other(this_object(), desc_func, item, obj);
+                                                                        ^
+/cmds/std/look.c line 872: Warning: Unused local variable 'special_slots'
+  }
+   ^
+/cmds/std/look.c line 814: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string ridemsg = ride_suffix(obj);
+                     ^
+/cmds/std/look.c line 814: Illegal LHS
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 814: Warning: Expression has no side effects, and the value is unused
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 848: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 848: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 848: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 849: Undefined variable 'inv'
+  if (!arrayp(inv) || !sizeof(inv)) return "";
+                      ^
+/cmds/std/look.c line 854: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string slot = item->query("armor_type");
+                     ^
+/cmds/std/look.c line 854: Warning: Expression has no side effects, and the value is unused
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 857: Warning: Expression has no side effects, and the value is unused
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 860: Warning: Expression has no side effects, and the value is unused
+  string desc = call_other(this_object(), desc_func, item, obj);
+                                                                        ^
+/cmds/std/look.c line 870: Warning: Unused local variable 'special_slots'
+  }
+   ^
+/cmds/std/look.c line 814: syntax error, unexpected L_DEFINED_NAME, expecting L_COLON_COLON or '('
+  string ridemsg = ride_suffix(obj);
+                     ^
+/cmds/std/look.c line 814: Illegal LHS
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 814: Warning: Expression has no side effects, and the value is unused
+  string ridemsg = ride_suffix(obj);
+                                         ^
+/cmds/std/look.c line 848: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 848: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 848: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 849: Undefined variable 'inv'
+  if (!arrayp(inv) || !sizeof(inv)) return "";
+                      ^
+/cmds/std/look.c line 854: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string slot = item->query("armor_type");
+                     ^
+/cmds/std/look.c line 854: Warning: Expression has no side effects, and the value is unused
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 857: Warning: Expression has no side effects, and the value is unused
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 860: Warning: Expression has no side effects, and the value is unused
+  string desc = call_other(this_object(), desc_func, item, obj);
+                                                                        ^
+/cmds/std/look.c line 870: Warning: Unused local variable 'special_slots'
+  }
+   ^
+/cmds/std/look.c line 848: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 848: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 848: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 849: Undefined variable 'inv'
+  if (!arrayp(inv) || !sizeof(inv)) return "";
+                      ^
+/cmds/std/look.c line 854: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string slot = item->query("armor_type");
+                     ^
+/cmds/std/look.c line 854: Illegal LHS
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 854: Warning: Expression has no side effects, and the value is unused
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 855: Undefined variable 'slot'
+  if (!stringp(slot) || undefinedp(slot_to_func[slot])) continue;
+                            ^
+/cmds/std/look.c line 857: Warning: Expression has no side effects, and the value is unused
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 860: Warning: Expression has no side effects, and the value is unused
+  string desc = call_other(this_object(), desc_func, item, obj);
+                                                                        ^
+/cmds/std/look.c line 870: Warning: Unused local variable 'special_slots'
+  }
+   ^
+/cmds/std/look.c line 855: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string slot = item->query("armor_type");
+                     ^
+/cmds/std/look.c line 855: Illegal LHS
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 855: Warning: Expression has no side effects, and the value is unused
+  string slot = item->query("armor_type");
+                                                  ^
+/cmds/std/look.c line 856: Undefined variable 'slot'
+  if (!stringp(slot) || undefinedp(slot_to_func[slot])) continue;
+                            ^
+/cmds/std/look.c line 858: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string desc_func = slot_to_func[slot];
+                          ^
+/cmds/std/look.c line 858: Illegal LHS
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 858: Warning: Expression has no side effects, and the value is unused
+  string desc_func = slot_to_func[slot];
+                                                ^
+/cmds/std/look.c line 859: Undefined variable 'desc_func'
+  if (!function_exists(desc_func, this_object())) continue;
+                                         ^
+/cmds/std/look.c line 861: Warning: Expression has no side effects, and the value is unused
+  string desc = call_other(this_object(), desc_func, item, obj);
+                                                                        ^
+/cmds/std/look.c line 871: Warning: Unused local variable 'special_slots'
+  }
+   ^
+/cmds/std/look.c line 837: syntax error, unexpected L_BASIC_TYPE, expecting L_ASSIGN or ';' or ','
+  string *special_slots = ({ "hands", "neck", "arms", "waist", "legs", "feet" });
+            ^
+/cmds/std/look.c line 837: Illegal LHS
+  string *special_slots = ({ "hands", "neck", "arms", "waist", "legs", "feet" });
+                                                                                     ^
+/cmds/std/look.c line 837: Warning: Expression has no side effects, and the value is unused
+  string *special_slots = ({ "hands", "neck", "arms", "waist", "legs", "feet" });
+                                                                                     ^
+/cmds/std/look.c line 838: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  mapping slot_to_func = ([
+                          ^
+/cmds/std/look.c line 845: Illegal LHS
+  ]);
+         ^
+/cmds/std/look.c line 845: Warning: Expression has no side effects, and the value is unused
+  ]);
+         ^
+/cmds/std/look.c line 857: Undefined variable 'slot_to_func'
+  if (!stringp(slot) || undefinedp(slot_to_func[slot])) continue;
+                                                        ^
+/cmds/std/look.c line 862: Undefined variable 'desc'
+  desc = call_other(this_object(), desc_func, item, obj);
+                ^
+/cmds/std/look.c line 837: syntax error, unexpected L_BASIC_TYPE, expecting L_ASSIGN or ';' or ','
+  mapping slot_to_func;
+             ^
+/cmds/std/look.c line 838: Illegal LHS
+  special_slots = ({ "hands", "neck", "arms", "waist", "legs", "feet" });
+                                                                             ^
+/cmds/std/look.c line 838: Warning: Expression has no side effects, and the value is unused
+  special_slots = ({ "hands", "neck", "arms", "waist", "legs", "feet" });
+                                                                             ^
+/cmds/std/look.c line 839: Undefined variable 'slot_to_func'
+  slot_to_func = ([
+                    ^
+/cmds/std/look.c line 839: Illegal lvalue
+  slot_to_func = ([
+                    ^
+/cmds/std/look.c line 804: Undefined function body_general_desc
+  str += body_general_desc(obj);
+                                   ^
+/cmds/std/look.c line 804: Bad assignment ( string vs unknown ).
+  str += body_general_desc(obj);
+                                    ^
+/cmds/std/look.c line 883: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string func = slot_to_func[slot];
+                     ^
+/cmds/std/look.c line 883: Illegal LHS
+  string func = slot_to_func[slot];
+                                           ^
+/cmds/std/look.c line 883: Warning: Expression has no side effects, and the value is unused
+  string func = slot_to_func[slot];
+                                           ^
+/cmds/std/look.c line 884: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string line = call_other(this_object(), func, obj, item);
+                     ^
+/cmds/std/look.c line 884: Undefined variable 'func'
+  string line = call_other(this_object(), func, obj, item);
+                                                       ^
+/cmds/std/look.c line 884: Warning: Expression has no side effects, and the value is unused
+  string line = call_other(this_object(), func, obj, item);
+                                                                   ^
+/cmds/std/look.c line 951: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 884: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string func = slot_to_func[slot];
+                     ^
+/cmds/std/look.c line 884: Illegal LHS
+  string func = slot_to_func[slot];
+                                           ^
+/cmds/std/look.c line 884: Warning: Expression has no side effects, and the value is unused
+  string func = slot_to_func[slot];
+                                           ^
+/cmds/std/look.c line 885: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string line = call_other(this_object(), func, obj, item);
+                     ^
+/cmds/std/look.c line 885: Undefined variable 'func'
+  string line = call_other(this_object(), func, obj, item);
+                                                       ^
+/cmds/std/look.c line 885: Illegal LHS
+  string line = call_other(this_object(), func, obj, item);
+                                                                   ^
+/cmds/std/look.c line 885: Warning: Expression has no side effects, and the value is unused
+  string line = call_other(this_object(), func, obj, item);
+                                                                   ^
+/cmds/std/look.c line 890: Undefined variable 'line'
+  str += "    " + line + "（" + item->name() + "(" + item->query("id") + ")" + "）\n";
+                                    ^
+/cmds/std/look.c line 952: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 856: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  mapping slot_to_func = ([
+                          ^
+/cmds/std/look.c line 864: Illegal LHS
+  ]);
+         ^
+/cmds/std/look.c line 864: Warning: Expression has no side effects, and the value is unused
+  ]);
+         ^
+/cmds/std/look.c line 866: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string str = "";
+                ^
+/cmds/std/look.c line 866: Illegal LHS
+  string str = "";
+                      ^
+/cmds/std/look.c line 866: Warning: Expression has no side effects, and the value is unused
+  string str = "";
+                      ^
+/cmds/std/look.c line 867: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 867: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 867: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 953: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 856: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  mapping slot_to_func;
+                          ^
+/cmds/std/look.c line 865: Illegal LHS
+  ]);
+         ^
+/cmds/std/look.c line 865: Warning: Expression has no side effects, and the value is unused
+  ]);
+         ^
+/cmds/std/look.c line 867: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string str = "";
+                ^
+/cmds/std/look.c line 867: Illegal LHS
+  string str = "";
+                      ^
+/cmds/std/look.c line 867: Warning: Expression has no side effects, and the value is unused
+  string str = "";
+                      ^
+/cmds/std/look.c line 868: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 868: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 868: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 954: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 867: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string str = "";
+                ^
+/cmds/std/look.c line 867: Illegal LHS
+  string str = "";
+                      ^
+/cmds/std/look.c line 867: Warning: Expression has no side effects, and the value is unused
+  string str = "";
+                      ^
+/cmds/std/look.c line 868: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  object *inv = all_inventory(obj);
+              ^
+/cmds/std/look.c line 868: Illegal LHS
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 868: Warning: Expression has no side effects, and the value is unused
+  object *inv = all_inventory(obj);
+                                       ^
+/cmds/std/look.c line 869: Undefined variable 'inv'
+  if (!arrayp(inv) || !sizeof(inv)) return "";
+                      ^
+/cmds/std/look.c line 892: Undefined variable 'str'
+  str += "    " + line + "（" + item->name() + "(" + item->query("id") + ")" + "）\n";
+                    ^
+/cmds/std/look.c line 954: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 955: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string str = obj->short();
+                ^
+/cmds/std/look.c line 955: Illegal LHS
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 955: Warning: Expression has no side effects, and the value is unused
+  string str = obj->short();
+                                ^
+/cmds/std/look.c line 957: Undefined variable 'str'
+  str = HIC "  √" NOR + do_query(obj);
+               ^
+/cmds/std/look.c line 957: Illegal lvalue
+  str = HIC "  √" NOR + do_query(obj);
+               ^
+/cmds/std/look.c line 986: syntax error, unexpected L_IDENTIFIER, expecting L_COLON_COLON or '('
+  string inventory_look(object obj, int flag)
+                       ^
+/cmds/std/look.c line 990: Illegal LHS
+  env = environment(obj);
+                             ^
+/cmds/std/look.c line 990: Warning: Expression has no side effects, and the value is unused
+  env = environment(obj);
+                             ^
+/cmds/std/look.c line 992: Undefined variable 'env'
+  if (env && arrayp(body_desc_equipped[env]) &&
+                ^
+/cmds/std/look.c line 992: Undefined variable 'body_desc_equipped'
+  if (env && arrayp(body_desc_equipped[env]) &&
+                                           ^
+/cmds/std/look.c line 1000: Undefined variable 'flag'
+  else if (!flag)
+                     ^
+/cmds/std/look.c line 1004: Type of returned value doesn't match function return type ( string vs int )
+  return str;
+                 ^
+/cmds/std/look.c line 1005: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/std/look.c line 1005: Warning: Unused local variable 'already_described'
+  }
+   ^
+/cmds/std/look.c line 1091: Warning: Expression has no side effects, and the value is unused
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1092: Warning: Expression has no side effects, and the value is unused
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1138: Warning: Expression has no side effects, and the value is unused
+  string part_desc = LOOK_PARTS["wrists"][gender][bodytype][per_range];
+                                                                           ^
+/cmds/std/look.c line 1139: Warning: Expression has no side effects, and the value is unused
+  object wrist_item = equip_map["wrists"];
+                                              ^
+/cmds/std/look.c line 1150: Warning: Expression has no side effects, and the value is unused
+  object neck_item = equip_map["neck"];
+                                           ^
+/cmds/std/look.c line 1159: Warning: Expression has no side effects, and the value is unused
+  object cloth_item = equip_map["cloth"];
+                                             ^
+/cmds/std/look.c line 1170: Warning: Expression has no side effects, and the value is unused
+  object waist_item = equip_map["waist"];
+                                             ^
+/cmds/std/look.c line 1181: Warning: Expression has no side effects, and the value is unused
+  object skirt_item = equip_map["skirt"];
+                                             ^
+/cmds/std/look.c line 1192: Warning: Expression has no side effects, and the value is unused
+  object boots_item = equip_map["boots"];
+                                             ^
+/cmds/std/look.c line 985: Warning: Unused local variable 'inv'
+  }
+   ^
+/cmds/std/look.c line 985: Warning: Unused local variable 'already_described'
+  }
+   ^
+/cmds/std/look.c line 993: Undefined variable 'body_desc_equipped'
+  if (env && arrayp(body_desc_equipped[env]) &&
+                                           ^
+/cmds/std/look.c line 1092: syntax error, unexpected '-'
+  mapping-h equip_map = ([]);
+              ^
+/cmds/std/look.c line 1092: Illegal LHS
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1092: Warning: Expression has no side effects, and the value is unused
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1093: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+             ^
+/cmds/std/look.c line 1093: Illegal LHS
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1093: Warning: Expression has no side effects, and the value is unused
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1123: Undefined variable 'processed_parts'
+  if (member_array(armor_type, processed_parts) != -1) {
+                                                           ^
+/cmds/std/look.c line 1139: Warning: Expression has no side effects, and the value is unused
+  string part_desc = LOOK_PARTS["wrists"][gender][bodytype][per_range];
+                                                                           ^
+/cmds/std/look.c line 1140: Warning: Expression has no side effects, and the value is unused
+  object wrist_item = equip_map["wrists"];
+                                              ^
+/cmds/std/look.c line 1151: Warning: Expression has no side effects, and the value is unused
+  object neck_item = equip_map["neck"];
+                                           ^
+/cmds/std/look.c line 1160: Warning: Expression has no side effects, and the value is unused
+  object cloth_item = equip_map["cloth"];
+                                             ^
+/cmds/std/look.c line 1171: Warning: Expression has no side effects, and the value is unused
+  object waist_item = equip_map["waist"];
+                                             ^
+/cmds/std/look.c line 1182: Warning: Expression has no side effects, and the value is unused
+  object skirt_item = equip_map["skirt"];
+                                             ^
+/cmds/std/look.c line 1193: Warning: Expression has no side effects, and the value is unused
+  object boots_item = equip_map["boots"];
+                                             ^
+/cmds/std/look.c line 952: Undefined variable 'detailed_look'
+  detailed_look = generate_detailed_look(obj, me);
+                   ^
+/cmds/std/look.c line 952: Illegal lvalue
+  detailed_look = generate_detailed_look(obj, me);
+                   ^
+/cmds/std/look.c line 976: Undefined variable 'already_described'
+  already_described = get_described_items();
+                          ^
+/cmds/std/look.c line 976: Illegal lvalue
+  already_described = get_described_items();
+                          ^
+/cmds/std/look.c line 1016: Undefined variable 'body_desc_equipped'
+  if (env && arrayp(body_desc_equipped[env]) &&
+                                           ^
+/cmds/std/look.c line 1115: syntax error, unexpected '-'
+  mapping-h equip_map = ([]);
+              ^
+/cmds/std/look.c line 1115: Warning: Expression has no side effects, and the value is unused
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1116: Warning: Expression has no side effects, and the value is unused
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1162: Warning: Expression has no side effects, and the value is unused
+  string part_desc = LOOK_PARTS["wrists"][gender][bodytype][per_range];
+                                                                           ^
+/cmds/std/look.c line 1163: Warning: Expression has no side effects, and the value is unused
+  object wrist_item = equip_map["wrists"];
+                                              ^
+/cmds/std/look.c line 1174: Warning: Expression has no side effects, and the value is unused
+  object neck_item = equip_map["neck"];
+                                           ^
+/cmds/std/look.c line 1183: Warning: Expression has no side effects, and the value is unused
+  object cloth_item = equip_map["cloth"];
+                                             ^
+/cmds/std/look.c line 1194: Warning: Expression has no side effects, and the value is unused
+  object waist_item = equip_map["waist"];
+                                             ^
+/cmds/std/look.c line 1205: Warning: Expression has no side effects, and the value is unused
+  object skirt_item = equip_map["skirt"];
+                                             ^
+/cmds/std/look.c line 1216: Warning: Expression has no side effects, and the value is unused
+  object boots_item = equip_map["boots"];
+                                             ^
+/cmds/std/look.c line 1017: Undefined variable 'body_desc_equipped'
+  if (env && arrayp(body_desc_equipped[env]) &&
+                                           ^
+/cmds/std/look.c line 1116: syntax error, unexpected '-'
+  mapping-h equip_map = ([]);
+              ^
+/cmds/std/look.c line 1116: Illegal LHS
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1116: Warning: Expression has no side effects, and the value is unused
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1117: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+             ^
+/cmds/std/look.c line 1117: Illegal LHS
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1117: Warning: Expression has no side effects, and the value is unused
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1147: Undefined variable 'processed_parts'
+  if (member_array(armor_type, processed_parts) != -1) {
+                                                           ^
+/cmds/std/look.c line 1163: Warning: Expression has no side effects, and the value is unused
+  string part_desc = LOOK_PARTS["wrists"][gender][bodytype][per_range];
+                                                                           ^
+/cmds/std/look.c line 1164: Warning: Expression has no side effects, and the value is unused
+  object wrist_item = equip_map["wrists"];
+                                              ^
+/cmds/std/look.c line 1175: Warning: Expression has no side effects, and the value is unused
+  object neck_item = equip_map["neck"];
+                                           ^
+/cmds/std/look.c line 1184: Warning: Expression has no side effects, and the value is unused
+  object cloth_item = equip_map["cloth"];
+                                             ^
+/cmds/std/look.c line 1195: Warning: Expression has no side effects, and the value is unused
+  object waist_item = equip_map["waist"];
+                                             ^
+/cmds/std/look.c line 1206: Warning: Expression has no side effects, and the value is unused
+  object skirt_item = equip_map["skirt"];
+                                             ^
+/cmds/std/look.c line 1217: Warning: Expression has no side effects, and the value is unused
+  object boots_item = equip_map["boots"];
+                                             ^
+/cmds/std/look.c line 1107: syntax error, unexpected '-'
+  mapping-h equip_map = ([]);
+              ^
+/cmds/std/look.c line 1107: Illegal LHS
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1107: Warning: Expression has no side effects, and the value is unused
+  mapping-h equip_map = ([]);
+                                 ^
+/cmds/std/look.c line 1108: syntax error, unexpected '*', expecting L_COLON_COLON or '('
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+             ^
+/cmds/std/look.c line 1108: Illegal LHS
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1108: Warning: Expression has no side effects, and the value is unused
+  string* processed_parts = ({"wrists", "finger", "neck", "cloth", "waist", "skirt", "boots"});
+                                                                                                   ^
+/cmds/std/look.c line 1138: Undefined variable 'processed_parts'
+  if (member_array(armor_type, processed_parts) != -1) {
+                                                           ^
+/cmds/std/look.c line 1141: Undefined variable 'equip_map'
+  equip_map["wrists"] = item;
+                                ^
+/cmds/std/look.c line 1154: Warning: Expression has no side effects, and the value is unused
+  string part_desc = LOOK_PARTS["wrists"][gender][bodytype][per_range];
+                                                                           ^
+/cmds/std/look.c line 1155: Warning: Expression has no side effects, and the value is unused
+  object wrist_item = equip_map["wrists"];
+                                              ^
+/cmds/std/look.c line 1166: Warning: Expression has no side effects, and the value is unused
+  object neck_item = equip_map["neck"];
+                                           ^
+/cmds/std/look.c line 1175: Warning: Expression has no side effects, and the value is unused
+  object cloth_item = equip_map["cloth"];
+                                             ^
+/cmds/std/look.c line 1186: Warning: Expression has no side effects, and the value is unused
+  object waist_item = equip_map["waist"];
+                                             ^
+/cmds/std/look.c line 1197: Warning: Expression has no side effects, and the value is unused
+  object skirt_item = equip_map["skirt"];
+                                             ^
+/cmds/std/look.c line 1208: Warning: Expression has no side effects, and the value is unused
+  object boots_item = equip_map["boots"];
+                                             ^
+/cmds/std/look.c line 650: Undefined function body_part_description
+  str += body_part_description(obj);
+                                      ^
+/cmds/std/look.c line 650: Bad assignment ( string vs unknown ).
+  str += body_part_description(obj);
+                                       ^
+/cmds/std/look.c line 117: syntax error, unexpected invalid token
+  HI淮 "星眸剪水玉光浮，冰作香肌雪作柔。楚殿细腰争一捻，步摇香雾月随流。\n...
+                                                                                                              ^
+/cmds/std/look.c line 197: syntax error, unexpected ';'
+  ]);
+     ^
+/cmds/std/look.c line 205: syntax error, unexpected ';'
+  });
+     ^
+/cmds/std/look.c line 213: Undefined variable 'me'
+  ridee = me->ride();
+                ^
+/cmds/std/look.c line 213: syntax error, unexpected ';'
+  ridee = me->ride();
+                       ^
+/cmds/std/look.c line 215: Undefined variable 'ridee'
+  ridemsg = ridee->query("ride/msg")+NOR+WHT" 在 "+ridee->name()+NOR+WHT" 上"NOR;
+                       ^
+/cmds/std/look.c line 1152: syntax error, unexpected invalid token
+  str += sprintf("    脚穿%s，鞋面平整洁净，贴合足踝弧形，足尖轻合，皮肤%s，虽藏于履�...
+                                                                                                                     ^
+/cmds/std/look.c line 1154: syntax error, unexpected ';'
+  str += sprintf("    脚穿%s，足踝圆润，脚背饱满，皮肤%s，步伐优雅。\n", equipped["boots"]->s...
+                                                                                                                     ^
+/cmds/std/look.c line 1158: syntax error, unexpected ';'
+  str += sprintf("    脚穿%s，鞋面平整洁净，贴合足踝弧形，足尖轻合如花瓣初阖，虽藏于...
+                                                                                                                     ^
+/cmds/std/look.c line 1160: syntax error, unexpected ';'
+  str += sprintf("    脚穿%s，鞋面平整洁净，贴合足踝圆润，足尖轻合，皮肤%s，虽藏于履�...
+                                                                                                                     ^
+/cmds/std/look.c line 1162: syntax error, unexpected ';'
+  str += sprintf("    脚穿%s，足踝圆润，脚背饱满，皮肤%s，步伐优雅。\n", equipped["boots"]->s...
+                                                                                                                     ^
+/cmds/std/look.c line 1168: syntax error, unexpected ';'
+  equipped["boots"]->short(), skin);
+                                         ^
+/cmds/std/look.c line 1135: syntax error, unexpected ')'
+  str += sprintf("    肩头圆润，肌理细腻。胸前隆起若含苞，乳尖粉嫩。玉臂修长，肌肤%s...
+                                                                                                                     ^
+/cmds/std/look.c line 1137: Illegal LHS
+  str += sprintf("    肩部圆润，胸部饱满，臂部柔和，肌肤%s。\n", skin);
+                                                                                              ^
+/d/changan/jiaoshi.c line 141: Warning: Unused local variable 'dir'
+  }
+   ^
+/d/changan/fen.c line 52: Warning: Unused local variable 'i'
+  }
+   ^
+/d/changan/fen.c line 52: Warning: Unused local variable 'damage'
+  }
+   ^
+/d/jz/npc/faming.c line 89: Warning: Unused local variable 'me'
+  }
+   ^
+/d/changan/ph.c line 138: Warning: Unused local variable 'name'
+  }
+   ^
+/d/changan/officer.c line 111: Warning: Unused local variable 'householder'
+  }
+           ^
+/d/changan/officer.c line 111: Warning: Unused local variable 'i'
+  }
+           ^
+/d/changan/officer.c line 111: Warning: Unused local variable 'j'
+  }
+           ^

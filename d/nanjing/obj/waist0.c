@@ -16,7 +16,7 @@ void create()
                 set("value", 2000);
                 set("material", "cloth");
                 set("armor_type", "waist");
-                set("armor_prop/per", random(3));
+                set("armor_prop/personality", random(3));
                 set("armor_prop/armor", 10);
                 set("armor_prop/dodge", 20);
                 set("wear_msg","$N围上一条$n。\n");

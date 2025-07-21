@@ -26,7 +26,7 @@ void create()
 		set("value", 50000);
 		set("armor_prop/armor", 15);
 		set("armor_prop/warm", 7);
-		set("armor_prop/per", 4+random(5));
+		set("armor_prop/personality", 4+random(5));
 		set("female_only", 1);
 	}
 

@@ -1,7 +1,7 @@
 #/d/city/npc/yang.c
-dbase (["per":11,"env":(["wimpy":50,]),"max_kee":300,"nickname":"[1;37m長安名醫[2;37;0m","eff_sen":200,"kee":300,"str":16,"force":0,"max_gin":580,"title":"[1;33m藥鋪掌櫃[2;37;0m","gin":580,"kar":22,"cor":21,"startroom":"/d/city/yaopu","eff_kee":300,"con":12,"long":"杨老板是长安城里祖传的名医。虽然年轻，却早已名声在外。","unit":"位","eff_gin":580,"vendor_goods":(["3":"/d/obj/drug/fake-tao","2":"/d/obj/drug/hunyuandan","1":"/d/obj/drug/jinchuang",]),"int":23,"mana":0,"can_speak":1,"race":"人类","name":"楊中順","spi":30,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"yang zhongshun","cps":22,"atman":0,"gender":"男性","combat_exp":10000,"attitude":"friendly","bodytype":"normal","max_sen":200,"sen":200,"age":37,])
+dbase (["per":11,"env":(["wimpy":50,]),"eff_sen":200,"nickname":"[1;37m長安名醫[2;37;0m","max_kee":300,"str":16,"kee":300,"max_gin":580,"force":0,"title":"[1;33m藥鋪掌櫃[2;37;0m","kar":22,"gin":580,"cor":21,"startroom":"/d/city/yaopu","eff_kee":300,"con":12,"unit":"位","long":"杨老板是长安城里祖传的名医。虽然年轻，却早已名声在外。","eff_gin":580,"vendor_goods":(["3":"/d/obj/drug/fake-tao","2":"/d/obj/drug/hunyuandan","1":"/d/obj/drug/jinchuang",]),"int":23,"can_speak":1,"mana":0,"race":"人类","name":"楊中順","spi":30,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"id":"yang zhongshun","cps":22,"gender":"男性","atman":0,"combat_exp":10000,"bodytype":"normal","attitude":"friendly","max_sen":200,"sen":200,"age":37,])
 skills (["dodge":60,"literate":70,"unarmed":60,])
 learned (["dodge":0,"literate":0,"unarmed":0,])
 SAVE_NAME "yangzhongshun"
 price_ratio 10
-close_time 1752786838
+close_time 1752922670

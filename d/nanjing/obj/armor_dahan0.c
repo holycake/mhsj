@@ -19,7 +19,7 @@ void create()
 	set("armor_prop/str", 5);
 	set("armor_prop/con", 5);
 	set("armor_prop/dex", 2);
-	set("armor_prop/per", 6);
+	set("armor_prop/personality", 6);
 	set("armor_prop/kar", 6);
 
 	setup();

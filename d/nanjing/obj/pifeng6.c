@@ -16,7 +16,7 @@ void create()
 		set("long", "这是件披在外面的披风。\n");
 		set("value", 3000);
 		set("armor_prop/armor", 10+random(6));
-		set("armor_prop/per", 1+random(2));
+		set("armor_prop/personality", 1+random(2));
 		set("armor_prop/dodge", 60);
 	}
 	setup();

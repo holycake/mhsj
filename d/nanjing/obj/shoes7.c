@@ -19,7 +19,7 @@ void create()
 
 	        set("armor_type", "feet");
 	        set("armor_prop/armor", 10);
-	        set("armor_prop/per", 1+random(2));
+	        set("armor_prop/personality", 1+random(2));
 	        set("armor_prop/dodge", 60+random(20));
 	        set("wear_msg","$N穿上一双$n。\n");
 	        set("remove_msg","$N将$n脱了下来。\n");
