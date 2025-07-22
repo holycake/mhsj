@@ -220,15 +220,31 @@ void create() { seteuid(getuid()); }
 
 int main(object me, string arg)
 {
-	object obj;
+	object obj,who;
 	int result;
+	string target;
 
-	if( !arg ) result = look_room(me, environment(me));
-	else if( (obj = present(arg, me)) || (obj = present(arg, environment(me)))) {
-		if( obj->is_character() ) result = look_living(me, obj);
-		else result = look_item(me, obj);
-	} else result = look_room_item(me, arg);
-
+	if( !arg ) 
+		result = look_room(me, environment(me));
+	else if( sscanf(arg,"%s in %s",arg,target)==2 )
+	{
+		who = present(target, environment(me));
+		if( !who || !who->is_character() )
+			return notify_fail("这里没有"+target+"。\n");
+		obj = present(arg,who);
+		if( !obj ) 
+			return notify_fail("对方身上没有这样东西。\n");
+		if( !obj->query("equipped") )
+			return notify_fail("你只能看对方装备着的物品。\n");
+		return  look_item(me, obj);
+	}	
+	else if( (obj = present(arg, me)) || (obj = present(arg, environment(me)))) 
+        {
+        	if( obj->is_character() && !obj->is_corpse() ) 
+        		result = look_living(me, obj);
+        	else    result = look_item(me, obj);
+        } 
+	else    result = look_room_item(me, arg);
 	return result;
 }
 
@@ -329,6 +345,7 @@ int look_item(object me, object obj)
 	mixed *inv;
 	int max_damage,damage;
 	int protect;
+	object who;
 
 	me->start_more(obj->long());
 	if(obj->query("armor_type") && obj->query("armor_type")!="cloth"
@@ -349,10 +366,13 @@ int look_item(object me, object obj)
 	
 	inv = all_inventory(obj);
 	if( sizeof(inv) ) {
-		inv = map_array(inv, "inventory_look", this_object(), obj);
+		inv = map_array(inv, "inventory_look", this_object(), 0, obj);
 		message("vision", sprintf("里面有：\n  %s\n",
 			implode(inv, "\n  ") ), me);
 	}
+       who = environment(obj);
+       if( who && living(who) && me!=who )
+       	tell_object(who,me->name()+"正盯着你身上的"+obj->name()+"左瞧右看，不知在打什么主意。\n");
 	return 1;
 }
 
@@ -615,12 +635,14 @@ string inventory_look(object obj, int flag, object ob)
 	int age;
 
 	// 如果是指定的装备部位，则跳过
-	age = ob->query("age") ? ob->query("age") : 20;
-	armor_type = obj->query("armor_type");
-	if (age >= 13 && age <= 50 && armor_type && member_array(armor_type, ({
-	    "wrists", "finger", "neck", "cloth", "waist", "skirt", "pants", "boots"
-	})) != -1)
-		return 0;
+	if (ob->is_character())
+	{	age = ob->query("age") ? ob->query("age") : 20;
+		armor_type = obj->query("armor_type");
+		if (age >= 13 && age <= 50 && armor_type && member_array(armor_type, ({
+		    "wrists", "finger", "neck", "cloth", "waist", "skirt", "pants", "boots"
+		})) != -1)
+			return 0;
+	}
 
 	str = obj->short();
 	if (obj->query("equipped"))
@@ -685,6 +707,9 @@ string do_query(object obj)
 				break;
 			case "skirt":
 				str = "下身穿着一" + units + str;
+				break;
+			case "surcoat":
+				str = "背后背着一" + units + str;
 				break;
 			case "head":
 			case "neck":
@@ -1040,8 +1065,8 @@ string body_part_description(object obj)
 	}
 
 	// 上身（胸部、肩膀、臂部）
-	if (equipped["cloth"] || equipped["armor"] || equipped["surcoat"]) {
-		object upper = equipped["cloth"] ? equipped["cloth"] : (equipped["armor"] ? equipped["armor"] : equipped["surcoat"]);
+	if (equipped["cloth"] || equipped["armor"]) {
+		object upper = equipped["cloth"] ? equipped["cloth"] : equipped["armor"];
 		if (gender == "女性") {
 			if (per < 15) {
 				str += sprintf("    上身%s贴合身体，肩部瘦削，胸部扁平，双臂单薄，皮肤%s。\n", upper->short(), skin);
@@ -1180,85 +1205,85 @@ string body_part_description(object obj)
 	    if (gender == "女性") {
 	        if (per >= 15 && per <= 19) { // 丑
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，毫无曲线。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢松垮，毫无曲线。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢僵直，缺乏柔美。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢僵直，缺乏柔美。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
 	            }
 	        } else if (per >= 20 && per <= 25) { // 普通
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢柔和，线条流畅。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢柔和，线条流畅。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢流畅，线条柔和。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢流畅，线条柔和。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段圆润，腰肢宽厚，线条平顺。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段圆润，腰肢宽厚，线条平顺。\n", equipped["waist"]->short());
 	            }
 	        } else if (per >= 26 && per <= 30) { // 美
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢稍显流畅，线条柔和。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢稍显流畅，线条柔和。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤柔，腰肢柔美，线条曼妙。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤柔，腰肢柔美，线条曼妙。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢柔美，线条流畅。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢柔美，线条流畅。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段圆润，腰肢柔和，线条优雅。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段圆润，腰肢柔和，线条优雅。\n", equipped["waist"]->short());
 	            }
 	        } else if (per > 30) { // 完美极美
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段稍显粗硬，腰肢流畅，线条柔美。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段稍显粗硬，腰肢流畅，线条柔美。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤柔，腰肢盈盈一握，仿佛风中细柳，顾盼生姿。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤柔，腰肢盈盈一握，仿佛风中细柳，顾盼生姿。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢柔美，宛如清泉流转，风姿绰约。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢柔美，宛如清泉流转，风姿绰约。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段圆润，腰肢柔美，宛若玉环轻舞，仪态万方。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段圆润，腰肢柔美，宛若玉环轻舞，仪态万方。\n", equipped["waist"]->short());
 	            }
 	        }
 	    } else { // 男性
 	        if (per >= 15 && per <= 19) { // 丑
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，毫无线条。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢松垮，毫无线条。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢僵直，缺乏力度。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢僵直，缺乏力度。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢平直，略显呆板。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段宽厚，腰肢粗壮，毫无精致。\n", equipped["waist"]->short());
 	            }
 	        } else if (per >= 20 && per <= 25) { // 普通
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢松垮，线条呆板。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢流畅，线条分明。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢流畅，线条分明。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢流畅，线条有力。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢流畅，线条有力。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实，线条平顺。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段宽厚，腰肢厚实，线条平顺。\n", equipped["waist"]->short());
 	            }
 	        } else if (per >= 26 && per <= 30) { // 美
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段粗硬，腰肢稍显流畅，线条平顺。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段粗硬，腰肢稍显流畅，线条平顺。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢挺拔，线条俊朗。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢挺拔，线条俊朗。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢挺拔，线条英俊。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢挺拔，线条英俊。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实，线条有力。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段宽厚，腰肢厚实，线条有力。\n", equipped["waist"]->short());
 	            }
 	        } else if (per > 30) { // 完美极美
 	            if (bodytype == "slim" || bodytype == "fat") {
-	                str += sprintf("    腰系%s显得身段稍显粗硬，腰肢流畅，线条平顺。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段稍显粗硬，腰肢流畅，线条平顺。\n", equipped["waist"]->short());
 	            } else if (bodytype == "light") {
-	                str += sprintf("    腰系%s显得身段纤细，腰肢挺拔如松，宛若玉树临风，英姿勃发。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段纤细，腰肢挺拔如松，宛若玉树临风，英姿勃发。\n", equipped["waist"]->short());
 	            } else if (bodytype == "normal") {
-	                str += sprintf("    腰系%s显得身段匀称，腰肢挺拔有力，宛如山岳屹立，气势不凡。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段匀称，腰肢挺拔有力，宛如山岳屹立，气势不凡。\n", equipped["waist"]->short());
 	            } else if (bodytype == "heavy") {
-	                str += sprintf("    腰系%s显得身段宽厚，腰肢厚实有力，宛若磐石稳重，威仪堂堂。\n", equipped["waist"]->short());
+	                str += sprintf("    腰间%s显得身段宽厚，腰肢厚实有力，宛若磐石稳重，威仪堂堂。\n", equipped["waist"]->short());
 	            }
 	        }
 	    }
@@ -1675,8 +1700,10 @@ int help (object me)
 {
 	write(@HELP
 指令格式: look [<物品>|<生物>|<方向>]
-
 这个指令让你查看你所在的环境、某件物品、生物、或是方向。
+
+指令格式: look [<物品> in <对象>]
+这个指令让你查看指定对象身上的装备。
 
 HELP
 );
